@@ -1,0 +1,6 @@
+.tags {
+  @apply flex m-0;
+}
+.tag {
+  @apply list-none bg-white shadow-md px-5 py-3 tracking-widest mr-4;
+}

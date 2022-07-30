@@ -1,0 +1,18 @@
+.root {
+  @apply max-w-7xl mx-auto;
+}
+.h1 {
+  @apply font-brandon-grotesque text-3xl font-bold;
+}
+.section {
+  @apply bg-white rounded px-16 py-9 mb-10;
+}
+.sectionContent {
+  @apply columns-2 my-10;
+}
+.sectionHeader {
+  @apply flex justify-between;
+}
+.p {
+  @apply pt-8;
+}

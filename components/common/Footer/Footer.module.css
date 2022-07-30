@@ -1,0 +1,22 @@
+.root {
+  @apply border-t border-gray p-5 mt-8;
+}
+.wrap {
+  @apply max-w-7xl mx-auto px-4 py-4 grid grid-cols-4;
+}
+.address {
+  @apply normal-case;
+}
+.address h2 {
+  @apply font-fira-sans text-base tracking-normal;
+}
+
+.address * {
+  @apply normal-case;
+}
+.nav {
+  @apply columns-2 col-span-2;
+}
+.nav * {
+  @apply block hover:text-blue;
+}

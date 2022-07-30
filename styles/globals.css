@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply font-fira-sans text-dark;
+  @apply font-fira-sans text-dark bg-lighter-gray;
 }
 h1,
 h2,
@@ -12,13 +12,16 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-montserrat uppercase tracking-heading;
+  @apply font-montserrat uppercase tracking-heading font-bold;
+}
+h2 {
+  @apply text-3xl mb-5;
 }
 a {
-  @apply hover:text-blue;
+  @apply hover:text-blue transition-opacity hover:transition-opacity duration-200;
 }
 p {
-  @apply pb-3;
+  @apply pb-3 leading-huge;
 }
 
 * {
