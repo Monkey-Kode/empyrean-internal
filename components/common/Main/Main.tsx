@@ -1,9 +1,8 @@
 import { FC } from 'react';
-import LogoIcon from '../../../icons/LogoIcon';
-import LogoNelsoHall from '../../../icons/LogoNelsoHall';
-import Hero from '../../../ui/Hero';
-import TagList from '../../../ui/TagList';
-import Lorem from '../../Lorem';
+import LogoNelsoHall from '../../icons/LogoNelsoHall';
+import Hero from '../../ui/Hero';
+import TagList from '../../ui/TagList';
+import Lorem from '../Lorem';
 import s from './Main.module.css';
 const Main: FC = () => {
   return (
@@ -26,7 +25,6 @@ const Main: FC = () => {
       <section className={s.section}>
         <header className={s.sectionHeader}>
           <h2>Empyrean</h2>
-          <LogoIcon />
         </header>
         <TagList
           tags={[

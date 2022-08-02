@@ -1,0 +1,5 @@
+.root {
+}
+.preTitle {
+  @apply text-med-gray text-3xl font-bold py-10;
+}

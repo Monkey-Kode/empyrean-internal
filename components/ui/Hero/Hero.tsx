@@ -13,7 +13,7 @@ const Hero: FC = () => {
           NelsonHall recognize in the current environment, Benefits play an
           increased role in supporting wider corporate and HR objectives.
         </p>
-        <Button type="link" href="#">
+        <Button type="link" href="/participate">
           BEGIN THE ASSESSMENT
         </Button>
       </div>

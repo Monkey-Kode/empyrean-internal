@@ -10,13 +10,17 @@ module.exports = {
     },
     extend: {
       colors: {
+        darker: '#2D2D2D',
         dark: '#262626',
         darkest: '#111111',
         blue: '#0865DE',
         'light-gray': '#D1D1D1',
         'lighter-gray': '#F7F7F7',
         gray: '#707070',
+        grey: '#CCCCCC',
         'mid-gray': '#959595',
+        'med-gray': '#9D9D9D',
+        'md-gray': '#747474',
         'dark-blue': '#002D69',
       },
       letterSpacing: {

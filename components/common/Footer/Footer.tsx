@@ -7,25 +7,24 @@ const Footer = () => {
       <div className={s.wrap}>
         <LogoIcon />
         <div className={s.address}>
-          <p>
-            <h2>Contact Info</h2>
-            Main: <Link href="tel:(281) 768-2900">(281) 768-2900</Link>
-            <br></br>
-            Toll-Free: <a href="tel:(281) 768-2900">(800) 934-1451</a>
-          </p>
+          <h2>Contact Info</h2>
+          Main: <a href="tel:(281) 768-2900">(281) 768-2900</a>
+          <br />
+          Toll-Free: <a href="tel:(281) 768-2900">(800) 934-1451</a>
+          <br />
           3010 Briarpark Drive, Suite 8000
-          <br></br>
+          <br />
           Houston, TX 77042
         </div>
         <nav className={s.nav}>
-          <Link href="/">Benefit Solutions</Link>
-          <Link href="/">Client Success</Link>
-          <Link href="/">Insights</Link>
-          <Link href="/">Company</Link>
-          <Link href="/">Get Demo</Link>
-          <Link href="#">Leadership</Link>
-          <Link href="#">Careers</Link>
-          <Link href="#">Contact Us</Link>
+          <a href="https://empyrean.com">Benefit Solutions</a>
+          <a href="https://empyrean.com">Client Success</a>
+          <a href="https://empyrean.com">Insights</a>
+          <a href="https://empyrean.com">Company</a>
+          <a href="https://empyrean.com">Get Demo</a>
+          <a href="https://empyrean.com">Leadership</a>
+          <a href="https://empyrean.com">Careers</a>
+          <Link href="/contact">Contact Us</Link>
         </nav>
         <div>© EMPYREAN RESEARCH INSTITUTE, {new Date().getUTCFullYear()}</div>
       </div>

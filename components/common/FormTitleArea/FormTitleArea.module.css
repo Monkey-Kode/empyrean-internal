@@ -1,0 +1,15 @@
+.root {
+  @apply bg-blue py-11;
+}
+
+.heading {
+  @apply text-3xl text-white;
+}
+
+.sectionTitle {
+  @apply text-2xl text-white uppercase;
+}
+
+.content {
+  @apply flex justify-between;
+}

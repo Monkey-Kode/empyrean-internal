@@ -2,6 +2,7 @@ import { FC } from 'react';
 import s from './Button.module.css';
 import cn from 'classnames';
 import Eye from '../../icons/Eye';
+import Link from 'next/link';
 interface ButtonProps {
   children: React.ReactNode;
   className?: string;
@@ -18,12 +19,14 @@ const Button: FC<ButtonProps> = ({
 }: ButtonProps) => {
   if (type === 'link' && href) {
     return (
-      <a href={href} className={cn(s.button, className)} onClick={onClick}>
-        <span className={s.icon}>
-          <Eye />
-        </span>
-        {children}
-      </a>
+      <Link href={href}>
+        <a className={cn(s.button, className)} onClick={onClick}>
+          <span className={s.icon}>
+            <Eye />
+          </span>
+          {children}
+        </a>
+      </Link>
     );
   } else if (type === 'button') {
     return (

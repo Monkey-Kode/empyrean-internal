@@ -1,3 +1,18 @@
 .root {
-  @apply flex justify-between mb-14 px-4;
+  /* @apply pb-14; */
+}
+.header {
+  @apply flex justify-between px-4;
+}
+.link {
+  @apply hover:text-black;
+}
+.blue {
+  @apply bg-blue text-white;
+}
+.blue a {
+  @apply text-white hover:text-black;
+}
+.h1 {
+  @apply text-3xl font-montserrat font-bold;
 }
