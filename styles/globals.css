@@ -18,7 +18,7 @@ h2 {
   @apply text-3xl mb-5;
 }
 a {
-  @apply hover:text-blue transition-opacity hover:transition-opacity duration-200;
+  @apply text-blue hover:text-dark-blue transition-opacity hover:transition-opacity duration-200;
 }
 p {
   @apply pb-3 leading-huge;

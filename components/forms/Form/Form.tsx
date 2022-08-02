@@ -3,8 +3,9 @@ import s from './Form.module.css';
 import FormIntro from '../FormIntro';
 import FormSection from '../FormSection';
 import FormQuestion from '../FormQuestion';
+import { useQuestionPage } from '../../../framework/context/questions';
+
 const Form = () => {
-  const [page, setPage] = useState(1);
   return (
     <form
       className={s.root}

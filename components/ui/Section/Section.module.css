@@ -1,0 +1,12 @@
+.root {
+  @apply my-12;
+}
+.section {
+  @apply bg-white rounded px-16 py-9 mb-10;
+}
+.sectionContent {
+  @apply my-10;
+}
+.sectionHeader {
+  @apply flex justify-between;
+}

@@ -9,3 +9,7 @@
 .h2 {
   @apply font-bold text-3xl mb-5;
 }
+
+.button {
+  @apply mt-5;
+}

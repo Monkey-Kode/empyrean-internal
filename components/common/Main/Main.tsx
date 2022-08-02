@@ -1,57 +1,37 @@
 import { FC } from 'react';
+import data from '../../../data';
+import LogoIcon from '../../icons/LogoIcon';
 import LogoNelsoHall from '../../icons/LogoNelsoHall';
 import Hero from '../../ui/Hero';
-import TagList from '../../ui/TagList';
+import Section from '../../ui/Section';
 import Lorem from '../Lorem';
 import s from './Main.module.css';
 const Main: FC = () => {
+  const sections = data?.data?.pages
+    ?.find((page) => page.slug === 'home')
+    ?.content.filter((content) => content.type === 'section');
+
   return (
     <main className={s.root}>
       <h1 className={s.h1}>Impact</h1>
       <Hero />
-      <section className={s.section}>
-        <h2>
-          CONCEPTION <br></br>& CREATION
-        </h2>
-        <div className={s.sectionContent}>
-          <p>
-            <Lorem />
-          </p>
-          <p>
-            <Lorem />
-          </p>
-        </div>
-      </section>
-      <section className={s.section}>
-        <header className={s.sectionHeader}>
-          <h2>Empyrean</h2>
-        </header>
-        <TagList
-          tags={[
-            'BENEFITS ADMISITRATION',
-            'TECHNOLOGY',
-            'THOUGHT LEADER',
-            'ADVISORY',
-          ]}
-        />
-        <div className={s.sectionContent}>
-          <p>
-            <Lorem />
-          </p>
-        </div>
-      </section>
-      <section className={s.section}>
-        <header className={s.sectionHeader}>
-          <h2>Nelson Hall</h2>
-          <LogoNelsoHall />
-        </header>
-        <TagList
-          tags={['HUMAN RESOURCES', 'RESEARCH', 'ANALYTICS', 'ADVISORY']}
-        />
-        <p className={s.p}>
-          <Lorem />
-        </p>
-      </section>
+      {sections?.map(({ title, content, link }) => {
+        let icon =
+          title === 'About Nelson Hall'
+            ? LogoNelsoHall
+            : title === 'About Empyrean'
+            ? LogoIcon
+            : undefined;
+        return (
+          <Section
+            key={title}
+            title={title}
+            content={content}
+            link={link}
+            logo={icon}
+          />
+        );
+      })}
     </main>
   );
 };
