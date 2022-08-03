@@ -3,7 +3,7 @@ import s from './Sections.module.css';
 import { useQuestionPage } from '../../../framework/context/questions';
 import Section from '../Section/Section';
 const Sections = () => {
-  const context = useQuestionPage();
+
   const content = data.data.forms.find((form) => form.slug === 'assessment');
   return (
     <div className={s.root}>

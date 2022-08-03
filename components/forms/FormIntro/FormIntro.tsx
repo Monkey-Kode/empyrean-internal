@@ -1,8 +1,12 @@
 import data from '../../../data';
+import { useQuestionPage } from '../../../framework/context/questions';
+import { useSectionIndex } from '../../../framework/context/section';
 import Button from '../../ui/Button';
 import Select from '../../ui/Select';
 import s from './FormIntro.module.css';
 const FormIntro = () => {
+
+  const { dispatch: sectionDispatch } = useSectionIndex();
   const content = data.data.forms.find((form) => form.slug === 'firmographics');
   console.log(content);
   return (
@@ -21,7 +25,14 @@ const FormIntro = () => {
               />
             )
         )}
-        <Button type="button" className={s.button}>
+        <Button
+          type="button"
+          className={s.button}
+          onClick={(e) => {
+            e.preventDefault();
+            sectionDispatch({ type: 'set', payload: 1 });
+          }}
+        >
           BEGIN THE ASSESSMENT
         </Button>
       </div>

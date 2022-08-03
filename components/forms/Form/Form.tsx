@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import s from './Form.module.css';
 import FormIntro from '../FormIntro';
-import FormSection from '../FormSection';
-import FormQuestion from '../FormQuestion';
 import Sections from '../Sections';
+import FormPages from '../FormPages';
 
 const Form = () => {
   return (
@@ -13,8 +12,7 @@ const Form = () => {
         console.log('send to netlify');
       }}
     >
-      <FormIntro />
-      <Sections />
+      <FormPages />
     </form>
   );
 };

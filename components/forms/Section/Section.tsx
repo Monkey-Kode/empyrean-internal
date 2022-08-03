@@ -33,9 +33,9 @@ const Section = ({
     <div className={s.navigationWrap}>
       <Navigation />
     </div>
-    <div className={s.questions}>
+    {/* <div className={s.questions}>
       <Questions questions={questions} />
-    </div>
+    </div> */}
   </div>
 );
 

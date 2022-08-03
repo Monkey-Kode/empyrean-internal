@@ -5,12 +5,12 @@ interface State {
 }
 type Action = { type: 'next' | 'previous' };
 type Dispatch = (action: Action) => void;
-interface QuestionsContextInterface {
+interface QuestionsIndexContextInterface {
   state: State;
   dispatch: Dispatch;
 }
-export const QuestionsContext = createContext<
-  QuestionsContextInterface | undefined
+export const QuestionsIndexContext = createContext<
+  QuestionsIndexContextInterface | undefined
 >(undefined);
 
 const changePageReducer = (state: State, action: Action) => {
@@ -25,23 +25,25 @@ const changePageReducer = (state: State, action: Action) => {
   }
 };
 
-const QuestionsProvider: FC<{
+const QuestionsIndexProvider: FC<{
   children: ReactNode;
 }> = ({ children }) => {
-  const [state, dispatch] = useReducer(changePageReducer, { page: 0 });
+  const [state, dispatch] = useReducer(changePageReducer, {
+    page: 0,
+  });
   const value = { state, dispatch };
   return (
-    <QuestionsContext.Provider value={value}>
+    <QuestionsIndexContext.Provider value={value}>
       {children}
-    </QuestionsContext.Provider>
+    </QuestionsIndexContext.Provider>
   );
 };
 
-const useQuestionPage = () => {
-  const context = useContext(QuestionsContext);
+const useQuestionIndex = () => {
+  const context = useContext(QuestionsIndexContext);
   if (context === undefined) {
-    throw new Error('usePage must be used within a QuestionsProvider');
+    throw new Error('usePage must be used within a QuestionsIndexProvider');
   }
   return context;
 };
-export { QuestionsProvider, useQuestionPage };
+export { QuestionsIndexProvider, useQuestionIndex };
