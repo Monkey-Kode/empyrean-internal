@@ -1,5 +1,9 @@
 .root {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12;
 }
 .preTitle {
   @apply text-med-gray text-3xl font-bold py-10;
+}
+.button {
+  @apply my-10;
 }

@@ -17,7 +17,7 @@ h6 {
 h2 {
   @apply text-3xl mb-5;
 }
-a {
+main a {
   @apply text-blue hover:text-dark-blue transition-opacity hover:transition-opacity duration-200;
 }
 p {

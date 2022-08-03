@@ -8,7 +8,7 @@ const Participate: NextPageWithLayout = () => {
   return (
     <QuestionsProvider>
       <FormTitleArea title="Participate" />
-      <main className="wrap">
+      <main>
         <Form />
       </main>
     </QuestionsProvider>

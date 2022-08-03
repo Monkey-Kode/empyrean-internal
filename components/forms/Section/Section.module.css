@@ -1,0 +1,14 @@
+.root {
+  @apply bg-blue py-16;
+}
+.content {
+  @apply max-w-6xl mx-auto px-4 text-white;
+}
+.preTitle {
+  @apply text-2xl mb-16;
+}
+.title {
+  @apply mb-12;
+}
+.p {
+}

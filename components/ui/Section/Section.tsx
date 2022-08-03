@@ -7,9 +7,10 @@ const Section: FC<{
   title: string;
   content: string | undefined;
   link: string | undefined;
+  tags?: string[];
   logo: (() => JSX.Element) | undefined;
-}> = ({ className, title, content, logo, link }) => (
-  <section className={cn(s.section, s.root)}>
+}> = ({ className, title, content, logo, link, tags }) => (
+  <section className={cn(s.section, s.root, className)}>
     <header className={s.sectionHeader}>
       <h2>{title}</h2>
       {logo && (
@@ -18,14 +19,7 @@ const Section: FC<{
         </a>
       )}
     </header>
-    <TagList
-      tags={[
-        'BENEFITS ADMISITRATION',
-        'TECHNOLOGY',
-        'THOUGHT LEADER',
-        'ADVISORY',
-      ]}
-    />
+    {tags && <TagList tags={tags} />}
     <div className={s.sectionContent}>
       <p>{content}</p>
     </div>

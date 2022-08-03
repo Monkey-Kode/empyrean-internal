@@ -4,18 +4,16 @@ import LogoIcon from '../../icons/LogoIcon';
 import LogoNelsoHall from '../../icons/LogoNelsoHall';
 import Hero from '../../ui/Hero';
 import Section from '../../ui/Section';
-import Lorem from '../Lorem';
 import s from './Main.module.css';
 const Main: FC = () => {
   const sections = data?.data?.pages
     ?.find((page) => page.slug === 'home')
-    ?.content.filter((content) => content.type === 'section');
-
+    ?.content?.filter((content) => content.type === 'section');
   return (
     <main className={s.root}>
       <h1 className={s.h1}>Impact</h1>
       <Hero />
-      {sections?.map(({ title, content, link }) => {
+      {sections?.map(({ title, content, link, tags }: any) => {
         let icon =
           title === 'About Nelson Hall'
             ? LogoNelsoHall
@@ -29,6 +27,7 @@ const Main: FC = () => {
             content={content}
             link={link}
             logo={icon}
+            tags={tags}
           />
         );
       })}
