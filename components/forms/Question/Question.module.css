@@ -1,0 +1,41 @@
+.root {
+  @apply bg-lighter-gray py-20 text-black;
+}
+.content {
+  @apply max-w-6xl mx-auto px-4;
+}
+.question {
+  @apply text-3xl text-gray2 pt-8 leading-snug;
+}
+.inputWrapper {
+  @apply bg-white pt-12 px-12 max-w-8xl mx-auto my-12;
+}
+.input {
+  @apply w-full rounded-lg my-3 text-xl text-gray2 appearance-none cursor-pointer focus:outline-none bg-mid-gray2 border border-gray;
+}
+/* .input::-webkit-slider-thumb {
+  @apply w-[20px] h-[20px] border border-white rounded-full appearance-none bg-blue;
+} */
+
+.inputContent {
+  @apply max-w-6xl mx-auto;
+}
+.small {
+  @apply text-center text-darkest opacity-40 font-bold font-montserrat w-full block;
+}
+.smallUppercase {
+  @apply uppercase;
+}
+.datalist {
+  @apply px-1 flex w-full justify-between select-none;
+}
+
+.labels {
+  @apply text-lg uppercase w-full flex justify-between font-bold tracking-tighter transform -translate-y-5;
+}
+.label:first-of-type {
+  @apply max-w-[100px];
+}
+.label:last-of-type {
+  @apply text-right max-w-[200px];
+}

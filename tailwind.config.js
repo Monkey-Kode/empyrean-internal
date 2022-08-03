@@ -18,12 +18,15 @@ module.exports = {
         'lighter-gray': '#F7F7F7',
         gray: '#707070',
         grey: '#CCCCCC',
+        gray2: '#434343',
         'mid-gray': '#959595',
+        'mid-gray2': '#E8E8E8',
         'med-gray': '#9D9D9D',
         'md-gray': '#747474',
         'dark-blue': '#002D69',
       },
       letterSpacing: {
+        tighter: '0.225em',
         heading: '0.45rem',
       },
       lineHeight: {
@@ -33,6 +36,9 @@ module.exports = {
         montserrat: ['montserrat', 'sans-serif'],
         'fira-sans': ['fira-sans', 'sans-serif'],
         'brandon-grotesque': ['brandon-grotesque', 'sans-serif'],
+      },
+      maxWidth: {
+        '8xl': '1440px',
       },
     },
   },

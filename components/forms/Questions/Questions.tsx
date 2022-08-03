@@ -1,5 +1,24 @@
+import Question from '../Question/Question';
 import s from './Questions.module.css';
-const Questions = () => {
-  return <div className={s.root}></div>;
+export interface Question {
+  text: string;
+  name: string;
+  low: string;
+  high: string;
+}
+
+const Questions = ({ questions }: { questions: Question[] }) => {
+  return (
+    <div className={s.root}>
+      {questions.map((question, index) => (
+        <Question
+          key={question.name}
+          question={question}
+          index={index}
+          length={questions.length}
+        />
+      ))}
+    </div>
+  );
 };
 export default Questions;
