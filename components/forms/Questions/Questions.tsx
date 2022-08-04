@@ -11,12 +11,7 @@ const Questions = ({ questions }: { questions: Question[] }) => {
   return (
     <div className={s.root}>
       {questions.map((question, index) => (
-        <Question
-          key={question.name}
-          question={question}
-          index={index}
-          length={questions.length}
-        />
+        <Question key={question.name} question={question} index={index} />
       ))}
     </div>
   );

@@ -1,15 +1,16 @@
+import { useFormState } from '../../../framework/context/form';
 import Navigation from '../Navigation';
 import { Question } from '../Questions/Questions';
 import s from './Question.module.css';
 const Question = ({
   question,
   index,
-  length,
 }: {
   question: Question;
   index: number;
-  length: number;
 }) => {
+  const { state: formState, dispatch: formDispatch } = useFormState();
+
   return (
     <div className={s.root}>
       <div className={s.content}>
@@ -31,6 +32,17 @@ const Question = ({
             type="range"
             min="1"
             max="5"
+            value={formState?.[question.name]}
+            onChange={(e) => {
+              formDispatch({
+                type: 'UPDATE_FIELD',
+                payload: {
+                  name: question.name,
+                  value: e.target.value,
+                },
+              });
+              console.log('formState', formState);
+            }}
           />
           <small className={s.small}>
             <span className={s.smallUppercase}>

@@ -55,9 +55,9 @@
 .labels {
   @apply text-lg uppercase w-full flex justify-between font-bold tracking-tighter transform -translate-y-5;
 }
-.label:first-of-type {
+/* .label:first-of-type {
   @apply max-w-[100px];
 }
 .label:last-of-type {
   @apply text-right max-w-[200px];
-}
+} */

@@ -2,22 +2,25 @@ import Form from '../components/forms/Form';
 import FormTitleArea from '../components/common/FormTitleArea';
 import Layout from '../components/common/Layout';
 import { NextPageWithLayout } from './_app';
-import { QuestionsProvider } from '../framework/context/questions';
 import { SectionIndexProvider } from '../framework/context/section';
 import { QuestionsIndexProvider } from '../framework/context/question';
+import { FormStateProvider } from '../framework/context/form';
+import { TitleProvider } from '../framework/context/title';
 
 const Participate: NextPageWithLayout = () => {
   return (
-    <QuestionsProvider>
-      <SectionIndexProvider>
-        <QuestionsIndexProvider>
-          <FormTitleArea title="Participate" />
+    <SectionIndexProvider>
+      <QuestionsIndexProvider>
+        <TitleProvider>
+          <FormTitleArea />
           <main>
-            <Form />
+            <FormStateProvider>
+              <Form />
+            </FormStateProvider>
           </main>
-        </QuestionsIndexProvider>
-      </SectionIndexProvider>
-    </QuestionsProvider>
+        </TitleProvider>
+      </QuestionsIndexProvider>
+    </SectionIndexProvider>
   );
 };
 Participate.getLayout = function getLayout(page) {

@@ -1,0 +1,17 @@
+.root {
+  @apply max-w-6xl mx-auto py-16;
+}
+.topArea {
+  @apply grid grid-cols-2;
+}
+
+.mainHeading {
+  @apply text-3xl font-bold;
+}
+
+.list {
+  @apply ml-0;
+}
+.list li {
+  @apply list-none;
+}

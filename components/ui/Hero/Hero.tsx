@@ -13,7 +13,11 @@ const Hero: FC = () => {
       <div className={s.content}>
         <h2 className={s.h2}>{content?.title}</h2>
         <div dangerouslySetInnerHTML={{ __html: content?.__html ?? '' }} />
-        <Button className={s.button} type="link" href={content?.cta?.link}>
+        <Button
+          className={s.button}
+          type="link"
+          href={content?.cta?.link ?? ''}
+        >
           {content?.cta?.text}
         </Button>
       </div>

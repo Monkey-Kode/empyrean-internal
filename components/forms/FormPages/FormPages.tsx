@@ -2,22 +2,33 @@ import FormIntro from '../FormIntro';
 import data from '../../../data';
 import Section from '../Section/Section';
 import { useSectionIndex } from '../../../framework/context/section';
+import { useQuestionIndex } from '../../../framework/context/question';
+import ResultsLoader from '../ResultsLoader';
+import Report from '../Report';
 // import s from './FormPages.module.css';
 const FormPages = () => {
-  const { state } = useSectionIndex();
+  const { state: sectionIndexState, dispatch: sectionIndexDispatch } =
+    useSectionIndex();
+  const { state: questionIndexState, dispatch: questionIndexDispatch } =
+    useQuestionIndex();
   const content = data.data.forms.find((form) => form.slug === 'assessment');
   const sections = content?.sections;
 
-  if (state.index > 0) {
+  if (sectionIndexState.index >= 0) {
     return sections && sections?.length > 0 ? (
       <Section
-        index={state.index - 1}
         length={sections?.length}
-        title={sections[state.index - 1].title}
-        description={sections[state.index - 1].description}
-        questions={sections[state.index - 1].questions}
+        title={sections[sectionIndexState.index].title}
+        description={sections[sectionIndexState.index].description}
       />
     ) : null;
+  }
+
+  if (sectionIndexState.index === -2) {
+    return <ResultsLoader />;
+  }
+  if (sectionIndexState.index === -3) {
+    return <Report />;
   }
 
   return <FormIntro />;

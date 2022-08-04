@@ -1,24 +1,26 @@
 import { createContext, FC, ReactNode, useContext, useReducer } from 'react';
 
 interface State {
-  page: number;
+  index: number;
 }
-type Action = { type: 'next' | 'previous' };
+type Action = { type: 'next' | 'previous' | 'set'; payload: number };
 type Dispatch = (action: Action) => void;
 interface QuestionsIndexContextInterface {
   state: State;
   dispatch: Dispatch;
 }
-export const QuestionsIndexContext = createContext<
+const QuestionsIndexContext = createContext<
   QuestionsIndexContextInterface | undefined
 >(undefined);
 
-const changePageReducer = (state: State, action: Action) => {
+const changeQuestionIndexReducer = (state: State, action: Action) => {
   switch (action.type) {
     case 'next':
-      return { page: state.page + 1 };
+      return { index: state.index + action.payload };
     case 'previous':
-      return { page: state.page - 1 };
+      return { index: state.index - action.payload };
+    case 'set':
+      return { index: action.payload };
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }
@@ -28,8 +30,8 @@ const changePageReducer = (state: State, action: Action) => {
 const QuestionsIndexProvider: FC<{
   children: ReactNode;
 }> = ({ children }) => {
-  const [state, dispatch] = useReducer(changePageReducer, {
-    page: 0,
+  const [state, dispatch] = useReducer(changeQuestionIndexReducer, {
+    index: -1,
   });
   const value = { state, dispatch };
   return (
@@ -42,7 +44,9 @@ const QuestionsIndexProvider: FC<{
 const useQuestionIndex = () => {
   const context = useContext(QuestionsIndexContext);
   if (context === undefined) {
-    throw new Error('usePage must be used within a QuestionsIndexProvider');
+    throw new Error(
+      'useQuestionIndex must be used within a QuestionsIndexProvider'
+    );
   }
   return context;
 };

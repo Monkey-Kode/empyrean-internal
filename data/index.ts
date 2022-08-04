@@ -23,6 +23,7 @@ const data = {
             type: 'section',
             title: 'About Nelson Hall',
             link: 'https://www.research.nelson-hall.com',
+            __html: '',
             content: `The leading global analyst firm dedicated to helping organizations understand the 'art of the possible' in HR and business services.`,
             cta: {
               text: '',
@@ -39,6 +40,7 @@ const data = {
             type: 'section',
             title: 'About Empyrean',
             link: 'https://goempyrean.com',
+            __html: '',
             content: `Since 2006, Empyrean has provided employers of varying size, industry, and benefit plan complexity with the innovative technology and best in class service necessary to accelerate their benefits strategies and bring their benefit programs to life.Empyrean’s platform and services were designed to create connected employee benefit experiences that enrich lives, strengthen employer brands, and improve workplace cultures.`,
             cta: {
               text: '',
@@ -60,10 +62,12 @@ const data = {
           {
             type: 'hero',
             title: 'Firmographics',
+            __html: '',
             content:
               'So that we can tailor your results, please provide the following information. ',
             cta: {
               text: 'Begin Assessment',
+              link: '',
             },
           },
           {
@@ -77,15 +81,52 @@ const data = {
         slug: 'contact',
         content: [
           {
+            type: 'title',
+            content: 'Your Report',
+          },
+        ],
+      },
+      {
+        title: 'Loader',
+        slug: 'loader',
+        content: [
+          {
             type: 'text',
-            content: '',
+            content: `Please stand by while we calculate your results. We’ll determine the
+            maturity of your benefits operation and share insights to help you
+            improve your impact.`,
+          },
+        ],
+      },
+      {
+        title: 'Report',
+        slug: 'report',
+        content: [
+          {
+            type: 'title',
+            content: 'Your Results',
+          },
+          {
+            type: 'subtext',
+            content: `YOUR COMPANY FIRMOGRAPHICS`,
+          },
+          {
+            type: 'subtitle',
+            content: `Thank you for participating!`,
+          },
+          {
+            type: 'summary',
+            content: `<p>In the featured spider graph, your organization’s benefits maturity is plotted upon each of the five core areas identified in the research study. If your organization is more mature in a particular area, your rating will be plotted towards the edge of the corresponding spike.</p>
+            <p>Below, we have used the results of your assessment to suggest actions that will help you to increase your impact and uplift the capability of your benefits function.</p>
+            <p>
+              Your maturity was calculated using the data collected from the NelsonHall research study: “The Changing Role of Benefits Leaders survey.” This primary research, sponsored by Empyrean, surveyed 100 HR & Benefits leaders, and was published in early 2022. The resulting report explored the changing role of the benefits function, uncovering the insights, tools, products, partners, and education needed to best serve the HR function and the broader organization. The research also explored the evolving demands on benefits platforms to uncover how these technologies must evolve to support the changing role of benefits leaders. Request a copy of the report.
+              Recommendations to enhance your benefits capability are suggested below, based upon the primary research and NelsonHall market knowledge.
+            </p>`,
           },
         ],
       },
     ],
-    loader: {
-      text: 'Please stand by while we calculate your results. We’ll determine the maturity of your benefits operation and share insights to help you improve your impact.',
-    },
+
     forms: [
       {
         title: 'Firmographics',

@@ -1,14 +1,14 @@
 import data from '../../../data';
-import { useQuestionPage } from '../../../framework/context/questions';
+import { useFormState } from '../../../framework/context/form';
 import { useSectionIndex } from '../../../framework/context/section';
 import Button from '../../ui/Button';
 import Select from '../../ui/Select';
 import s from './FormIntro.module.css';
 const FormIntro = () => {
-
   const { dispatch: sectionDispatch } = useSectionIndex();
+  const { state: formState, dispatch: formDispatch } = useFormState();
   const content = data.data.forms.find((form) => form.slug === 'firmographics');
-  console.log(content);
+
   return (
     <>
       <div className={s.root}>
@@ -22,6 +22,17 @@ const FormIntro = () => {
                 label={field.label}
                 options={field.options}
                 name={field.name}
+                value={formState[field.name]}
+                onChange={(e) => {
+                  formDispatch({
+                    type: 'UPDATE_FIELD',
+                    payload: {
+                      name: field.name,
+                      value: e.target.value,
+                    },
+                  });
+                  console.log('formState', formState);
+                }}
               />
             )
         )}
@@ -30,7 +41,7 @@ const FormIntro = () => {
           className={s.button}
           onClick={(e) => {
             e.preventDefault();
-            sectionDispatch({ type: 'set', payload: 1 });
+            sectionDispatch({ type: 'set', payload: 0 });
           }}
         >
           BEGIN THE ASSESSMENT

@@ -1,42 +1,58 @@
+import { useQuestionIndex } from '../../../framework/context/question';
+import { useSectionIndex } from '../../../framework/context/section';
 import Navigation from '../Navigation';
 import Questions from '../Questions';
 import s from './Section.module.css';
+import data from '../../../data';
+import Question from '../Question';
+
 interface SectionProps {
-  index: number;
   length: number;
   title: string;
   description: string | undefined;
-  questions: {
-    text: string;
-    name: string;
-    low: string;
-    high: string;
-  }[];
 }
-const Section = ({
-  index,
-  length,
-  title,
-  description,
-  questions,
-}: SectionProps) => (
-  <div className={s.root}>
-    <div className={s.wrap}>
-      <div className={s.content}>
-        <h3 className={s.preTitle}>
-          Section {index + 1} of {length}
-        </h3>
-        <h2 className={s.title}>{title}</h2>
-        <p className={s.p}>{description}</p>
+const Section = ({ length, title, description }: SectionProps) => {
+  const content = data.data.forms.find((form) => form.slug === 'assessment');
+  const { state: sectionIndexState, dispatch: sectionIndexDispatch } =
+    useSectionIndex();
+  const { state: questionIndexState, dispatch: questionIndexDispatch } =
+    useQuestionIndex();
+
+  const questions = content?.sections?.[sectionIndexState.index].questions;
+
+  const question = questions?.[questionIndexState.index];
+  console.log('questionIndexState', questionIndexState.index);
+
+  if (questionIndexState.index === -1) {
+    return (
+      <div className={s.root}>
+        <div className={s.wrap}>
+          <div className={s.content}>
+            <h3 className={s.preTitle}>
+              Section {sectionIndexState.index + 1} of {length}
+            </h3>
+            <h2 className={s.title}>{title}</h2>
+            <p className={s.p}>{description}</p>
+          </div>
+        </div>
+        <div className={s.navigationWrap}>
+          <Navigation />
+        </div>
       </div>
-    </div>
-    <div className={s.navigationWrap}>
-      <Navigation />
-    </div>
-    {/* <div className={s.questions}>
-      <Questions questions={questions} />
-    </div> */}
-  </div>
-);
+    );
+  } else {
+    return question ? (
+      <div className={s.questions}>
+        <Question
+          key={question.name}
+          question={question}
+          index={questionIndexState.index}
+        />
+      </div>
+    ) : null;
+  }
+
+  return null;
+};
 
 export default Section;

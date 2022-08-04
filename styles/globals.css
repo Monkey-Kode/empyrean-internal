@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply font-fira-sans text-dark bg-lighter-gray;
+  @apply font-fira-sans text-dark bg-lighter-gray select-none;
 }
 h1,
 h2,

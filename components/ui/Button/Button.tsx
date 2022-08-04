@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, MouseEventHandler } from 'react';
 import s from './Button.module.css';
 import cn from 'classnames';
 import Eye from '../../icons/Eye';
@@ -8,7 +8,8 @@ interface ButtonProps {
   className?: string;
   type?: 'button' | 'link';
   href?: string;
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLButtonElement> &
+    MouseEventHandler<HTMLAnchorElement>;
 }
 const Button: FC<ButtonProps> = ({
   children,

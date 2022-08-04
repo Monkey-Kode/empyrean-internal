@@ -30,7 +30,9 @@ const changeSectionIndexReducer = (state: State, action: Action) => {
 const SectionIndexProvider: FC<{
   children: ReactNode;
 }> = ({ children }) => {
-  const [state, dispatch] = useReducer(changeSectionIndexReducer, { index: 0 });
+  const [state, dispatch] = useReducer(changeSectionIndexReducer, {
+    index: -1,
+  });
   const value = { state, dispatch };
   return (
     <SectionIndexContext.Provider value={value}>
