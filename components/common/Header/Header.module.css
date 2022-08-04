@@ -1,5 +1,6 @@
 .root {
   /* @apply pb-14; */
+  @apply z-50 relative;
 }
 .header {
   @apply flex justify-between px-4;
@@ -13,6 +14,10 @@
 .blue a {
   @apply text-white hover:text-black;
 }
+.white {
+  @apply bg-transparent;
+}
+
 .h1 {
   @apply text-3xl font-montserrat font-bold;
 }

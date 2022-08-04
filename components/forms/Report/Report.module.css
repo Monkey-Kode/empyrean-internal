@@ -10,8 +10,11 @@
 }
 
 .list {
-  @apply ml-0;
+  @apply ml-0 mt-3 mb-10;
 }
 .list li {
   @apply list-none;
+}
+.download {
+  @apply text-right;
 }

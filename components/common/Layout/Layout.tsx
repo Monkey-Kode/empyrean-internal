@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import cn from 'classnames';
 import s from './Layout.module.css';
 import { ThemeProvider } from '../../../framework/context/theme';
+import Background from '../Background';
 
 const Layout: FC<{
   children: ReactNode;
@@ -11,6 +12,7 @@ const Layout: FC<{
   return (
     <ThemeProvider>
       <div className={cn(s.root)}>
+        <Background />
         <Header />
         {children}
         <Footer />

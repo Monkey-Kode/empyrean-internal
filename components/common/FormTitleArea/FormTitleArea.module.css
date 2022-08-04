@@ -1,5 +1,5 @@
 .root {
-  @apply bg-blue py-11;
+  @apply bg-blue py-11 z-50 relative;
 }
 
 .heading {

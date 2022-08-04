@@ -1,0 +1,8 @@
+.accordionItem {
+  @apply py-6 first-of-type:border-t border-b border-light-gray;
+}
+.accordionItemTitle {
+  @apply text-lg font-bold font-montserrat text-dark tracking-wider text-2xl;
+}
+.accordionItemContent {
+}

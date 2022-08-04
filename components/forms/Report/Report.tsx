@@ -1,5 +1,7 @@
 import data from '../../../data';
 import { useFormState } from '../../../framework/context/form';
+import Accordion from '../../ui/Accordion';
+import Button from '../../ui/Button';
 import Chart from '../../ui/Chart';
 import s from './Report.module.css';
 const Report = () => {
@@ -32,13 +34,16 @@ const Report = () => {
           </ul>
           <h2>{subtitle}</h2>
 
-          <div dangerouslySetInnerHTML={{ __html: summary }} />
+          <div dangerouslySetInnerHTML={{ __html: String(summary) }} />
         </div>
         <div className={s.download}>
-          <a href="#">Download PDF</a>
+          <Button>Download PDF</Button>
           <Chart />
         </div>
       </div>
+      <section>
+        <Accordion />
+      </section>
     </div>
   );
 };
