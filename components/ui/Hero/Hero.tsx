@@ -1,16 +1,13 @@
 import { FC } from 'react';
 import data from '../../../data';
-import { useTheme } from '../../../framework/context/theme';
 import Button from '../Button';
 import Chart from '../Chart';
 import s from './Hero.module.css';
 
 const Hero: FC = () => {
-  const { dispatch: themeDispatch } = useTheme();
-
   const content = data.data.pages
     .find((page) => page.slug === 'home')
-    ?.content.find((content) => content.type === 'hero');
+    ?.content?.find((content: any) => content.type === 'hero');
   return (
     <section className={s.wrap}>
       <div className={s.content}>
@@ -20,9 +17,6 @@ const Hero: FC = () => {
           className={s.button}
           type="link"
           href={content?.cta?.link ?? ''}
-          onClick={() => {
-            themeDispatch({ type: 'UPDATE_THEME_COLOR', payload: 'blue' });
-          }}
         >
           {content?.cta?.text}
         </Button>

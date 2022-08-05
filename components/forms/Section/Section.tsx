@@ -21,7 +21,6 @@ const Section = ({ length, title, description }: SectionProps) => {
   const questions = content?.sections?.[sectionIndexState.index].questions;
 
   const question = questions?.[questionIndexState.index];
-  console.log('questionIndexState', questionIndexState.index);
 
   if (questionIndexState.index === -1) {
     return (

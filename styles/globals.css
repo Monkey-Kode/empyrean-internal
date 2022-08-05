@@ -5,7 +5,6 @@
 html,
 body {
   @apply font-fira-sans text-dark bg-lighter-gray select-none;
-  
 }
 h1,
 h2,
@@ -19,7 +18,7 @@ h2 {
   @apply text-3xl mb-5;
 }
 main a {
-  @apply text-blue hover:text-dark-blue transition-opacity hover:transition-opacity duration-200;
+  @apply text-blue hover:text-dark-blue;
 }
 p {
   @apply pb-3 leading-huge;

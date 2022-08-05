@@ -1,5 +1,5 @@
 .root {
-  @apply bg-lighter-gray py-20 text-black;
+  @apply relative  py-20 text-black z-30;
 }
 .content {
   @apply max-w-6xl mx-auto px-4;
@@ -55,6 +55,7 @@
 .labels {
   @apply text-lg uppercase w-full flex justify-between font-bold tracking-tighter transform -translate-y-5;
 }
+
 /* .label:first-of-type {
   @apply max-w-[100px];
 }

@@ -2,15 +2,12 @@ import FormIntro from '../FormIntro';
 import data from '../../../data';
 import Section from '../Section/Section';
 import { useSectionIndex } from '../../../framework/context/section';
-import { useQuestionIndex } from '../../../framework/context/question';
 import ResultsLoader from '../ResultsLoader';
 import Report from '../Report';
 // import s from './FormPages.module.css';
 const FormPages = () => {
   const { state: sectionIndexState, dispatch: sectionIndexDispatch } =
     useSectionIndex();
-  const { state: questionIndexState, dispatch: questionIndexDispatch } =
-    useQuestionIndex();
   const content = data.data.forms.find((form) => form.slug === 'assessment');
   const sections = content?.sections;
 

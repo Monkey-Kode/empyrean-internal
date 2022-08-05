@@ -1,4 +1,6 @@
 import { useFormState } from '../../../framework/context/form';
+import { useScoreState } from '../../../framework/context/score';
+import { useSectionIndex } from '../../../framework/context/section';
 import Navigation from '../Navigation';
 import { Question } from '../Questions/Questions';
 import s from './Question.module.css';
@@ -9,7 +11,10 @@ const Question = ({
   question: Question;
   index: number;
 }) => {
+  const { state: sectionIndexState, dispatch: sectionIndexDispatch } =
+    useSectionIndex();
   const { state: formState, dispatch: formDispatch } = useFormState();
+  const { state: scoreState, dispatch: scoreDispatch } = useScoreState();
 
   return (
     <div className={s.root}>
@@ -39,9 +44,19 @@ const Question = ({
                 payload: {
                   name: question.name,
                   value: e.target.value,
+                  // section: Number(sectionIndexState),
                 },
               });
-              console.log('formState', formState);
+              scoreDispatch({
+                type: 'UPDATE_SCORE',
+                payload: {
+                  section: {
+                    name: question.name,
+                    index: sectionIndexState.index,
+                    value: Number(e.target.value),
+                  },
+                },
+              });
             }}
           />
           <small className={s.small}>

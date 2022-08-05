@@ -1,15 +1,16 @@
 import s from './Form.module.css';
 import FormPages from '../FormPages';
 import { useFormState } from '../../../framework/context/form';
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useTitle } from '../../../framework/context/title';
-import { useQuestionIndex } from '../../../framework/context/question';
 import { useSectionIndex } from '../../../framework/context/section';
-import { ThemeContext } from '../../../framework/context/theme';
+import { useScoreState } from '../../../framework/context/score';
+
 const Form = () => {
   const { state: formState } = useFormState();
   const { dispatch: titleDispatch } = useTitle();
   const { dispatch: sectionIndexDispatch } = useSectionIndex();
+  const { state: scoreState } = useScoreState();
 
   useEffect(() => {
     titleDispatch({ type: 'SET_TITLE', payload: 'Participate' });
@@ -20,7 +21,8 @@ const Form = () => {
       className={s.root}
       onSubmit={(e) => {
         e.preventDefault();
-        console.log('send to netlify', formState);
+        // console.log('send to netlify', formState);
+        // console.log('score state', scoreState);
         titleDispatch({ type: 'SET_TITLE', payload: 'Calculating Results' });
         // send to netlify
         sectionIndexDispatch({ type: 'set', payload: -2 });

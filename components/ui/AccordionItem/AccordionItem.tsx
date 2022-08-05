@@ -1,6 +1,10 @@
-import { useState } from 'react';
+import { FC, ReactNode, useState } from 'react';
 import s from './AccordionItem.module.css';
-const AccordionItem = ({ title, children }) => {
+const AccordionItem: FC<{
+  title: string;
+  children: ReactNode;
+  isOpen?: boolean;
+}> = ({ title, isOpen: isOpenDefault, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -10,7 +14,8 @@ const AccordionItem = ({ title, children }) => {
       <div className={s.accordionItemTitle} onClick={handleClick}>
         {title}
       </div>
-      {isOpen && <div className={s.accordionItemContent}>{children}</div>}
+      {isOpenDefault ||
+        (isOpen && <div className={s.accordionItemContent}>{children}</div>)}
     </div>
   );
 };

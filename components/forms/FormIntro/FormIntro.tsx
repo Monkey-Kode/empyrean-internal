@@ -22,7 +22,8 @@ const FormIntro = () => {
                 label={field.label}
                 options={field.options}
                 name={field.name}
-                value={formState[field.name]}
+                required
+                value={formState?.[field.name]}
                 onChange={(e) => {
                   formDispatch({
                     type: 'UPDATE_FIELD',
@@ -31,7 +32,7 @@ const FormIntro = () => {
                       value: e.target.value,
                     },
                   });
-                  console.log('formState', formState);
+                  // console.log('formState', formState);
                 }}
               />
             )

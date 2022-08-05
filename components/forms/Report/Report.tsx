@@ -9,18 +9,20 @@ const Report = () => {
   const content = data.data.pages.find(
     (page) => page.slug === 'report'
   )?.content;
-  const title = content?.find((content) => content.type === 'title')?.content;
+  const title = content?.find(
+    (content: any) => content.type === 'title'
+  )?.content;
   const subText = content?.find(
-    (content) => content.type === 'subtext'
+    (content: any) => content.type === 'subtext'
   )?.content;
   const subtitle = content?.find(
-    (content) => content.type === 'subtitle'
+    (content: any) => content.type === 'subtitle'
   )?.content;
   const summary = content?.find(
-    (content) => content.type === 'summary'
+    (content: any) => content.type === 'summary'
   )?.content;
 
-  console.log('formState', formState);
+  // console.log('formState', formState);
   return (
     <div className={s.root}>
       <div className={s.topArea}>
@@ -33,7 +35,6 @@ const Report = () => {
             <li>{formState.industry}</li>
           </ul>
           <h2>{subtitle}</h2>
-
           <div dangerouslySetInnerHTML={{ __html: String(summary) }} />
         </div>
         <div className={s.download}>
