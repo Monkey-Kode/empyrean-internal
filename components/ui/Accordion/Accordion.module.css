@@ -1,3 +1,6 @@
 .root {
   @apply mt-16;
 }
+.h4 {
+  @apply text-blue uppercase font-montserrat font-bold text-2xl opacity-70 mb-6 tracking-widest;
+}

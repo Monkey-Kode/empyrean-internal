@@ -1,5 +1,6 @@
 import { FC, ReactNode, useState } from 'react';
 import s from './AccordionItem.module.css';
+import { useFormState } from '../../../framework/context/form';
 const AccordionItem: FC<{
   title: string;
   children: ReactNode;
@@ -11,11 +12,10 @@ const AccordionItem: FC<{
   };
   return (
     <div className={s.accordionItem}>
-      <div className={s.accordionItemTitle} onClick={handleClick}>
+      <h3 className={s.accordionItemTitle} onClick={handleClick}>
         {title}
-      </div>
-      {isOpenDefault ||
-        (isOpen && <div className={s.accordionItemContent}>{children}</div>)}
+      </h3>
+      {isOpen && <div className={s.accordionItemContent}>{children}</div>}
     </div>
   );
 };

@@ -212,6 +212,9 @@ const data = {
             description:
               'Benefits should no longer be regarded as corporate hygiene; they are a critical element in establishing and driving company culture. This section examines the extent to which your organization believes that building a more positive workplace culture is important and that benefits could make a greater contribution to employee attraction, retention, and experience.',
             weight: 1,
+            lowScore: 16,
+            mediumScore: 21,
+            highScore: 25,
             questions: [
               {
                 text: 'To what extent is building a more positive workplace culture a critical element within your HR strategy',
@@ -248,7 +251,7 @@ const data = {
               {
                 name: 'low',
                 content: `<p>
-                While your benefits may support most employees’ needs based on your overall demographic profile, it is important to continue maintaining the momentum and to further enhance the contribution of benefits to the individual employee experience and the overall company culture.</p>,<p>Connecting benefits to company culture is increasingly important to the organization’s success as it relates to retention, as well as attraction, through helping employees feel “connected.” Over 90% of HR and benefits leaders perceive that building a more positive workplace culture is critical within their organizations’ HR strategies over the next 1-2 years. Benefits have a key role, and over three-quarters of your peers believe it is highly important for benefits and benefits operations to continue increasing their contributions to employee retention and the employee experience.</p><p>Benefits should reflect demographic segmentation and how company culture supports each individual’s needs and use benefits communications and design to support that culture as it relates to individual circumstances.</p><p>Activities that could be undertaken to uplift the benefits function in supporting company culture include: </p><ul><li>Interview key stakeholders from a wide range of backgrounds and demographic groups to understand how the corporate culture and corporate values are reflected in the benefits</li><li>Analyze the results and look for opportunities to refine or add offerings and/or adapt the processes to enable the culture to be reflected in benefits better</li><li>Source new benefits as appropriate</li><li>Deliver a refined benefits communication plan for each benefits offering using language that reflects your cultural values. Assess benefits performance and communication by segmented group.</li></ul>`,
+                While your benefits may support most employees’ needs based on your overall demographic profile, it is important to continue maintaining the momentum and to further enhance the contribution of benefits to the individual employee experience and the overall company culture.</p><p>Connecting benefits to company culture is increasingly important to the organization’s success as it relates to retention, as well as attraction, through helping employees feel “connected.” Over 90% of HR and benefits leaders perceive that building a more positive workplace culture is critical within their organizations’ HR strategies over the next 1-2 years. Benefits have a key role, and over three-quarters of your peers believe it is highly important for benefits and benefits operations to continue increasing their contributions to employee retention and the employee experience.</p><p>Benefits should reflect demographic segmentation and how company culture supports each individual’s needs and use benefits communications and design to support that culture as it relates to individual circumstances.</p><p>Activities that could be undertaken to uplift the benefits function in supporting company culture include: </p><ul><li>Interview key stakeholders from a wide range of backgrounds and demographic groups to understand how the corporate culture and corporate values are reflected in the benefits</li><li>Analyze the results and look for opportunities to refine or add offerings and/or adapt the processes to enable the culture to be reflected in benefits better</li><li>Source new benefits as appropriate</li><li>Deliver a refined benefits communication plan for each benefits offering using language that reflects your cultural values. Assess benefits performance and communication by segmented group.</li></ul>`,
               },
               {
                 name: 'medium',
@@ -268,6 +271,9 @@ const data = {
             description:
               'If benefits have a role to play in delivering an enhanced workplace culture, then it is important that benefits leaders are involved in the HR strategy development impacting workplace culture. This section examines the extent to which benefits leaders are involved in appropriate strategic initiatives and decision-making.',
             weight: 1,
+            lowScore: 23,
+            mediumScore: 30,
+            highScore: 35,
             questions: [
               {
                 text: 'To what extent are you as benefits leader currently involved in delivering upon strategic initiatives',
@@ -324,6 +330,9 @@ const data = {
             descripton:
               'It is important that your employees feel that they are treated as individuals rather than impersonally. This section examines the extent to which your benefits are personalized and measures current employee satisfaction with the benefits available.',
             weight: 1,
+            lowScore: 18,
+            mediumScore: 20,
+            highScore: 25,
             questions: [
               {
                 text: 'To what extent does your current benefits technology provide personalized recommendations to employees that drive them towards the most appropriate benefits packages for their individual situation',
@@ -366,6 +375,9 @@ const data = {
             description:
               'Even with an excellent range of benefits, it is important that the individual employee is directed to the most appropriate opportunities for them and that benefits are easy to consume. This section examines the extent to which you provide a consumer-grade experience to allow employees to obtain maximum value with ease of use.',
             weight: 3,
+            lowScore: 22,
+            mediumScore: 30,
+            highScore: 35,
             questions: [
               {
                 text: 'To what extent has your benefits operations achieved high levels of automation & workflows minimizing both the user "clicks"and the number of user interfaces and ensuring effective data flows from enrollment to claims',
@@ -421,6 +433,9 @@ const data = {
             description:
               'Finally, it is important to build on success and continually optimize and enhance the benefits programs available to your employees. This section examines the extent to which your organization uses analytics to enhance benefits program and plan provider performance.',
             weight: 3,
+            lowScore: 42,
+            mediumScore: 65,
+            highScore: 75,
             questions: [
               {
                 text: 'How often does your organization measure employee benefits satisfaction and engagement',

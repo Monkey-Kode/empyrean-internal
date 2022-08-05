@@ -31,3 +31,14 @@ p {
 .wrap {
   @apply max-w-6xl mx-auto px-4;
 }
+
+ul {
+  @apply pl-12 pt-1 pb-2;
+}
+ul li {
+  @apply list-disc;
+}
+
+main {
+  @apply z-30 relative;
+}

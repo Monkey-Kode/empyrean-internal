@@ -76,7 +76,7 @@ const Report = () => {
       <div className={s.topArea}>
         <div>
           <h1 className={s.mainHeading}>{title}</h1>
-          <small>{subText}</small>
+          <small className={s.small}>{subText}</small>
           <ul className={s.list}>
             <li>{companySize}</li>
             <li>{role}</li>
