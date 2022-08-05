@@ -1,6 +1,6 @@
 import data from '../../../data';
 import { useQuestionIndex } from '../../../framework/context/question';
-import { useScoreState } from '../../../framework/context/score';
+
 import { useSectionIndex } from '../../../framework/context/section';
 import s from './Navigation.module.css';
 const Navigation = () => {
@@ -8,7 +8,7 @@ const Navigation = () => {
     useSectionIndex();
   const { state: questionIndexState, dispatch: questionIndexDispatch } =
     useQuestionIndex();
-  const { state: scoreState, dispatch: scoreStateDispatch } = useScoreState();
+
 
   const assessmentPage = data.data.forms.find(
     (form) => form.slug === 'assessment'

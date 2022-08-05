@@ -1,6 +1,7 @@
 import { useFormState } from '../../../framework/context/form';
-import { useScoreState } from '../../../framework/context/score';
 import { useSectionIndex } from '../../../framework/context/section';
+import getFormValueFromSection from '../../../framework/state/gerFromValueFromSection';
+import getSectionState from '../../../framework/state/getSectionState';
 import Navigation from '../Navigation';
 import { Question } from '../Questions/Questions';
 import s from './Question.module.css';
@@ -14,7 +15,12 @@ const Question = ({
   const { state: sectionIndexState, dispatch: sectionIndexDispatch } =
     useSectionIndex();
   const { state: formState, dispatch: formDispatch } = useFormState();
-  const { state: scoreState, dispatch: scoreDispatch } = useScoreState();
+
+  const value = getFormValueFromSection({
+    sectionState: getSectionState({ formState, sectionIndexState }),
+    sectionIndexState,
+    field: question,
+  });
 
   return (
     <div className={s.root}>
@@ -28,7 +34,7 @@ const Question = ({
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
-            <option value="4">4</option>
+            <option value="3">4</option>
             <option value="5">5</option>
           </datalist>
           <input
@@ -37,24 +43,14 @@ const Question = ({
             type="range"
             min="1"
             max="5"
-            value={formState?.[question.name]}
+            value={value}
             onChange={(e) => {
               formDispatch({
                 type: 'UPDATE_FIELD',
                 payload: {
                   name: question.name,
                   value: e.target.value,
-                  // section: Number(sectionIndexState),
-                },
-              });
-              scoreDispatch({
-                type: 'UPDATE_SCORE',
-                payload: {
-                  section: {
-                    name: question.name,
-                    index: sectionIndexState.index,
-                    value: Number(e.target.value),
-                  },
+                  section: Number(sectionIndexState.index),
                 },
               });
             }}

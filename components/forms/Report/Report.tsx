@@ -1,5 +1,8 @@
 import data from '../../../data';
 import { useFormState } from '../../../framework/context/form';
+import getFormValueFromSection from '../../../framework/state/gerFromValueFromSection';
+import getSectionState from '../../../framework/state/getSectionState';
+import getFieldLabelFromContentByName from '../../../lib/getFieldLabelFromContentByName';
 import Accordion from '../../ui/Accordion';
 import Button from '../../ui/Button';
 import Chart from '../../ui/Chart';
@@ -22,7 +25,52 @@ const Report = () => {
     (content: any) => content.type === 'summary'
   )?.content;
 
-  // console.log('formState', formState);
+  const firmSectionIndex = -1;
+  const firmGraphicsFormName = 'firmographics';
+  const companySizeFieldName = 'company-size';
+
+  const companySize = getFieldLabelFromContentByName({
+    formName: firmGraphicsFormName,
+    fieldName: companySizeFieldName,
+    value: getFormValueFromSection({
+      sectionState: getSectionState({
+        formState,
+        sectionIndexState: { index: firmSectionIndex },
+      }),
+      sectionIndexState: { index: firmSectionIndex },
+      field: { name: companySizeFieldName },
+    }),
+  });
+
+  const roleFieldName = 'role';
+  const role = getFieldLabelFromContentByName({
+    formName: firmGraphicsFormName,
+    fieldName: roleFieldName,
+    value: getFormValueFromSection({
+      sectionState: getSectionState({
+        formState,
+        sectionIndexState: { index: firmSectionIndex },
+      }),
+      sectionIndexState: { index: firmSectionIndex },
+      field: { name: roleFieldName },
+    }),
+  });
+
+  const industryFieldName = 'industry';
+  const industry = getFieldLabelFromContentByName({
+    formName: firmGraphicsFormName,
+    fieldName: industryFieldName,
+    value: getFormValueFromSection({
+      sectionState: getSectionState({
+        formState,
+        sectionIndexState: { index: firmSectionIndex },
+      }),
+      sectionIndexState: { index: firmSectionIndex },
+      field: { name: industryFieldName },
+    }),
+  });
+
+  console.log('formState', formState);
   return (
     <div className={s.root}>
       <div className={s.topArea}>
@@ -30,9 +78,9 @@ const Report = () => {
           <h1 className={s.mainHeading}>{title}</h1>
           <small>{subText}</small>
           <ul className={s.list}>
-            <li>{formState['company-size']}</li>
-            <li>{formState.role}</li>
-            <li>{formState.industry}</li>
+            <li>{companySize}</li>
+            <li>{role}</li>
+            <li>{industry}</li>
           </ul>
           <h2>{subtitle}</h2>
           <div dangerouslySetInnerHTML={{ __html: String(summary) }} />

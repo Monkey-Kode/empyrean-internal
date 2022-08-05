@@ -16,7 +16,11 @@ const Accordion = () => {
             title={`${alphabet[index]}. ${section.title}`}
             isOpen={section.isOpen}
           >
-            {section.results[0].content}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: section.results[0].content,
+              }}
+            />
           </AccordionItem>
         ) : null
       )}

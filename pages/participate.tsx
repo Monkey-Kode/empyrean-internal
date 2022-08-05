@@ -8,7 +8,6 @@ import { FormStateProvider } from '../framework/context/form';
 import { TitleProvider } from '../framework/context/title';
 import { useTheme } from '../framework/context/theme';
 import { useEffect } from 'react';
-import { ScoreStateProvider } from '../framework/context/score';
 
 const Participate: NextPageWithLayout = () => {
   const { state: theme, dispatch: themeDispatch } = useTheme();
@@ -23,9 +22,7 @@ const Participate: NextPageWithLayout = () => {
           <FormTitleArea />
           <main>
             <FormStateProvider>
-              <ScoreStateProvider>
-                <Form />
-              </ScoreStateProvider>
+              <Form />
             </FormStateProvider>
           </main>
         </TitleProvider>
