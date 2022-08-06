@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import data from '../../../data';
 import { useFormState } from '../../../framework/context/form';
+import { calculateSectionScore } from '../../../framework/score/calculateScores';
 import getFormValueFromSection from '../../../framework/state/gerFromValueFromSection';
 import getSectionState from '../../../framework/state/getSectionState';
 import getFieldLabelFromContentByName from '../../../lib/getFieldLabelFromContentByName';
@@ -77,6 +78,15 @@ const Report = () => {
     (page: any) => page.slug === 'download-personal-report'
   )?.content;
 
+  const sectionContent = data.data.forms.find(
+    (form: any) => form.slug === 'assessment'
+  )?.sections;
+  const scores = sectionContent.map((section: any, index: number) => {
+    return calculateSectionScore({
+      formState,
+      index,
+    });
+  });
   console.log('formState', formState);
   return (
     <div className={s.root}>
@@ -104,7 +114,7 @@ const Report = () => {
                 ?.content
             }
           </Button>
-          <Chart />
+          <Chart data={scores} />
         </div>
       </div>
       <section>

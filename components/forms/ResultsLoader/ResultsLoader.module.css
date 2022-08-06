@@ -1,5 +1,5 @@
 .root {
-  @apply max-w-6xl mx-auto py-16 flex flex-col justify-center;
+  @apply max-w-7xl mx-auto py-16 flex flex-col justify-center;
 }
 .chart {
   @apply max-w-lg mx-auto;

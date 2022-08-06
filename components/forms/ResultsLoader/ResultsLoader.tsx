@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import data from '../../../data';
+import generateRandomData from '../../../data/generateRandomData';
 import { useSectionIndex } from '../../../framework/context/section';
 import { useTheme } from '../../../framework/context/theme';
 import { useTitle } from '../../../framework/context/title';
@@ -25,7 +26,7 @@ const ResultsLoader = () => {
   return (
     <div className={s.root}>
       <div className={s.chart}>
-        <Chart />
+        <Chart data={generateRandomData(5)} />
       </div>
       <ProgressBar width={100} percent={Math.round(100)} />
       <p>{content?.content}</p>
