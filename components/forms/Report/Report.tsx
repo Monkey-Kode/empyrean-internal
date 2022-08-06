@@ -70,6 +70,10 @@ const Report = () => {
     }),
   });
 
+  const downloadContent = data.data.pages.find(
+    (page: any) => page.slug === 'download-personal-report'
+  )?.content;
+
   console.log('formState', formState);
   return (
     <div className={s.root}>
@@ -86,7 +90,12 @@ const Report = () => {
           <div dangerouslySetInnerHTML={{ __html: String(summary) }} />
         </div>
         <div className={s.download}>
-          <Button>Download PDF</Button>
+          <Button>
+            {
+              downloadContent?.find((content: any) => content.type === 'cta')
+                ?.content
+            }
+          </Button>
           <Chart />
         </div>
       </div>

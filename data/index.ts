@@ -141,6 +141,10 @@ const data: any = {
             type: 'privacy',
             content: `By completing this form, you agree to be contacted by Empyrean for marketing purposes.`,
           },
+          {
+            type: 'cta',
+            content: 'Email my Report',
+          },
         ],
       },
     ],
