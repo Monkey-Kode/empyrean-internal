@@ -1,0 +1,10 @@
+.root {
+  @apply my-8 flex justify-center;
+}
+.progressDiv {
+  @apply bg-mid-gray2 rounded-xl;
+}
+
+.progress {
+  @apply bg-blue rounded-2xl h-[20px] transition-all duration-[5000ms] delay-500;
+}

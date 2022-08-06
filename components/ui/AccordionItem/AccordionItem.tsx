@@ -15,7 +15,7 @@ const AccordionItem: FC<{
       <h3 className={s.accordionItemTitle} onClick={handleClick}>
         {title}
       </h3>
-      {isOpen && <div className={s.accordionItemContent}>{children}</div>}
+      {!isOpen && <div className={s.accordionItemContent}>{children}</div>}
     </div>
   );
 };
