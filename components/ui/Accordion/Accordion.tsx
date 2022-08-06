@@ -14,11 +14,11 @@ import {
 const Accordion = () => {
   const { state: formState } = useFormState();
   const content = data.data.forms.find(
-    (form) => form.slug === 'assessment'
+    (form: any) => form.slug === 'assessment'
   )?.sections;
   return (
     <div className={s.root}>
-      {content?.map((section, index) => {
+      {content?.map((section: any, index: number) => {
         const score = calculateSectionScore({
           formState,
           index,
@@ -38,7 +38,9 @@ const Accordion = () => {
 
         const level = isLow ? 'low' : isMedium ? 'medium' : isHigh && 'high';
 
-        const report = section.results.find((result) => result.name === level);
+        const report = section.results.find(
+          (result: any) => result.name === level
+        );
 
         console.log('score', score);
         return section?.questions ? (

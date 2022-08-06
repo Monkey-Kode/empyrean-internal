@@ -10,7 +10,7 @@ import s from './Report.module.css';
 const Report = () => {
   const { state: formState } = useFormState();
   const content = data.data.pages.find(
-    (page) => page.slug === 'report'
+    (page: any) => page.slug === 'report'
   )?.content;
   const title = content?.find(
     (content: any) => content.type === 'title'

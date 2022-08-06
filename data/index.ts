@@ -1,4 +1,4 @@
-const data = {
+const data: any = {
   title: 'EMPYREAN RESEARCH INSTITUTE',
   data: {
     pages: [

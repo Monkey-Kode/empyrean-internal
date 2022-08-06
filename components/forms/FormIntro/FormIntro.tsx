@@ -9,10 +9,12 @@ import s from './FormIntro.module.css';
 const FormIntro = () => {
   const { dispatch: sectionDispatch } = useSectionIndex();
   const { state: formState, dispatch: formDispatch } = useFormState();
-  const content = data.data.forms.find((form) => form.slug === 'firmographics');
+  const content = data.data.forms.find(
+    (form: any) => form.slug === 'firmographics'
+  );
   const { state: sectionIndexState } = useSectionIndex();
   const pageContent = data.data.pages.find(
-    (page) => page.slug === 'participate'
+    (page: any) => page.slug === 'participate'
   )?.content;
   const sectionState = getSectionState({ formState, sectionIndexState });
 
@@ -21,7 +23,7 @@ const FormIntro = () => {
       <div className={s.root}>
         <p>{content?.description}</p>
         <h2 className={s.preTitle}>{content?.title}</h2>
-        {content?.fields?.map((field) => {
+        {content?.fields?.map((field: any) => {
           const value = getFormValueFromSection({
             sectionState,
             sectionIndexState,
@@ -58,10 +60,13 @@ const FormIntro = () => {
             sectionDispatch({ type: 'set', payload: 0 });
           }}
         >
-          {pageContent?.find((content) => content.type === 'cta')?.content}
+          {pageContent?.find((content: any) => content.type === 'cta')?.content}
         </Button>
         <small className={s.small}>
-          {pageContent?.find((content) => content.type === 'policy')?.content}
+          {
+            pageContent?.find((content: any) => content.type === 'policy')
+              ?.content
+          }
         </small>
       </div>
     </>

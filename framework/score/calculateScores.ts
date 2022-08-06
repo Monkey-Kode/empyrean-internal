@@ -20,7 +20,7 @@ const calculateSectionScore = ({ formState, index }: SectionProps) => {
 
 const getSection = ({ sectionIndex }: { sectionIndex: number }) => {
   const sections = data.data.forms.find(
-    (form) => form.slug === 'assessment'
+    (form: any) => form.slug === 'assessment'
   )?.sections;
   const currentSection = sections?.[sectionIndex];
   return currentSection;

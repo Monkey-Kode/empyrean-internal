@@ -12,7 +12,9 @@ interface SectionProps {
   description: string | undefined;
 }
 const Section = ({ length, title, description }: SectionProps) => {
-  const content = data.data.forms.find((form) => form.slug === 'assessment');
+  const content = data.data.forms.find(
+    (form: any) => form.slug === 'assessment'
+  );
   const { state: sectionIndexState, dispatch: sectionIndexDispatch } =
     useSectionIndex();
   const { state: questionIndexState, dispatch: questionIndexDispatch } =

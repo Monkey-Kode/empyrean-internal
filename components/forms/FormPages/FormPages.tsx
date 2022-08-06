@@ -8,7 +8,9 @@ import Report from '../Report';
 const FormPages = () => {
   const { state: sectionIndexState, dispatch: sectionIndexDispatch } =
     useSectionIndex();
-  const content = data.data.forms.find((form) => form.slug === 'assessment');
+  const content = data.data.forms.find(
+    (form: any) => form.slug === 'assessment'
+  );
   const sections = content?.sections;
 
   if (sectionIndexState.index >= 0) {

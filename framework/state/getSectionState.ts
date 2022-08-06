@@ -6,7 +6,7 @@ interface Props {
 }
 const getSectionState = ({ formState, sectionIndexState }: Props) => {
   return formState.find((form) => {
-    const keys = Object.keys(form)[0];
+    const keys = typeof form === 'object' && Object.keys(form)[0];
     return keys === `section_${sectionIndexState.index}`;
   });
 };

@@ -3,7 +3,7 @@ import cn from 'classnames';
 import data from '../../../data';
 import ContactForm from '../ContactForm';
 const Contact = () => {
-  const content = data.data.pages.find((page) => page.slug === 'contact');
+  const content = data.data.pages.find((page: any) => page.slug === 'contact');
   return (
     <>
       <div className={s.topArea}>

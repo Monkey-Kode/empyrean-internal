@@ -9,12 +9,10 @@ const Navigation = () => {
   const { state: questionIndexState, dispatch: questionIndexDispatch } =
     useQuestionIndex();
 
-
   const assessmentPage = data.data.forms.find(
-    (form) => form.slug === 'assessment'
+    (form: any) => form.slug === 'assessment'
   );
   const sections = assessmentPage?.sections;
-  const currentSection = sections?.[sectionIndexState.index];
   const questions = sections?.[sectionIndexState.index].questions;
 
   return (
@@ -46,7 +44,6 @@ const Navigation = () => {
                   type: 'next',
                   payload: 1,
                 });
-
               } else if (
                 questionIndexState.index === questions?.length - 1 &&
                 sectionIndexState.index < sections?.length - 1

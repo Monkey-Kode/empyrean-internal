@@ -10,8 +10,8 @@ const ResultsLoader = () => {
   const { dispatch: sectionIndexDispatch } = useSectionIndex();
   const { dispatch: themeDispatch } = useTheme();
   const content = data.data.pages
-    ?.find((page) => page.slug === 'loader')
-    ?.content.find((content) => content.type === 'text');
+    ?.find((page: any) => page.slug === 'loader')
+    ?.content.find((content: any) => content.type === 'text');
 
   useEffect(() => {
     const timer = setTimeout(() => {

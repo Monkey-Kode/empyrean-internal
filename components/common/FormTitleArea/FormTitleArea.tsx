@@ -9,7 +9,9 @@ const FormTitleArea = () => {
   const { state: sectionIndexState } = useSectionIndex();
   const { state: questionIndexState } = useQuestionIndex();
   const { state: pageTitle } = useTitle();
-  const content = data.data.forms.find((form) => form.slug === 'assessment');
+  const content = data.data.forms.find(
+    (form: any) => form.slug === 'assessment'
+  );
   const sections = content?.sections;
   const sectionTitle =
     questionIndexState.index > -1 && sections?.[sectionIndexState.index]?.title;

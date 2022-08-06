@@ -10,14 +10,14 @@ const getFieldLabelFromContentByName = ({
   fieldName,
   value,
 }: Props) => {
-  const form = data.data.forms.find((form) => {
+  const form = data.data.forms.find((form: any) => {
     return form.slug === formName;
   });
   const fields = form?.fields;
-  const field = fields?.find((field) => {
+  const field = fields?.find((field: any) => {
     return field.name === fieldName;
   });
-  const selection = field?.options?.find((option) => {
+  const selection = field?.options?.find((option: any) => {
     return option.value === value;
   });
 

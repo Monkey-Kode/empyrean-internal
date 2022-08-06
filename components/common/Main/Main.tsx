@@ -7,8 +7,8 @@ import Section from '../../ui/Section';
 import s from './Main.module.css';
 const Main: FC = () => {
   const sections = data?.data?.pages
-    ?.find((page) => page.slug === 'home')
-    ?.content?.filter((content) => content.type === 'section');
+    ?.find((page: any) => page.slug === 'home')
+    ?.content?.filter((content: any) => content.type === 'section');
   return (
     <main className={s.root}>
       <h1 className={s.h1}>Impact</h1>

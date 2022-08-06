@@ -6,7 +6,7 @@ import s from './Hero.module.css';
 
 const Hero: FC = () => {
   const content = data.data.pages
-    .find((page) => page.slug === 'home')
+    .find((page: any) => page.slug === 'home')
     ?.content?.find((content: any) => content.type === 'hero');
   return (
     <section className={s.wrap}>
