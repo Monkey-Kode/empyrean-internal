@@ -12,8 +12,7 @@ const Question = ({
   question: Question;
   index: number;
 }) => {
-  const { state: sectionIndexState, dispatch: sectionIndexDispatch } =
-    useSectionIndex();
+  const { state: sectionIndexState } = useSectionIndex();
   const { state: formState, dispatch: formDispatch } = useFormState();
 
   const value = getFormValueFromSection({

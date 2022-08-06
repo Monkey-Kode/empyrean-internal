@@ -14,10 +14,8 @@ const Section = ({ length, title, description }: SectionProps) => {
   const content = data.data.forms.find(
     (form: any) => form.slug === 'assessment'
   );
-  const { state: sectionIndexState, dispatch: sectionIndexDispatch } =
-    useSectionIndex();
-  const { state: questionIndexState, dispatch: questionIndexDispatch } =
-    useQuestionIndex();
+  const { state: sectionIndexState } = useSectionIndex();
+  const { state: questionIndexState } = useQuestionIndex();
 
   const questions = content?.sections?.[sectionIndexState.index].questions;
 
