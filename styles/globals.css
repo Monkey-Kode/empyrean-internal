@@ -21,7 +21,7 @@ main a {
   @apply text-blue hover:text-dark-blue;
 }
 p {
-  @apply pb-3 leading-huge;
+  @apply pb-3 leading-loose;
 }
 
 * {

@@ -375,9 +375,9 @@ const data = {
             description:
               'Even with an excellent range of benefits, it is important that the individual employee is directed to the most appropriate opportunities for them and that benefits are easy to consume. This section examines the extent to which you provide a consumer-grade experience to allow employees to obtain maximum value with ease of use.',
             weight: 3,
-            lowScore: 22,
-            mediumScore: 30,
-            highScore: 35,
+            lowScore: 66,
+            mediumScore: 90,
+            highScore: 105,
             questions: [
               {
                 text: 'To what extent has your benefits operations achieved high levels of automation & workflows minimizing both the user "clicks"and the number of user interfaces and ensuring effective data flows from enrollment to claims',
