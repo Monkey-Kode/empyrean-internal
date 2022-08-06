@@ -19,7 +19,7 @@ const ResultsLoader = () => {
       titleDispatch({ type: 'SET_TITLE', payload: '' });
       sectionIndexDispatch({ type: 'set', payload: -3 });
       themeDispatch({ type: 'UPDATE_THEME_COLOR', payload: 'white' });
-    }, 3000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, [sectionIndexDispatch, themeDispatch, titleDispatch]);
   return (

@@ -10,12 +10,13 @@ const AccordionItem: FC<{
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+  const open = isOpenDefault ? !isOpen : isOpen;
   return (
     <div className={s.accordionItem}>
       <h3 className={s.accordionItemTitle} onClick={handleClick}>
         {title}
       </h3>
-      {!isOpen && <div className={s.accordionItemContent}>{children}</div>}
+      {open && <div className={s.accordionItemContent}>{children}</div>}
     </div>
   );
 };
