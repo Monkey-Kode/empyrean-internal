@@ -1,7 +1,6 @@
 import { useQuestionIndex } from '../../../framework/context/question';
 import { useSectionIndex } from '../../../framework/context/section';
 import Navigation from '../Navigation';
-import Questions from '../Questions';
 import s from './Section.module.css';
 import data from '../../../data';
 import Question from '../Question';
@@ -52,8 +51,6 @@ const Section = ({ length, title, description }: SectionProps) => {
       </div>
     ) : null;
   }
-
-  return null;
 };
 
 export default Section;

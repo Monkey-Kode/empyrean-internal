@@ -81,10 +81,13 @@ const changeFormStateReducer = (state: State, action: Action) => {
 };
 
 const FormStateProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [state, dispatch] = useReducer(changeFormStateReducer, intialFormData);
+  const [state, dispatch] = useReducer(
+    changeFormStateReducer as any,
+    intialFormData
+  );
 
   return (
-    <FormStateContext.Provider value={{ state, dispatch }}>
+    <FormStateContext.Provider value={{ state, dispatch } as any}>
       {children}
     </FormStateContext.Provider>
   );
