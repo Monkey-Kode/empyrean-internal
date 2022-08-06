@@ -20,7 +20,6 @@ const Form = () => {
       className={s.root}
       onSubmit={(e) => {
         e.preventDefault();
-
         titleDispatch({ type: 'SET_TITLE', payload: 'Calculating Results' });
         // send to netlify
         sectionIndexDispatch({ type: 'set', payload: -2 });

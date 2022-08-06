@@ -11,9 +11,11 @@ const FormIntro = () => {
   const { state: formState, dispatch: formDispatch } = useFormState();
   const content = data.data.forms.find((form) => form.slug === 'firmographics');
   const { state: sectionIndexState } = useSectionIndex();
-
+  const pageContent = data.data.pages.find(
+    (page) => page.slug === 'participate'
+  )?.content;
   const sectionState = getSectionState({ formState, sectionIndexState });
-  // console.log('sectionState fields', sectionState, sectionIndexState);
+
   return (
     <>
       <div className={s.root}>
@@ -56,8 +58,11 @@ const FormIntro = () => {
             sectionDispatch({ type: 'set', payload: 0 });
           }}
         >
-          BEGIN THE ASSESSMENT
+          {pageContent?.find((content) => content.type === 'cta')?.content}
         </Button>
+        <small className={s.small}>
+          {pageContent?.find((content) => content.type === 'policy')?.content}
+        </small>
       </div>
     </>
   );

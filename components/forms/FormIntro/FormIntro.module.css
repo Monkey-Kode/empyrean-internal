@@ -7,3 +7,6 @@
 .button {
   @apply my-10;
 }
+.small {
+  @apply block text-sm max-w-lg;
+}
