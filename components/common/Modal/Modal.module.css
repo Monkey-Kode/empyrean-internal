@@ -1,0 +1,44 @@
+.root {
+  @apply z-50 relative;
+}
+
+.dialog {
+  @apply relative z-50;
+}
+.bg {
+  @apply fixed inset-0 bg-darker bg-opacity-60 transition-opacity;
+}
+.wrap {
+  @apply fixed z-50 inset-0 overflow-y-auto;
+}
+
+.content {
+  @apply flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0;
+}
+
+.panel {
+  @apply relative bg-white px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-sm sm:w-full sm:p-6;
+}
+
+.panelInner {
+  @apply mt-3 text-center sm:mt-5;
+}
+
+.title {
+  @apply text-lg leading-6 font-medium text-gray;
+}
+
+.contentInner {
+  @apply mt-2;
+}
+.p {
+  @apply text-sm text-gray;
+}
+
+.buttonWrap {
+  @apply mt-5 sm:mt-6;
+}
+
+.button {
+  @apply inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm;
+}

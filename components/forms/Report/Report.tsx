@@ -1,13 +1,16 @@
+import { useState } from 'react';
 import data from '../../../data';
 import { useFormState } from '../../../framework/context/form';
 import getFormValueFromSection from '../../../framework/state/gerFromValueFromSection';
 import getSectionState from '../../../framework/state/getSectionState';
 import getFieldLabelFromContentByName from '../../../lib/getFieldLabelFromContentByName';
+import Modal from '../../common/Modal';
 import Accordion from '../../ui/Accordion';
 import Button from '../../ui/Button';
 import Chart from '../../ui/Chart';
 import s from './Report.module.css';
 const Report = () => {
+  const [openModal, setOpenModal] = useState(false);
   const { state: formState } = useFormState();
   const content = data.data.pages.find(
     (page: any) => page.slug === 'report'
@@ -90,7 +93,12 @@ const Report = () => {
           <div dangerouslySetInnerHTML={{ __html: String(summary) }} />
         </div>
         <div className={s.download}>
-          <Button>
+          <Button
+            onClick={(e) => {
+              e.preventDefault();
+              setOpenModal(!openModal);
+            }}
+          >
             {
               downloadContent?.find((content: any) => content.type === 'cta')
                 ?.content
@@ -102,6 +110,7 @@ const Report = () => {
       <section>
         <Accordion />
       </section>
+      {openModal && <Modal open={openModal} setOpen={setOpenModal} />}
     </div>
   );
 };
