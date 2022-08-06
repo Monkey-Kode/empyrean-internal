@@ -81,8 +81,9 @@ const data = {
         slug: 'contact',
         content: [
           {
-            type: 'title',
-            content: 'Your Report',
+            type: 'text',
+            content:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse semper mattis dolor eget tempus. Etiam eu felis at ligula lobortis aliquet ut in sapien. Nulla quis odio magna. Phasellus porta accumsan turpis, ac maximus orci posuere nec. Morbi scelerisque tincidunt arcu, eget laoreet turpis ',
           },
         ],
       },

@@ -4,12 +4,14 @@ import cn from 'classnames';
 import Eye from '../../icons/Eye';
 import Link from 'next/link';
 interface ButtonProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
-  type?: 'button' | 'link';
+  type?: 'button' | 'link' | 'submit';
   href?: string;
   onClick?: MouseEventHandler<HTMLButtonElement> &
-    MouseEventHandler<HTMLAnchorElement>;
+    MouseEventHandler<HTMLAnchorElement> &
+    MouseEventHandler<HTMLInputElement>;
+  value?: string;
 }
 const Button: FC<ButtonProps> = ({
   children,
@@ -17,6 +19,7 @@ const Button: FC<ButtonProps> = ({
   onClick,
   type = 'button',
   href,
+  value,
 }: ButtonProps) => {
   if (type === 'link' && href) {
     return (
@@ -37,6 +40,15 @@ const Button: FC<ButtonProps> = ({
         </span>
         {children}
       </button>
+    );
+  } else if (type === 'submit') {
+    return (
+      <input
+        className={cn(className, s.button)}
+        type="submit"
+        value={value}
+        onSubmit={onClick}
+      />
     );
   } else {
     return null;

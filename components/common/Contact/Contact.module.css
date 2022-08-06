@@ -1,0 +1,18 @@
+.topArea {
+  @apply bg-blue text-white  relative z-50;
+}
+.topAreaContent {
+  @apply max-w-6xl mx-auto py-16;
+}
+
+.h1 {
+  @apply font-montserrat text-3xl font-bold;
+}
+
+.root {
+  @apply my-12;
+}
+
+.content {
+  @apply max-w-3xl;
+}
