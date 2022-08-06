@@ -1,0 +1,9 @@
+.root {
+  /* @apply pr-8; */
+}
+.input {
+  @apply w-full py-3 px-4 border-grey border mt-1 mb-2;
+}
+.label {
+  @apply block text-md-gray text-base opacity-40 font-montserrat font-medium;
+}

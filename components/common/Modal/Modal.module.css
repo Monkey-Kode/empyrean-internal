@@ -17,7 +17,7 @@
 }
 
 .panel {
-  @apply relative bg-white px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-sm sm:w-full sm:p-6;
+  @apply relative bg-white px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-sm lg:max-w-4xl sm:w-full sm:p-6;
 }
 
 .panelInner {
@@ -41,4 +41,35 @@
 
 .button {
   @apply inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm;
+}
+
+.enter {
+  @apply ease-out duration-300;
+}
+.leave {
+  @apply ease-in duration-200;
+}
+.enterFrom {
+  @apply opacity-0;
+}
+
+.enterTo {
+  @apply opacity-100;
+}
+
+.leaveFrom {
+  @apply opacity-100;
+}
+
+.leaveTo {
+  @apply opacity-0;
+}
+.enterFromChild,
+.leaveToChild {
+  @apply opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95;
+}
+
+.enterToChild,
+.leaveFromChild {
+  @apply opacity-100 translate-y-0 sm:scale-100;
 }

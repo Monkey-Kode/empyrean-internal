@@ -1,6 +1,7 @@
 import s from './Modal.module.css';
-import { Dispatch, Fragment, SetStateAction, useState } from 'react';
+import { Dispatch, Fragment, SetStateAction } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
+import EmailReportForm from '../EmailReportForm';
 
 interface ModalProps {
   open: boolean;
@@ -13,12 +14,12 @@ const Modal = ({ open, setOpen }: ModalProps) => {
         <Dialog as="div" className={s.dialog} onClose={setOpen}>
           <Transition.Child
             as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+            enter={s.enter}
+            enterFrom={s.enterFrom}
+            enterTo={s.enterTo}
+            leave={s.leave}
+            leaveFrom={s.leaveFrom}
+            leaveTo={s.leaveTo}
           >
             <div className={s.bg} />
           </Transition.Child>
@@ -26,12 +27,12 @@ const Modal = ({ open, setOpen }: ModalProps) => {
             <div className={s.content}>
               <Transition.Child
                 as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                enterTo="opacity-100 translate-y-0 sm:scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enter={s.enter}
+                enterFrom={s.enterFromChild}
+                enterTo={s.enterToChild}
+                leave={s.leave}
+                leaveFrom={s.leaveFromChild}
+                leaveTo={s.leaveToChild}
               >
                 <Dialog.Panel className={s.panel}>
                   <div>
@@ -40,11 +41,7 @@ const Modal = ({ open, setOpen }: ModalProps) => {
                         Form goes here
                       </Dialog.Title> */}
                       <div className={s.contentInner}>
-                        <p className={s.p}>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Consequatur amet labore.
-                        </p>
-                        form goes here
+                        <EmailReportForm />
                       </div>
                     </div>
                   </div>

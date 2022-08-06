@@ -135,7 +135,8 @@ const data: any = {
         slug: 'download-personal-report',
         content: [
           {
-            text: `Please complete the following information so that we may eMail you a report with your organization’s Benefits Maturity Assessment.`,
+            type: 'text',
+            content: `Please complete the following information so that we may eMail you a report with your organization’s Benefits Maturity Assessment.`,
           },
           {
             type: 'privacy',

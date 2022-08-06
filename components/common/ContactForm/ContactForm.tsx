@@ -1,4 +1,5 @@
 import Button from '../../ui/Button';
+import Input from '../../ui/Input';
 import s from './ContactForm.module.css';
 const ContactForm = () => {
   return (
@@ -12,11 +13,8 @@ const ContactForm = () => {
     >
       <div className={s.row}>
         <div className={s.col}>
-          <label className={s.label} htmlFor="firstname">
-            First Name
-          </label>
-          <input
-            className={s.input}
+          <Input
+            label="First Name"
             type="text"
             name="firstname"
             id="firstname"
@@ -24,11 +22,8 @@ const ContactForm = () => {
           />
         </div>
         <div className={s.col}>
-          <label className={s.label} htmlFor="lastname">
-            Last Name
-          </label>
-          <input
-            className={s.input}
+          <Input
+            label="Last Name"
             type="text"
             name="lastname"
             id="lastname"
@@ -36,12 +31,10 @@ const ContactForm = () => {
           />
         </div>
       </div>
+
       <div className={s.fullCol}>
-        <label className={s.label} htmlFor="email">
-          Email
-        </label>
-        <input
-          className={s.input}
+        <Input
+          label="Email"
           type="email"
           name="email"
           id="email"
