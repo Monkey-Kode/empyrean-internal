@@ -29,6 +29,9 @@ const Form = () => {
 
   return (
     <form
+      //@ts-ignore
+      netlify
+      netlify-honeypot="bot-field"
       className={s.root}
       onSubmit={async (e) => {
         e.preventDefault();
@@ -42,7 +45,7 @@ const Form = () => {
           });
           console.log('scores', scores);
           console.log('body', body);
-          const response = await fetch('/', {
+          const response = await fetch(location.origin, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded',

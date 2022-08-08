@@ -13,11 +13,7 @@ const Contact = () => {
       </div>
       <main className={cn(s.root, 'wrap')}>
         <div className={s.content}>
-            {
-              content?.content?.find((content: any) => content.type === 'text')
-                ?.content
-            }
-            <ContactForm />
+          <ContactForm />
         </div>
       </main>
     </>
