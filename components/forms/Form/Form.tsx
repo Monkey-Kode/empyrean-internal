@@ -50,9 +50,9 @@ const Form = () => {
             body,
           });
           setErrorMessage('');
-          // titleDispatch({ type: 'SET_TITLE', payload: 'Calculating Results' });
-          // // send to netlify
-          // sectionIndexDispatch({ type: 'set', payload: -2 });
+          titleDispatch({ type: 'SET_TITLE', payload: 'Calculating Results' });
+          // send to netlify
+          sectionIndexDispatch({ type: 'set', payload: -2 });
         } catch (error) {
           setErrorMessage('Sorry, there was an error submitting the form');
           console.error('error', error);
