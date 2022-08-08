@@ -22,8 +22,7 @@ const ContactForm = () => {
       </p>
       {errorMessage && <ErrorMessage message={errorMessage} />}
       <form
-        //@ts-ignore
-        netlify
+        data-netlify="true"
         netlify-honeypot="bot-field"
         className={s.root}
         onSubmit={async (e) => {
@@ -44,6 +43,7 @@ const ContactForm = () => {
               },
               body,
             });
+            console.log('response', response);
             setSuccess(true);
             setErrorMessage('');
           } catch (error) {
