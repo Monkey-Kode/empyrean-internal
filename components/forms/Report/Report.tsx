@@ -3,6 +3,7 @@ import data from '../../../data';
 import { useFormState } from '../../../framework/context/form';
 import { calculateSectionScore } from '../../../framework/score/calculateScores';
 import getFormValueFromSection from '../../../framework/state/gerFromValueFromSection';
+import getScores from '../../../framework/score/getScores';
 import getSectionState from '../../../framework/state/getSectionState';
 import getFieldLabelFromContentByName from '../../../lib/getFieldLabelFromContentByName';
 import Modal from '../../common/Modal';
@@ -32,7 +33,6 @@ const Report = () => {
   const firmSectionIndex = -1;
   const firmGraphicsFormName = 'firmographics';
   const companySizeFieldName = 'company-size';
-
   const companySize = getFieldLabelFromContentByName({
     formName: firmGraphicsFormName,
     fieldName: companySizeFieldName,
@@ -45,7 +45,6 @@ const Report = () => {
       field: { name: companySizeFieldName },
     }),
   });
-
   const roleFieldName = 'role';
   const role = getFieldLabelFromContentByName({
     formName: firmGraphicsFormName,
@@ -59,7 +58,6 @@ const Report = () => {
       field: { name: roleFieldName },
     }),
   });
-
   const industryFieldName = 'industry';
   const industry = getFieldLabelFromContentByName({
     formName: firmGraphicsFormName,
@@ -78,16 +76,10 @@ const Report = () => {
     (page: any) => page.slug === 'download-personal-report'
   )?.content;
 
-  const sectionContent = data.data.forms.find(
-    (form: any) => form.slug === 'assessment'
-  )?.sections;
-  const scores = sectionContent.map((section: any, index: number) => {
-    return calculateSectionScore({
-      formState,
-      index,
-    });
+  const scores = getScores({
+    formState,
   });
-  console.log('formState', formState);
+
   return (
     <div className={s.root}>
       <div className={s.topArea}>
