@@ -23,18 +23,16 @@ const FormPages = () => {
           [s.hide]: !showIntro,
         })}
       />
-      {sections && sections?.length > 0
-        ? sections.map((section: any, index: number) => {
-            return (
-              <Section
-                section={section}
-                key={section.title}
-                length={sections?.length}
-                index={index}
-              />
-            );
-          })
-        : null}
+      {sections.map((section: any, index: number) => {
+        return (
+          <Section
+            section={section}
+            key={section.title}
+            length={sections?.length}
+            index={index}
+          />
+        );
+      })}
     </>
   );
 };

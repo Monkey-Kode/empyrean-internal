@@ -29,7 +29,7 @@
 .hide {
   @apply hidden;
 }
-
+/*
 .enterSection {
   @apply transition-opacity duration-500;
 }
@@ -69,4 +69,4 @@
 }
 .leaveTo {
   @apply -translate-x-full;
-}
+} */
