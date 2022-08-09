@@ -3,7 +3,7 @@
   @apply z-50 relative;
 }
 .header {
-  @apply flex justify-between px-4;
+  @apply lg:flex lg:justify-between px-4;
 }
 .link {
   @apply hover:text-black;
