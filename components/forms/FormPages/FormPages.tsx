@@ -2,8 +2,6 @@ import FormIntro from '../FormIntro';
 import data from '../../../data';
 import Section from '../Section/Section';
 import { useSectionIndex } from '../../../framework/context/section';
-import ResultsLoader from '../ResultsLoader';
-import Report from '../Report';
 import s from './FormPages.module.css';
 import cn from 'classnames';
 const FormPages = () => {
