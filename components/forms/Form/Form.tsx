@@ -29,8 +29,7 @@ const Form = () => {
 
   return (
     <form
-      //@ts-ignore
-      netlify
+      data-netlify="true"
       netlify-honeypot="bot-field"
       className={s.root}
       onSubmit={async (e) => {
@@ -63,6 +62,7 @@ const Form = () => {
       }}
     >
       {errorMessage && <ErrorMessage message={errorMessage} />}
+      <input type={'hidden'} name={'form-name'} value={'survey'} />
       <FormPages />
     </form>
   );
