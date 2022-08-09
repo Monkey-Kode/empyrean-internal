@@ -36,7 +36,7 @@ const ContactForm = () => {
           console.log('send contact to netlify', body, location.href);
           // send to netlify
           try {
-            const response = await fetch(location.origin, {
+            const response = await fetch('/', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

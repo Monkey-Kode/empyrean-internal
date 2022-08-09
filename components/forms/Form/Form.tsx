@@ -44,7 +44,7 @@ const Form = () => {
           });
           console.log('scores', scores);
           console.log('body', body);
-          const response = await fetch(location.origin, {
+          const response = await fetch('/', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
