@@ -27,11 +27,12 @@ const ContactForm = () => {
         netlify-honeypot="bot-field"
         className={s.root}
         onSubmit={async (e) => {
+          const form = e.target as HTMLFormElement;
           e.preventDefault();
           const fd = new FormData(e.target as HTMLFormElement);
           const entries = [...(fd.entries() as any)];
           const body = encode({
-            ['form-name']: 'contact',
+            ['form-name']: form.getAttribute('name') || 'contact',
             ...Object.fromEntries(entries),
           });
           console.log('send contact to netlify', body, location.href);

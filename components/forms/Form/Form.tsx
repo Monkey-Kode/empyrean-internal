@@ -34,11 +34,12 @@ const Form = () => {
       netlify-honeypot="bot-field"
       className={s.root}
       onSubmit={async (e) => {
+        const form = e.target as HTMLFormElement;
         e.preventDefault();
         try {
           const fieldResponses = normalizeData(formState);
           const body = encode({
-            ['form-name']: 'survey',
+            ['form-name']: form.getAttribute('name') || 'survey',
             ['total-score']: totalScore,
             ...normalizeScoresData,
             ...fieldResponses,
