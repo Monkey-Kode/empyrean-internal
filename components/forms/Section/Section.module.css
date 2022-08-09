@@ -29,3 +29,44 @@
 .hide {
   @apply hidden;
 }
+
+.enterSection {
+  @apply transition-opacity duration-500;
+}
+.enterFromSection {
+  @apply opacity-0;
+}
+.enterToSection {
+  @apply opacity-100;
+}
+
+.leaveSection {
+  @apply transition-opacity duration-500;
+}
+.leaveFromSection {
+  @apply opacity-100;
+}
+.leaveToSection {
+  @apply opacity-0;
+}
+.enter {
+  @apply transition ease-in-out duration-700 transform;
+}
+
+.enterFrom {
+  @apply -translate-x-full;
+}
+
+.enterTo {
+  @apply translate-x-0;
+}
+
+.leave {
+  @apply transition ease-in-out duration-700 transform;
+}
+.leaveFrom {
+  @apply translate-x-0;
+}
+.leaveTo {
+  @apply -translate-x-full;
+}

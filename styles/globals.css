@@ -40,5 +40,5 @@ ul li {
 }
 
 main {
-  @apply z-30 relative;
+  @apply z-30 relative min-h-[calc(60vh)];
 }

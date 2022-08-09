@@ -5,7 +5,7 @@ import s from './Section.module.css';
 import Question from '../Question';
 import cn from 'classnames';
 import { QuestionInterface, ResultInterface } from '../Question/Question';
-import { useRef } from 'react';
+import { Transition } from '@headlessui/react';
 
 interface Section {
   isOpen: boolean;
@@ -28,7 +28,6 @@ const Section = ({ length, section, index }: SectionProps) => {
   const questions = section.questions;
   const { state: sectionIndexState } = useSectionIndex();
   const { state: questionIndexState } = useQuestionIndex();
-  const indexRef = useRef(0);
 
   // const questions = content?.sections?.[sectionIndexState.index].questions;
   console.log(
@@ -43,51 +42,77 @@ const Section = ({ length, section, index }: SectionProps) => {
     index,
     questionIndexState.index === index
   );
+  const showFullSection = sectionIndexState.index === index;
+  const showSection =
+    sectionIndexState.index === index && questionIndexState.index === -1;
   return (
-    <div
-      className={cn(s.root, {
-        [s.show]: sectionIndexState.index === index,
-      })}
+    <Transition
+      show={showFullSection}
+      enter={s.enterSection}
+      enterFrom={s.enterFromSection}
+      enterTo={s.enterToSection}
+      leave={s.leaveSection}
+      leaveFrom={s.leaveFromSection}
+      leaveTo={s.leaveToSection}
     >
       <div
+        key={section.title}
         className={cn(s.root, {
-          [s.show]:
-            sectionIndexState.index === index &&
-            questionIndexState.index === -1,
+          [s.show]: showFullSection,
         })}
       >
-        <div className={s.wrap}>
-          <div className={s.content}>
-            <h3 className={s.preTitle}>
-              Section {index + 1} of {length}
-            </h3>
-            <h2 className={s.title}>{title}</h2>
-            <p className={s.p}>{description}</p>
+        <div
+          className={cn(s.root, {
+            [s.show]: showSection,
+          })}
+        >
+          <div className={s.wrap}>
+            <div className={s.content}>
+              <h3 className={s.preTitle}>
+                Section {index + 1} of {length}
+              </h3>
+              <h2 className={s.title}>{title}</h2>
+              <p className={s.p}>{description}</p>
+            </div>
+          </div>
+          <div className={s.navigationWrap}>
+            <Navigation />
           </div>
         </div>
-        <div className={s.navigationWrap}>
-          <Navigation />
-        </div>
-      </div>
-      {questions.map((question: any, index: number) => {
-        return (
-          <>
-            <div
-              data-section={sectionIndexState.index}
-              data-question={index}
-              className={cn(s.question, {
-                [s.show]:
-                  questionIndexState.index === index &&
-                  questionIndexState.index !== -1,
-              })}
+        {questions.map((question: any, index: number) => {
+          const showQuestion =
+            questionIndexState.index === index &&
+            questionIndexState.index !== -1;
+          return (
+            <Transition
               key={question.name}
+              show={showQuestion}
+              enter={s.enter}
+              enterFrom={s.enterFrom}
+              enterTo={s.enterTo}
+              leave={s.leave}
+              leaveFrom={s.leaveFrom}
+              leaveTo={s.leaveTo}
             >
-              <Question key={question.name} question={question} index={index} />
-            </div>
-          </>
-        );
-      })}
-    </div>
+              <div
+                data-section={sectionIndexState.index}
+                data-question={index}
+                className={cn(s.question, {
+                  [s.show]: showQuestion,
+                })}
+                key={question.name}
+              >
+                <Question
+                  key={question.name}
+                  question={question}
+                  index={index}
+                />
+              </div>
+            </Transition>
+          );
+        })}
+      </div>
+    </Transition>
   );
 
   // if (questionIndexState.index === -1) {
