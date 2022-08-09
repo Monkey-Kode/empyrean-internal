@@ -29,6 +29,7 @@ const Form = () => {
 
   return (
     <form
+      name="survey"
       data-netlify="true"
       netlify-honeypot="bot-field"
       className={s.root}
