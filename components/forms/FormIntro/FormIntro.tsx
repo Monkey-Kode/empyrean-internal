@@ -8,7 +8,11 @@ import Button from '../../ui/Button';
 import ErrorMessage from '../../ui/ErrorMessage';
 import Select from '../../ui/Select';
 import s from './FormIntro.module.css';
-const FormIntro = () => {
+import cn from 'classnames';
+interface FormIntroProps {
+  className?: string;
+}
+const FormIntro = ({ className }: FormIntroProps) => {
   const { dispatch: sectionDispatch } = useSectionIndex();
   const { state: formState, dispatch: formDispatch } = useFormState();
   const [errorMessage, setErrorMessage] = useState('');
@@ -25,7 +29,7 @@ const FormIntro = () => {
 
   return (
     <>
-      <div className={s.root}>
+      <div className={cn(s.root, className)}>
         <p>{content?.description}</p>
         <h2 className={s.preTitle}>{content?.title}</h2>
         {errorMessage && <ErrorMessage message={errorMessage} />}

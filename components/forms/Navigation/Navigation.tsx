@@ -13,7 +13,7 @@ const Navigation = () => {
     (form: any) => form.slug === 'assessment'
   );
   const sections = assessmentPage?.sections;
-  const questions = sections?.[sectionIndexState.index].questions;
+  const questions = sections?.[sectionIndexState.index]?.questions;
 
   return (
     <div className={s.root}>

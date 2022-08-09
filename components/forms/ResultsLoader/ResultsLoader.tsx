@@ -7,7 +7,11 @@ import { useTitle } from '../../../framework/context/title';
 import Chart from '../../ui/Chart';
 import ProgressBar from '../../ui/ProgressBar';
 import s from './ResultsLoader.module.css';
-const ResultsLoader = () => {
+import cn from 'classnames';
+interface Props {
+  className?: string;
+}
+const ResultsLoader = ({ className }: Props) => {
   const { dispatch: titleDispatch } = useTitle();
   const { dispatch: sectionIndexDispatch } = useSectionIndex();
   const { dispatch: themeDispatch } = useTheme();
@@ -24,7 +28,7 @@ const ResultsLoader = () => {
     return () => clearTimeout(timer);
   }, [sectionIndexDispatch, themeDispatch, titleDispatch]);
   return (
-    <div className={s.root}>
+    <div className={cn(s.root, className)}>
       <div className={s.chart}>
         <Chart data={generateRandomData(5)} />
       </div>

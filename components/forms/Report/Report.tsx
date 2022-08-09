@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import data from '../../../data';
 import { useFormState } from '../../../framework/context/form';
-import { calculateSectionScore } from '../../../framework/score/calculateScores';
 import getFormValueFromSection from '../../../framework/state/gerFromValueFromSection';
 import getScores from '../../../framework/score/getScores';
 import getSectionState from '../../../framework/state/getSectionState';
@@ -11,7 +10,11 @@ import Accordion from '../../ui/Accordion';
 import Button from '../../ui/Button';
 import Chart from '../../ui/Chart';
 import s from './Report.module.css';
-const Report = () => {
+import cn from 'classnames';
+interface ReportProps {
+  className?: string;
+}
+const Report = ({ className }: ReportProps) => {
   const [openModal, setOpenModal] = useState(false);
   const { state: formState } = useFormState();
   const content = data.data.pages.find(
@@ -81,7 +84,7 @@ const Report = () => {
   });
 
   return (
-    <div className={s.root}>
+    <div className={cn(s.root, className)}>
       <div className={s.topArea}>
         <div>
           <h1 className={s.mainHeading}>{title}</h1>
