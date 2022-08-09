@@ -73,7 +73,8 @@ const Form = () => {
         }}
       >
         {errorMessage && <ErrorMessage message={errorMessage} />}
-        <input type={'hidden'} name={'form-name'} value={'survey'} />
+
+
         <FormPages />
       </form>
       {showloader && <ResultsLoader />}

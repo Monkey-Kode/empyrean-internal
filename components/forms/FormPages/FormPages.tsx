@@ -17,6 +17,16 @@ const FormPages = () => {
 
   return (
     <>
+      <input type={'hidden'} name={'form-name'} value={'survey'} />
+      <input type={'hidden'} name={'total-score'} value={0} />
+      {sections.map((section: any, index: number) => (
+        <input
+          type={'hidden'}
+          key={section.title}
+          name={`section_${index + 1}`}
+          value={0}
+        />
+      ))}
       <FormIntro
         className={cn({
           [s.show]: showIntro,
