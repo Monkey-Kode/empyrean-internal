@@ -2,7 +2,7 @@
   @apply max-w-7xl mx-auto mt-14;
 }
 .h1 {
-  @apply font-brandon-grotesque text-3xl font-bold;
+  @apply font-brandon-grotesque text-3xl font-bold px-5;
 }
 
 .p {

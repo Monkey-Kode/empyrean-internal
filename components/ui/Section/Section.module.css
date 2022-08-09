@@ -8,5 +8,5 @@
   @apply my-10;
 }
 .sectionHeader {
-  @apply flex justify-between;
+  @apply lg:flex lg:justify-between;
 }
