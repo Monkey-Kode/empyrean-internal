@@ -2,32 +2,64 @@ import { useQuestionIndex } from '../../../framework/context/question';
 import { useSectionIndex } from '../../../framework/context/section';
 import Navigation from '../Navigation';
 import s from './Section.module.css';
-import data from '../../../data';
 import Question from '../Question';
+import cn from 'classnames';
+import { QuestionInterface, ResultInterface } from '../Question/Question';
+import { useRef } from 'react';
 
+interface Section {
+  isOpen: boolean;
+  title: string;
+  description: string;
+  weight: number;
+  lowScore: number;
+  mediumScore: number;
+  highScore: number;
+  questions: QuestionInterface[];
+  results: ResultInterface[];
+}
 interface SectionProps {
   length: number;
-  title: string;
-  description: string | undefined;
+  section: Section;
+  index: number;
 }
-const Section = ({ length, title, description }: SectionProps) => {
-  const content = data.data.forms.find(
-    (form: any) => form.slug === 'assessment'
-  );
+const Section = ({ length, section, index }: SectionProps) => {
+  const { title, description } = section;
+  const questions = section.questions;
   const { state: sectionIndexState } = useSectionIndex();
   const { state: questionIndexState } = useQuestionIndex();
+  const indexRef = useRef(0);
 
-  const questions = content?.sections?.[sectionIndexState.index].questions;
-
-  const question = questions?.[questionIndexState.index];
-
-  if (questionIndexState.index === -1) {
-    return (
-      <div className={s.root}>
+  // const questions = content?.sections?.[sectionIndexState.index].questions;
+  console.log(
+    'section index state',
+    sectionIndexState.index,
+    index,
+    sectionIndexState.index === index
+  );
+  console.log(
+    'question index state',
+    questionIndexState.index,
+    index,
+    questionIndexState.index === index
+  );
+  return (
+    <div
+      className={cn(s.root, {
+        [s.show]: sectionIndexState.index === index,
+      })}
+    >
+      <div
+        className={cn(s.root, {
+          [s.show]:
+            sectionIndexState.index === index &&
+            questionIndexState.index === -1,
+        })}
+      >
         <div className={s.wrap}>
           <div className={s.content}>
             <h3 className={s.preTitle}>
-              Section {sectionIndexState.index + 1} of {length}
+              Section {index + 1} of {length}
             </h3>
             <h2 className={s.title}>{title}</h2>
             <p className={s.p}>{description}</p>
@@ -37,18 +69,59 @@ const Section = ({ length, title, description }: SectionProps) => {
           <Navigation />
         </div>
       </div>
-    );
-  } else {
-    return question ? (
-      <div className={s.questions}>
-        <Question
-          key={question.name}
-          question={question}
-          index={questionIndexState.index}
-        />
-      </div>
-    ) : null;
-  }
+      {questions.map((question: any, index: number) => {
+        return (
+          <>
+            <div
+              data-section={sectionIndexState.index}
+              data-question={index}
+              className={cn(s.question, {
+                [s.show]:
+                  questionIndexState.index === index &&
+                  questionIndexState.index !== -1,
+              })}
+              key={question.name}
+            >
+              <Question key={question.name} question={question} index={index} />
+            </div>
+          </>
+        );
+      })}
+    </div>
+  );
+
+  // if (questionIndexState.index === -1) {
+  //   return (
+  //     <div className={s.root}>
+  //       <div className={s.wrap}>
+  //         <div className={s.content}>
+  //           <h3 className={s.preTitle}>
+  //             Section {index + 1} of {length}
+  //           </h3>
+  //           <h2 className={s.title}>{title}</h2>
+  //           <p className={s.p}>{description}</p>
+  //         </div>
+  //       </div>
+  //       <div className={s.navigationWrap}>
+  //         <Navigation />
+  //       </div>
+  //     </div>
+  //   );
+  // } else {
+  //   return question
+  //     ? questions.map((question) => {
+  //         return (
+  //           <div className={s.questions} key={question.name}>
+  //             <Question
+  //               key={question.name}
+  //               question={question}
+  //               index={questionIndexState.index}
+  //             />
+  //           </div>
+  //         );
+  //       })
+  //     : null;
+  // }
 };
 
 export default Section;

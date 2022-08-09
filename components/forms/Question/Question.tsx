@@ -5,6 +5,16 @@ import getSectionState from '../../../framework/state/getSectionState';
 import Navigation from '../Navigation';
 import { Question } from '../Questions/Questions';
 import s from './Question.module.css';
+export interface QuestionInterface {
+  text: string;
+  name: string;
+  low: string;
+  high: string;
+}
+export interface ResultInterface {
+  name: string;
+  content: string;
+}
 const Question = ({
   question,
   index,

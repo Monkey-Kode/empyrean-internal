@@ -14,13 +14,18 @@ const FormPages = () => {
   const sections = content?.sections;
 
   if (sectionIndexState.index >= 0) {
-    return sections && sections?.length > 0 ? (
-      <Section
-        length={sections?.length}
-        title={sections[sectionIndexState.index].title}
-        description={sections[sectionIndexState.index].description}
-      />
-    ) : null;
+    return sections && sections?.length > 0
+      ? sections.map((section: any, index: number) => {
+          return (
+            <Section
+              section={section}
+              key={section.title}
+              length={sections?.length}
+              index={index}
+            />
+          );
+        })
+      : null;
   }
 
   if (sectionIndexState.index === -2) {

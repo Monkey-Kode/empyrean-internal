@@ -402,7 +402,7 @@ const data: any = {
                 high: 'Very extensively',
               },
               {
-                text: 'How effective is your overall benefits communication?',
+                text: 'How effective is your overall benefits communication',
                 name: 'communication',
                 low: 'Not at all effective',
                 high: 'Very effective',
