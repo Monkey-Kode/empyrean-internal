@@ -22,7 +22,7 @@ const ContactForm = () => {
       </p>
       {errorMessage && <ErrorMessage message={errorMessage} />}
       <form
-        name="contect"
+        name="contact"
         data-netlify="true"
         netlify-honeypot="bot-field"
         className={s.root}
