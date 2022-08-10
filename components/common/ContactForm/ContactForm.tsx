@@ -29,7 +29,7 @@ const ContactForm = () => {
         onSubmit={async (e) => {
           const form = e.target as HTMLFormElement;
           e.preventDefault();
-          const fd = new FormData(e.target as HTMLFormElement);
+          const fd = new FormData(form as HTMLFormElement);
           const entries = [...(fd.entries() as any)];
           const body = encode({
             ['form-name']: form.getAttribute('name') || 'contact',
