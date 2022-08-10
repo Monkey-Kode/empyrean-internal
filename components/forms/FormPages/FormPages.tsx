@@ -5,8 +5,7 @@ import { useSectionIndex } from '../../../framework/context/section';
 import s from './FormPages.module.css';
 import cn from 'classnames';
 const FormPages = () => {
-  const { state: sectionIndexState, dispatch: sectionIndexDispatch } =
-    useSectionIndex();
+  const { state: sectionIndexState } = useSectionIndex();
   const content = data.data.forms.find(
     (form: any) => form.slug === 'assessment'
   );

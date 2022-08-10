@@ -1,9 +1,4 @@
-import { State } from '../context/form';
-import {
-  QuestionAction,
-  QuestionDispatch,
-  QuestionState,
-} from '../context/question';
+import { QuestionDispatch, QuestionState } from '../context/question';
 import { SectionDispatch, SectionState } from '../context/section';
 
 const gotoNextQuestion = (
@@ -34,7 +29,6 @@ const gotoNextQuestion = (
       });
     }
   }
-
 };
 
 export default gotoNextQuestion;

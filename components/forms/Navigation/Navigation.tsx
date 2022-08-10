@@ -10,6 +10,7 @@ import { useQuestionIndex } from '../../../framework/context/question';
 
 import { useSectionIndex } from '../../../framework/context/section';
 import gotoNextQuestion from '../../../framework/state/gotoNextQuestion';
+import gotoPrevQuestion from '../../../framework/state/gotoPrevQuestion';
 import s from './Navigation.module.css';
 
 const Navigation = () => {
@@ -24,7 +25,7 @@ const Navigation = () => {
   const sections = assessmentPage?.sections;
   const questions = sections?.[sectionIndexState.index]?.questions;
 
-  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+  const handleNextClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     gotoNextQuestion(
       questions,
@@ -36,6 +37,17 @@ const Navigation = () => {
     );
   };
 
+  const handlePrevClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    gotoPrevQuestion(
+      questions,
+      questionIndexState,
+      questionIndexDispatch,
+      sectionIndexState,
+      sectionIndexDispatch,
+      sections
+    );
+  };
   const keyDownHandler = useCallback(
     (e: KeyboardEvent) => {
       console.log('key', e.key);
@@ -69,15 +81,7 @@ const Navigation = () => {
 
   return (
     <div className={s.root}>
-      <button
-        className={s.label}
-        onClick={(e) => {
-          e.preventDefault();
-          if (questionIndexState.index > 0) {
-            questionIndexDispatch({ type: 'previous', payload: 1 });
-          }
-        }}
-      >
+      <button className={s.label} onClick={handlePrevClick}>
         {`<<`} PREV
       </button>
       {sections &&
@@ -86,7 +90,7 @@ const Navigation = () => {
       questionIndexState.index === questions?.length - 1 ? (
         <input type="submit" className={s.label} value={`SUBMIT >>`} />
       ) : (
-        <button className={s.label} onClick={handleClick}>
+        <button className={s.label} onClick={handleNextClick}>
           NEXT {`>>`}
         </button>
       )}
