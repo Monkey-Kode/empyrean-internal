@@ -6,15 +6,8 @@ import { SectionIndexProvider } from '../framework/context/section';
 import { QuestionsIndexProvider } from '../framework/context/question';
 import { FormStateProvider } from '../framework/context/form';
 import { TitleProvider } from '../framework/context/title';
-import { useTheme } from '../framework/context/theme';
-import { useEffect } from 'react';
 
 const Participate: NextPageWithLayout = () => {
-  const { state: theme, dispatch: themeDispatch } = useTheme();
-  useEffect(() => {
-    themeDispatch({ type: 'UPDATE_THEME_COLOR', payload: 'blue' });
-  }, [themeDispatch, theme]);
-
   return (
     <SectionIndexProvider>
       <QuestionsIndexProvider>

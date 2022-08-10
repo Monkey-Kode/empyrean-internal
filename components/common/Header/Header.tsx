@@ -3,15 +3,17 @@ import TopNav from '../TopNav/TopNav';
 import Link from 'next/link';
 import s from './Header.module.css';
 import cn from 'classnames';
-import { useTheme } from '../../../framework/context/theme';
+
+import { useRouter } from 'next/router';
 
 const Header = ({ className }: { className?: string }) => {
-  const { state: themeColor } = useTheme();
+  const router = useRouter();
+
   return (
     <div
       className={cn(s.root, className, {
-        [s.blue]: themeColor.theme === 'blue',
-        [s.white]: themeColor.theme === 'white',
+        [s.blue]: router.pathname !== '/',
+        [s.white]: router.pathname === '/',
       })}
     >
       <header className={cn(s.header)}>

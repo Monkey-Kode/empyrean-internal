@@ -1,3 +1,4 @@
+import { MouseEvent, MouseEventHandler, useCallback, useEffect } from 'react';
 import data from '../../../data';
 import { useQuestionIndex } from '../../../framework/context/question';
 
@@ -14,6 +15,59 @@ const Navigation = () => {
   );
   const sections = assessmentPage?.sections;
   const questions = sections?.[sectionIndexState.index]?.questions;
+  const goToNextSection = useCallback(
+    (questions: any) => {
+      if (questions) {
+        if (questionIndexState.index < questions?.length - 1) {
+          questionIndexDispatch({
+            type: 'next',
+            payload: 1,
+          });
+        } else if (
+          questionIndexState.index === questions?.length - 1 &&
+          sectionIndexState.index < sections?.length - 1
+        ) {
+          questionIndexDispatch({
+            type: 'set',
+            payload: -1,
+          });
+          sectionIndexDispatch({
+            type: 'next',
+            payload: 1,
+          });
+        }
+      }
+    },
+    [
+      questionIndexDispatch,
+      questionIndexState.index,
+      sectionIndexDispatch,
+      sectionIndexState.index,
+      sections?.length,
+    ]
+  );
+
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    goToNextSection(questions);
+  };
+
+  const keyDownHandler = useCallback(
+    (e: KeyboardEvent) => {
+      console.log('key', e.key);
+      if (e.key === 'Enter') {
+        goToNextSection(questions);
+      }
+    },
+    [goToNextSection, questions]
+  );
+
+  useEffect(() => {
+    document.addEventListener('keydown', keyDownHandler);
+    return () => {
+      document.removeEventListener('keydown', keyDownHandler);
+    };
+  }, [keyDownHandler]);
 
   return (
     <div className={s.root}>
@@ -34,32 +88,7 @@ const Navigation = () => {
       questionIndexState.index === questions?.length - 1 ? (
         <input type="submit" className={s.label} value={`SUBMIT >>`} />
       ) : (
-        <button
-          className={s.label}
-          onClick={(e) => {
-            e.preventDefault();
-            if (questions) {
-              if (questionIndexState.index < questions?.length - 1) {
-                questionIndexDispatch({
-                  type: 'next',
-                  payload: 1,
-                });
-              } else if (
-                questionIndexState.index === questions?.length - 1 &&
-                sectionIndexState.index < sections?.length - 1
-              ) {
-                questionIndexDispatch({
-                  type: 'set',
-                  payload: -1,
-                });
-                sectionIndexDispatch({
-                  type: 'next',
-                  payload: 1,
-                });
-              }
-            }
-          }}
-        >
+        <button className={s.label} onClick={handleClick}>
           NEXT {`>>`}
         </button>
       )}

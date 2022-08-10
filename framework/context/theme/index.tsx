@@ -28,7 +28,7 @@ const changeThemeReducer = (state: State, action: Action) => {
 
 const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(changeThemeReducer, {
-    theme: 'white',
+    theme: 'blue',
   });
   const value = { state, dispatch };
   return (

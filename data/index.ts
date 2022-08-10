@@ -136,7 +136,7 @@ const data: any = {
         content: [
           {
             type: 'text',
-            content: `Please complete the following information so that we may eMail you a report with your organization’s Benefits Maturity Assessment.`,
+            content: `Please complete the following information so that we may email you a report with your organization’s Benefits Maturity Assessment.`,
           },
           {
             type: 'privacy',
