@@ -2,7 +2,7 @@
   @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 pt-14;
 }
 .preTitle {
-  @apply text-med-gray text-3xl font-bold py-10;
+  @apply text-med-gray text-2xl lg:text-3xl font-bold py-10;
 }
 .button {
   @apply my-10;

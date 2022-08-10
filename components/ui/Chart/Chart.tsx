@@ -9,6 +9,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
+import data from '../../../data';
 ChartJS.register(
   RadialLinearScale,
   PointElement,
@@ -67,7 +68,9 @@ weight: 3
 */
 
 export const defaultData = {
-  labels: ['strenght', 'luck', 'dexterity', 'charisma', 'intelligence'],
+  labels: data.data.forms
+    .find((page: any) => page.slug === 'assessment')
+    .sections.map((section: any) => section.shortTitle),
   datasets: [
     {
       label: 'Score Distribution',

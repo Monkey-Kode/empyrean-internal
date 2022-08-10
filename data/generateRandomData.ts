@@ -1,6 +1,6 @@
 const generateRandomData = (
   count: number,
-  min: number = 0,
+  min: number = 16,
   max: number = 75
 ) => {
   return Array(count)

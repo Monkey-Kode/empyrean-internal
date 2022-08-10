@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply font-fira-sans text-dark bg-lighter-gray select-none w-full overflow-x-hidden min-w-full min-h-full;
+  @apply font-fira-sans text-dark bg-lighter-gray select-none w-full overflow-x-hidden min-w-full min-h-full break-words;
 }
 h1,
 h2,
