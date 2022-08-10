@@ -26,7 +26,7 @@ const EmailReportFormFields = ({
       <form
         name="email-report-form"
         data-netlify="true"
-        data-netlify-recaptcha="true"
+        // data-netlify-recaptcha="true"
         className={s.form}
         onSubmit={async (e) => {
           const form = e.target as HTMLFormElement;

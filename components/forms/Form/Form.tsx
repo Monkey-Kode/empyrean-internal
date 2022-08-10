@@ -37,7 +37,7 @@ const Form = () => {
       <form
         name="survey"
         data-netlify="true"
-        data-netlify-recaptcha="true"
+        // data-netlify-recaptcha="true"
         netlify-honeypot="bot-field"
         className={s.root}
         onSubmit={async (e) => {

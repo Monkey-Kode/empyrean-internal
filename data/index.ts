@@ -174,7 +174,7 @@ const data: any = {
                 value: '100-1499',
               },
               {
-                label: '1,500 – 5,000Employees',
+                label: '1,500 – 5,000 Employees',
                 value: '1500-5000',
               },
               {
