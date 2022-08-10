@@ -1,5 +1,5 @@
 .root {
-  @apply absolute -right-20 top-0 z-0;
+  @apply fixed -right-20 top-0 z-0;
 }
 .bg {
   @apply w-[711px] h-[711px]  bg-transparent border-black opacity-[3%] -z-20 rounded-full border-[175px];

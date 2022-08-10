@@ -13,7 +13,7 @@ const Participate: NextPageWithLayout = () => {
       <QuestionsIndexProvider>
         <TitleProvider>
           <FormTitleArea />
-          <main>
+          <main className="px-4">
             <FormStateProvider>
               <Form />
             </FormStateProvider>

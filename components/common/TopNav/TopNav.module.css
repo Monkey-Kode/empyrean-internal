@@ -1,5 +1,5 @@
 .nav {
-  @apply flex justify-between items-center;
+  @apply flex justify-start lg:justify-end items-center;
 }
 .nav * {
   @apply font-montserrat font-bold text-sm uppercase tracking-wider px-2 py-2;

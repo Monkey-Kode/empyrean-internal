@@ -1,8 +1,8 @@
 .root {
-  @apply max-w-6xl mx-auto py-16;
+  @apply max-w-6xl mx-auto lg:py-16;
 }
 .topArea {
-  @apply grid grid-cols-2;
+  @apply lg:grid lg:grid-cols-2;
 }
 
 .mainHeading {

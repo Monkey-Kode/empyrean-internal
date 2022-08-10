@@ -2,7 +2,7 @@
   @apply py-6 first-of-type:border-t border-b border-light-gray;
 }
 .accordionItemTitle {
-  @apply font-bold font-montserrat text-dark tracking-wider text-3xl cursor-pointer;
+  @apply font-bold font-montserrat text-dark tracking-wider text-xl lg:text-3xl cursor-pointer;
 }
 .accordionItemContent {
   @apply border-t border-light-gray pt-8 pb-6 mt-6;
