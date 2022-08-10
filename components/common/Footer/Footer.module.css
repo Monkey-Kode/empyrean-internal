@@ -20,3 +20,7 @@
 .nav * {
   @apply block hover:text-blue;
 }
+
+.link {
+  @apply cursor-pointer block block hover:text-blue;
+}

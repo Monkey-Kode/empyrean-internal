@@ -1,30 +1,53 @@
 import LogoIcon from '../../icons/LogoIcon';
-import Link from 'next/link';
 import s from './Footer.module.css';
+import data from '../../../data';
 const Footer = () => {
+  const content = data.data.footer;
+  const links = content?.content?.filter(
+    (content: any) => content.type === 'link'
+  );
+  const addresses = content?.content?.filter(
+    (content: any) => content.type === 'address'
+  );
+  const numbers = content?.content?.filter(
+    (content: any) => content.type === 'number'
+  );
+
   return (
     <footer className={s.root}>
       <div className={s.wrap}>
         <LogoIcon />
         <div className={s.address}>
-          <h2>Contact Info</h2>
-          Main: <a href="tel:(281) 768-2900">(281) 768-2900</a>
-          <br />
-          Toll-Free: <a href="tel:(281) 768-2900">(800) 934-1451</a>
-          <br />
-          3010 Briarpark Drive, Suite 8000
-          <br />
-          Houston, TX 77042
+          <h2>{content.title}</h2>
+          {numbers?.map((number: any) => {
+            return (
+              <a
+                className={s.link}
+                key={number.title}
+                target="_blank"
+                rel="noreferrer"
+                href={`tel:${number.title}`}
+              >
+                {number.title}: {number.content}
+              </a>
+            );
+          })}
+          {addresses?.map((address: any) => {
+            return <div key={address.title}>{address.content}</div>;
+          })}
         </div>
         <nav className={s.nav}>
-          <a href="https://empyrean.com">Benefit Solutions</a>
-          <a href="https://empyrean.com">Client Success</a>
-          <a href="https://empyrean.com">Insights</a>
-          <a href="https://empyrean.com">Company</a>
-          <a href="https://empyrean.com">Get Demo</a>
-          <a href="https://empyrean.com">Leadership</a>
-          <a href="https://empyrean.com">Careers</a>
-          <Link href="/contact">Contact Us</Link>
+          {links?.map((link: any, index: number) => (
+            <a
+              className={s.link}
+              key={link.title}
+              target="_blank"
+              rel="noreferrer"
+              href={link.link}
+            >
+              {link.title}
+            </a>
+          ))}
         </nav>
         <div>© EMPYREAN RESEARCH INSTITUTE, {new Date().getUTCFullYear()}</div>
       </div>

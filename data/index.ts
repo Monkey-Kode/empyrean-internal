@@ -1,6 +1,96 @@
 const data: any = {
   title: 'EMPYREAN RESEARCH INSTITUTE',
   data: {
+    footer: {
+      title: 'Contact Info',
+      slug: 'contact',
+      content: [
+        {
+          type: 'number',
+          title: 'Main',
+          content: '(281) 768-2900',
+        },
+        {
+          type: 'number',
+          title: 'Toll-Free',
+          content: '(800) 934-1451',
+        },
+        {
+          type: 'address',
+          title: 'Address1',
+          content: '3010 Briarpark Drive, Suite 8000',
+        },
+        {
+          type: 'address',
+          title: 'Address2',
+          content: 'Houston, TX 77042',
+        },
+        {
+          type: 'link',
+          title: 'Benefit Solutions',
+          cta: {
+            text: 'Benefit Solutions',
+            link: 'https://www.goempyrean.com/benefits-solutions/benefits-administration/',
+          },
+        },
+        {
+          type: 'link',
+          title: 'Client Success',
+          cta: {
+            text: 'Client Success',
+            link: 'https://www.goempyrean.com/client-success/our-focus/',
+          },
+        },
+        {
+          type: 'link',
+          title: 'Insights',
+          cta: {
+            text: 'Insights',
+            link: 'https://www.goempyrean.com/insights/',
+          },
+        },
+        {
+          type: 'link',
+          title: 'Company',
+          cta: {
+            text: 'Company',
+            link: 'https://www.goempyrean.com/company/about-us/',
+          },
+        },
+        {
+          type: 'link',
+          title: 'Get Demo',
+          cta: {
+            text: 'Get Demo',
+            link: 'https://www.goempyrean.com/get-demo/',
+          },
+        },
+        {
+          type: 'link',
+          title: 'Leadership',
+          cta: {
+            text: 'Leadership',
+            link: 'https://www.goempyrean.com/company/about-us/#leadership',
+          },
+        },
+        {
+          type: 'link',
+          title: 'Careers',
+          cta: {
+            text: 'Careers',
+            link: 'https://www.goempyrean.com/careers/',
+          },
+        },
+        {
+          type: 'link',
+          title: 'Contact Us',
+          cta: {
+            text: 'Contact Us',
+            link: 'https://www.goempyrean.com/contact-us/',
+          },
+        },
+      ],
+    },
     pages: [
       {
         title: 'Impact',
