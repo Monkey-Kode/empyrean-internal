@@ -1,6 +1,6 @@
 .root {
   /* @apply pb-14; */
-  @apply z-50 relative;
+  @apply z-40 relative;
 }
 .header {
   @apply lg:flex lg:justify-between px-4;

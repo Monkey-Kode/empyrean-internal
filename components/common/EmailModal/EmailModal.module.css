@@ -1,0 +1,88 @@
+.root {
+  @apply z-50 relative;
+}
+
+.dialog {
+  @apply relative z-50;
+}
+.bg {
+  @apply fixed inset-0 bg-darker bg-opacity-60 transition-opacity;
+}
+.wrap {
+  @apply fixed z-50 inset-0 overflow-y-auto;
+}
+
+.content {
+  @apply flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0;
+}
+
+.panel {
+  @apply relative bg-white p-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-sm lg:max-w-4xl sm:w-full;
+}
+
+.panelInner {
+  @apply text-center;
+}
+
+.title {
+  @apply text-lg leading-6 font-medium text-gray;
+}
+
+/* .contentInner {
+  @apply p-4;
+} */
+.p {
+  @apply text-sm text-gray;
+}
+
+.buttonWrap {
+  @apply mt-5 sm:mt-6;
+}
+
+.button {
+  @apply inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm;
+}
+
+.enter {
+  @apply ease-out duration-300;
+}
+.leave {
+  @apply ease-in duration-200;
+}
+.enterFrom {
+  @apply opacity-0;
+}
+
+.enterTo {
+  @apply opacity-100;
+}
+
+.leaveFrom {
+  @apply opacity-100;
+}
+
+.leaveTo {
+  @apply opacity-0;
+}
+.enterFromChild,
+.leaveToChild {
+  @apply opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95;
+}
+
+.enterToChild,
+.leaveFromChild {
+  @apply opacity-100 translate-y-0 sm:scale-100;
+}
+
+.hide {
+  @apply hidden;
+}
+.show {
+  @apply block;
+}
+.buttonWrapper {
+  @apply flex justify-end;
+}
+.button {
+  @apply inline-block w-auto bg-gray mb-6;
+}

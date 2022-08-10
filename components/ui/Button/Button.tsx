@@ -12,6 +12,7 @@ interface ButtonProps {
     MouseEventHandler<HTMLAnchorElement> &
     MouseEventHandler<HTMLInputElement>;
   value?: string;
+  withIcon?: boolean;
 }
 const Button: FC<ButtonProps> = ({
   children,
@@ -20,14 +21,17 @@ const Button: FC<ButtonProps> = ({
   type = 'button',
   href,
   value,
+  withIcon = true,
 }: ButtonProps) => {
   if (type === 'link' && href) {
     return (
       <Link href={href}>
         <a className={cn(s.button, className)} onClick={onClick}>
-          <span className={s.icon}>
-            <Eye />
-          </span>
+          {withIcon && (
+            <span className={s.icon}>
+              <Eye />
+            </span>
+          )}
           {children}
         </a>
       </Link>
@@ -35,9 +39,11 @@ const Button: FC<ButtonProps> = ({
   } else if (type === 'button') {
     return (
       <button className={cn(className, s.button)} onClick={onClick}>
-        <span className={s.icon}>
-          <Eye />
-        </span>
+        {withIcon && (
+          <span className={s.icon}>
+            <Eye />
+          </span>
+        )}
         {children}
       </button>
     );

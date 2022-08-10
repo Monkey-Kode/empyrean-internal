@@ -1,3 +1,6 @@
 .success {
   @apply text-black;
 }
+.success p {
+  @apply pb-8;
+}

@@ -11,11 +11,12 @@ import Button from '../../ui/Button';
 import Chart from '../../ui/Chart';
 import s from './Report.module.css';
 import cn from 'classnames';
+import { useEmailModal } from '../../../framework/context/emailModal/indext';
 interface ReportProps {
   className?: string;
 }
 const Report = ({ className }: ReportProps) => {
-  const [openModal, setOpenModal] = useState(false);
+  const { state: isOpenModal, dispatch: isOpenModalDispatch } = useEmailModal();
   const { state: formState } = useFormState();
   const content = data.data.pages.find(
     (page: any) => page.slug === 'report'
@@ -99,9 +100,8 @@ const Report = ({ className }: ReportProps) => {
         </div>
         <div className={s.download}>
           <Button
-            onClick={(e) => {
-              e.preventDefault();
-              setOpenModal(!openModal);
+            onClick={() => {
+              isOpenModalDispatch({ type: 'TOGGLE_MODAL' });
             }}
           >
             {
@@ -115,7 +115,6 @@ const Report = ({ className }: ReportProps) => {
       <section>
         <Accordion />
       </section>
-      {openModal && <Modal open={openModal} setOpen={setOpenModal} />}
     </div>
   );
 };

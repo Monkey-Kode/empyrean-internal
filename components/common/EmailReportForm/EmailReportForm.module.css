@@ -1,8 +1,7 @@
 .root {
-  @apply pb-4;
+  @apply px-6 pt-0 pb-6;
 }
 
 .p {
   @apply leading-normal text-left pb-7;
 }
-
