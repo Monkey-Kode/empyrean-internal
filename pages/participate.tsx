@@ -6,6 +6,7 @@ import { SectionIndexProvider } from '../framework/context/section';
 import { QuestionsIndexProvider } from '../framework/context/question';
 import { FormStateProvider } from '../framework/context/form';
 import { TitleProvider } from '../framework/context/title';
+import EmailReportFormFields from '../components/common/EmailReportFormFields';
 
 const Participate: NextPageWithLayout = () => {
   return (
@@ -16,6 +17,7 @@ const Participate: NextPageWithLayout = () => {
           <main className="px-4">
             <FormStateProvider>
               <Form />
+              <EmailReportFormFields className="hidden" />
             </FormStateProvider>
           </main>
         </TitleProvider>

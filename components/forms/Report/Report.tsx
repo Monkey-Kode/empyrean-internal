@@ -11,7 +11,6 @@ import Button from '../../ui/Button';
 import Chart from '../../ui/Chart';
 import s from './Report.module.css';
 import cn from 'classnames';
-import EmailReportFormFields from '../../common/EmailReportFormFields';
 interface ReportProps {
   className?: string;
 }
@@ -116,7 +115,7 @@ const Report = ({ className }: ReportProps) => {
       <section>
         <Accordion />
       </section>
-      {openModal ? <Modal open={openModal} setOpen={setOpenModal} />: <EmailReportFormFields className="hidden" />}
+      {openModal && <Modal open={openModal} setOpen={setOpenModal} />}
     </div>
   );
 };
