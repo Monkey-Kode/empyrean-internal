@@ -13,7 +13,7 @@ const Participate: NextPageWithLayout = () => {
   const { state: theme, dispatch: themeDispatch } = useTheme();
   useEffect(() => {
     themeDispatch({ type: 'UPDATE_THEME_COLOR', payload: 'blue' });
-  }, [themeDispatch]);
+  }, [themeDispatch, theme]);
 
   return (
     <SectionIndexProvider>

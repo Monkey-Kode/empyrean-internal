@@ -166,16 +166,24 @@ const data: any = {
                 value: '',
               },
               {
-                label: '1-10 Employees',
-                value: '1-10',
+                label: '< 100 Employees',
+                value: 'less-than-100',
               },
               {
-                label: '11-50 Employees',
-                value: '11-50',
+                label: '100 – 1,499 Employees',
+                value: '100-1499',
               },
               {
-                label: '51-100 Employees',
-                value: '51-100',
+                label: '1,500 – 5,000Employees',
+                value: '1500-5000',
+              },
+              {
+                label: '5,001 – 10,000 Employees',
+                value: '5001-10000',
+              },
+              {
+                label: '10,000+ Employees',
+                value: '10000-plus',
               },
             ],
           },
@@ -189,8 +197,20 @@ const data: any = {
                 value: '',
               },
               {
-                label: 'HR Generalist',
-                value: 'hr-generalist',
+                label: 'Employer',
+                value: 'employer',
+              },
+              {
+                label: 'Broker',
+                value: 'broker',
+              },
+              {
+                label: 'Consultant',
+                value: 'consultant',
+              },
+              {
+                label: 'Other',
+                value: 'other',
               },
             ],
           },
@@ -204,8 +224,82 @@ const data: any = {
                 value: '',
               },
               {
-                label: 'Technology',
-                value: 'technology',
+                label: 'Manufacturing',
+                value: 'manufacturing',
+              },
+              {
+                label: 'Finance and Insurance',
+                value: 'finance-and-insurance',
+              },
+              {
+                label: 'Wholesale Trade ',
+                value: 'wholesale-trade',
+              },
+              {
+                label: 'Health Care and Social Assistance',
+                value: 'health-care-and-social-assistance',
+              },
+              {
+                label: 'Information ',
+                value: 'information',
+              },
+              {
+                label: 'Professional, Scientific, and Technical Services ',
+                value: 'professional-scientific-and-technical-services',
+              },
+              {
+                label:
+                  'Administrative and Support and Waste Management and Remediation Services',
+                value:
+                  'administrative-and-support-and-waste-management-and-remediation-services',
+              },
+              {
+                label: 'Utilities ',
+                value: 'utilities ',
+              },
+              {
+                label: 'Educational Services  ',
+                value: 'educational-services',
+              },
+              {
+                label: 'Retail Trade',
+                value: 'retail-trade',
+              },
+              {
+                label: 'Mining, Quarrying, and Oil and Gas Extraction',
+                value: 'mining-quarrying-and-oil-and-gas-extraction',
+              },
+              {
+                label: 'Construction',
+                value: 'constrution',
+              },
+              {
+                label: 'Public Administration',
+                value: 'public-administration',
+              },
+              {
+                label: 'Transportation and Warehousing',
+                value: 'transportation-and-warehousing',
+              },
+              {
+                label: 'Arts, Entertainment, and Recreation',
+                value: 'arts-entertainment-and-recreation',
+              },
+              {
+                label: 'Accommodation and Food Services',
+                value: 'accommodation-and-food-services',
+              },
+              {
+                label: 'Real Estate Rental and Leasing',
+                value: 'real-estate-rental-and-leasing',
+              },
+              {
+                label: 'Management of Companies and Enterprises',
+                value: 'management-of-companies-and-enterprises',
+              },
+              {
+                label: 'Other',
+                value: 'other',
               },
             ],
           },

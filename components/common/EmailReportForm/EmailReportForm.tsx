@@ -16,6 +16,9 @@ const EmailReportForm = () => {
     <div className={s.root}>
       <p className={s.p}>{description}</p>
       <form
+        name="email-report-form"
+        data-netlify="true"
+        data-netlify-recaptcha="true"
         className={s.form}
         onSubmit={(e) => {
           e.preventDefault();

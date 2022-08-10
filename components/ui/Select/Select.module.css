@@ -2,13 +2,13 @@
   @apply py-2;
 }
 .selectGroup {
-  @apply relative inline-flex min-w-[300px];
+  @apply relative inline-flex w-full max-w-lg;
 }
 .label {
   @apply text-md-gray opacity-40 font-montserrat text-lg block;
 }
 .select {
-  @apply appearance-none border border-grey px-4 py-2 h-[50px] min-w-[300px];
+  @apply appearance-none border border-grey px-4 py-2 h-[50px] w-full max-w-lg;
 }
 .selectGroup::after {
   @apply absolute right-0 top-0 bottom-0 pointer-events-none flex items-center px-4 w-[50px] h-[50px] bg-darker text-white;
