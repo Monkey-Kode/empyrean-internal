@@ -1,19 +1,25 @@
 import { createContext, FC, ReactNode, useContext, useReducer } from 'react';
 
-interface State {
+export interface SectionState {
   index: number;
 }
-type Action = { type: 'next' | 'previous' | 'set'; payload: number };
-type Dispatch = (action: Action) => void;
+export type SectionAction = {
+  type: 'next' | 'previous' | 'set';
+  payload: number;
+};
+export type SectionDispatch = (action: SectionAction) => void;
 interface SectionIndexContextInterface {
-  state: State;
-  dispatch: Dispatch;
+  state: SectionState;
+  dispatch: SectionDispatch;
 }
 export const SectionIndexContext = createContext<
   SectionIndexContextInterface | undefined
 >(undefined);
 
-const changeSectionIndexReducer = (state: State, action: Action) => {
+const changeSectionIndexReducer = (
+  state: SectionState,
+  action: SectionAction
+) => {
   switch (action.type) {
     case 'next':
       return { index: state.index + action.payload };

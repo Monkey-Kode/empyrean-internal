@@ -1,19 +1,25 @@
 import { createContext, FC, ReactNode, useContext, useReducer } from 'react';
 
-interface State {
+export interface QuestionState {
   index: number;
 }
-type Action = { type: 'next' | 'previous' | 'set'; payload: number };
-type Dispatch = (action: Action) => void;
+export type QuestionAction = {
+  type: 'next' | 'previous' | 'set';
+  payload: number;
+};
+export type QuestionDispatch = (action: QuestionAction) => void;
 interface QuestionsIndexContextInterface {
-  state: State;
-  dispatch: Dispatch;
+  state: QuestionState;
+  dispatch: QuestionDispatch;
 }
 const QuestionsIndexContext = createContext<
   QuestionsIndexContextInterface | undefined
 >(undefined);
 
-const changeQuestionIndexReducer = (state: State, action: Action) => {
+const changeQuestionIndexReducer = (
+  state: QuestionState,
+  action: QuestionAction
+) => {
   switch (action.type) {
     case 'next':
       return { index: state.index + action.payload };

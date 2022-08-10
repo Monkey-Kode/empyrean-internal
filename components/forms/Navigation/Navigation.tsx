@@ -1,9 +1,17 @@
-import { MouseEvent, MouseEventHandler, useCallback, useEffect } from 'react';
+import {
+  MouseEvent,
+  MouseEventHandler,
+  RefObject,
+  useCallback,
+  useEffect,
+} from 'react';
 import data from '../../../data';
 import { useQuestionIndex } from '../../../framework/context/question';
 
 import { useSectionIndex } from '../../../framework/context/section';
+import gotoNextQuestion from '../../../framework/state/gotoNextQuestion';
 import s from './Navigation.module.css';
+
 const Navigation = () => {
   const { state: sectionIndexState, dispatch: sectionIndexDispatch } =
     useSectionIndex();
@@ -15,51 +23,41 @@ const Navigation = () => {
   );
   const sections = assessmentPage?.sections;
   const questions = sections?.[sectionIndexState.index]?.questions;
-  const goToNextSection = useCallback(
-    (questions: any) => {
-      if (questions) {
-        if (questionIndexState.index < questions?.length - 1) {
-          questionIndexDispatch({
-            type: 'next',
-            payload: 1,
-          });
-        } else if (
-          questionIndexState.index === questions?.length - 1 &&
-          sectionIndexState.index < sections?.length - 1
-        ) {
-          questionIndexDispatch({
-            type: 'set',
-            payload: -1,
-          });
-          sectionIndexDispatch({
-            type: 'next',
-            payload: 1,
-          });
-        }
-      }
-    },
-    [
-      questionIndexDispatch,
-      questionIndexState.index,
-      sectionIndexDispatch,
-      sectionIndexState.index,
-      sections?.length,
-    ]
-  );
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    goToNextSection(questions);
+    gotoNextQuestion(
+      questions,
+      questionIndexState,
+      questionIndexDispatch,
+      sectionIndexState,
+      sectionIndexDispatch,
+      sections
+    );
   };
 
   const keyDownHandler = useCallback(
     (e: KeyboardEvent) => {
       console.log('key', e.key);
       if (e.key === 'Enter') {
-        goToNextSection(questions);
+        gotoNextQuestion(
+          questions,
+          questionIndexState,
+          questionIndexDispatch,
+          sectionIndexState,
+          sectionIndexDispatch,
+          sections
+        );
       }
     },
-    [goToNextSection, questions]
+    [
+      questions,
+      questionIndexState,
+      questionIndexDispatch,
+      sectionIndexState,
+      sectionIndexDispatch,
+      sections,
+    ]
   );
 
   useEffect(() => {
