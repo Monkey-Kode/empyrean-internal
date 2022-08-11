@@ -22,11 +22,12 @@ const Button: FC<ButtonProps> = ({
   href,
   value,
   withIcon = true,
+  ...props
 }: ButtonProps) => {
   if (type === 'link' && href) {
     return (
       <Link href={href}>
-        <a className={cn(s.button, className)} onClick={onClick}>
+        <a className={cn(s.button, className)} onClick={onClick} {...props}>
           {withIcon && (
             <span className={s.icon}>
               <Eye />
@@ -38,7 +39,7 @@ const Button: FC<ButtonProps> = ({
     );
   } else if (type === 'button') {
     return (
-      <button className={cn(className, s.button)} onClick={onClick}>
+      <button className={cn(className, s.button)} onClick={onClick} {...props}>
         {withIcon && (
           <span className={s.icon}>
             <Eye />
@@ -54,6 +55,7 @@ const Button: FC<ButtonProps> = ({
         type="submit"
         value={value}
         onSubmit={onClick}
+        {...props}
       />
     );
   } else {

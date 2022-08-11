@@ -5,3 +5,7 @@
 .p {
   @apply leading-normal text-left pb-7;
 }
+
+.button {
+  @apply mb-12;
+}

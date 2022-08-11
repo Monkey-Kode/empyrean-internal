@@ -47,7 +47,7 @@ const Accordion = () => {
           <AccordionItem
             key={index}
             title={`${alphabet[index]}. ${section.title}`}
-            isOpen={section.isOpen}
+            isOpen={true}
           >
             <h4 className={s.h4}>
               Your Result: <span className={s.score}>{level}</span>

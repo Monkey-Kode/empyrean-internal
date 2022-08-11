@@ -100,14 +100,14 @@ const Report = ({ className }: ReportProps) => {
         </div>
         <div className={s.download}>
           <Button
+            data-html2canvas-ignore="true"
+            className={s.button}
             onClick={() => {
               isOpenModalDispatch({ type: 'TOGGLE_MODAL' });
             }}
           >
-            {
-              downloadContent?.find((content: any) => content.type === 'cta')
-                ?.content
-            }
+            {downloadContent?.find((content: any) => content.type === 'cta')
+              ?.content || 'Download Report'}
           </Button>
           <Chart data={scores} />
         </div>

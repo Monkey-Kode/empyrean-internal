@@ -16,8 +16,11 @@
   @apply list-none;
 }
 .download {
-  @apply text-right;
+  @apply text-center py-6 lg:text-right;
 }
 .small {
   @apply uppercase text-med-gray font-montserrat font-bold;
+}
+.button {
+  @apply print:hidden;
 }
