@@ -2,5 +2,5 @@
   @apply w-full flex justify-between  mx-auto  py-8;
 }
 .label {
-  @apply text-darkest opacity-40 text-xl lg:text-2xl font-montserrat tracking-heading font-bold hover:text-blue hover:opacity-100 cursor-pointer;
+  @apply text-darkest opacity-40 text-xl lg:text-2xl font-montserrat tracking-widest lg:tracking-heading font-bold hover:text-blue hover:opacity-100 cursor-pointer;
 }
