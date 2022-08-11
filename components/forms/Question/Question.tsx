@@ -48,7 +48,7 @@ const Question = ({
           </datalist>
           <input
             className={s.input}
-            name={question.text}
+            name={question.name}
             type="range"
             min="1"
             max="5"
