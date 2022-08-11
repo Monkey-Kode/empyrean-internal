@@ -1,4 +1,5 @@
 import { useFormState } from '../../../framework/context/form';
+import { useQuestionIndex } from '../../../framework/context/question';
 import { useSectionIndex } from '../../../framework/context/section';
 import getFormValueFromSection from '../../../framework/state/gerFromValueFromSection';
 import getSectionState from '../../../framework/state/getSectionState';
@@ -23,14 +24,15 @@ const Question = ({
   index: number;
 }) => {
   const { state: sectionIndexState } = useSectionIndex();
+  const { state: questionIndexState } = useQuestionIndex();
   const { state: formState, dispatch: formDispatch } = useFormState();
-
   const value = getFormValueFromSection({
     sectionState: getSectionState({ formState, sectionIndexState }),
     sectionIndexState,
     field: question,
   });
-
+  console.log('question: sectionIndexState.index', sectionIndexState.index);
+  console.log('question: questionIndexState.index', questionIndexState.index);
   return (
     <div className={s.root}>
       <div className={s.content}>
@@ -47,6 +49,8 @@ const Question = ({
             <option value="5">5</option>
           </datalist>
           <input
+            data-section={sectionIndexState.index}
+            data-question={index}
             className={s.input}
             name={question.name}
             type="range"

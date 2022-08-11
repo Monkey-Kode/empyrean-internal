@@ -4,7 +4,7 @@ export interface QuestionState {
   index: number;
 }
 export type QuestionAction = {
-  type: 'next' | 'previous' | 'set';
+  type: 'next' | 'prev' | 'set';
   payload: number;
 };
 export type QuestionDispatch = (action: QuestionAction) => void;
@@ -23,7 +23,7 @@ const changeQuestionIndexReducer = (
   switch (action.type) {
     case 'next':
       return { index: state.index + action.payload };
-    case 'previous':
+    case 'prev':
       return { index: state.index - action.payload };
     case 'set':
       return { index: action.payload };

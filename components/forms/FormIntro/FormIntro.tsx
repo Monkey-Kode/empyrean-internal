@@ -9,11 +9,13 @@ import ErrorMessage from '../../ui/ErrorMessage';
 import Select from '../../ui/Select';
 import s from './FormIntro.module.css';
 import cn from 'classnames';
+import { useQuestionIndex } from '../../../framework/context/question';
 interface FormIntroProps {
   className?: string;
 }
 const FormIntro = ({ className }: FormIntroProps) => {
   const { dispatch: sectionDispatch } = useSectionIndex();
+  const { dispatch: questionDispatch } = useQuestionIndex();
   const { state: formState, dispatch: formDispatch } = useFormState();
   const [errorMessage, setErrorMessage] = useState('');
   const content = data.data.forms.find(
@@ -74,6 +76,7 @@ const FormIntro = ({ className }: FormIntroProps) => {
             if (allFieldsSelected) {
               setErrorMessage('');
               sectionDispatch({ type: 'set', payload: 0 });
+              questionDispatch({ type: 'set', payload: -1 });
             } else {
               setErrorMessage('Please select all fields');
             }

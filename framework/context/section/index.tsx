@@ -4,7 +4,7 @@ export interface SectionState {
   index: number;
 }
 export type SectionAction = {
-  type: 'next' | 'previous' | 'set';
+  type: 'next' | 'prev' | 'set';
   payload: number;
 };
 export type SectionDispatch = (action: SectionAction) => void;
@@ -23,7 +23,7 @@ const changeSectionIndexReducer = (
   switch (action.type) {
     case 'next':
       return { index: state.index + action.payload };
-    case 'previous':
+    case 'prev':
       return { index: state.index - action.payload };
     case 'set':
       return { index: action.payload };

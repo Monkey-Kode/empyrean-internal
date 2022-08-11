@@ -87,7 +87,7 @@ const Report = ({ className }: ReportProps) => {
   return (
     <div className={cn(s.root, className)}>
       <div className={s.topArea}>
-        <div>
+        <div className={s.topAreaLeft}>
           <h1 className={s.mainHeading}>{title}</h1>
           <small className={s.small}>{subText}</small>
           <ul className={s.list}>

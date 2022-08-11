@@ -20,7 +20,12 @@ const FormTitleArea = () => {
     <div className={s.root}>
       <div className={cn('wrap', s.content)}>
         <h1 className={s.heading}>{pageTitle.text}</h1>
-        {sectionTitle && <h2 className={s.sectionTitle}>{sectionTitle}</h2>}
+        {sectionTitle && (
+          <h2 className={s.sectionTitle}>
+            {' '}
+            {sectionIndexState.index + 1}. {sectionTitle}
+          </h2>
+        )}
       </div>
     </div>
   ) : null;

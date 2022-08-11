@@ -48,36 +48,36 @@ const Navigation = () => {
       sections
     );
   };
-  const keyDownHandler = useCallback(
-    (e: KeyboardEvent) => {
-      console.log('key', e.key);
-      if (e.key === 'Enter') {
-        gotoNextQuestion(
-          questions,
-          questionIndexState,
-          questionIndexDispatch,
-          sectionIndexState,
-          sectionIndexDispatch,
-          sections
-        );
-      }
-    },
-    [
-      questions,
-      questionIndexState,
-      questionIndexDispatch,
-      sectionIndexState,
-      sectionIndexDispatch,
-      sections,
-    ]
-  );
+  // const keyDownHandler = useCallback(
+  //   (e: KeyboardEvent) => {
+  //     console.log('key', e.key);
+  //     if (e.key === 'Enter') {
+  //       gotoNextQuestion(
+  //         questions,
+  //         questionIndexState,
+  //         questionIndexDispatch,
+  //         sectionIndexState,
+  //         sectionIndexDispatch,
+  //         sections
+  //       );
+  //     }
+  //   },
+  //   [
+  //     questions,
+  //     questionIndexState,
+  //     questionIndexDispatch,
+  //     sectionIndexState,
+  //     sectionIndexDispatch,
+  //     sections,
+  //   ]
+  // );
 
-  useEffect(() => {
-    document.addEventListener('keydown', keyDownHandler);
-    return () => {
-      document.removeEventListener('keydown', keyDownHandler);
-    };
-  }, [keyDownHandler]);
+  // useEffect(() => {
+  //   document.addEventListener('keydown', keyDownHandler);
+  //   return () => {
+  //     document.removeEventListener('keydown', keyDownHandler);
+  //   };
+  // }, [keyDownHandler]);
 
   return (
     <div className={s.root}>

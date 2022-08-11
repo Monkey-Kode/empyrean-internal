@@ -6,7 +6,6 @@ import ErrorMessage from '../../ui/ErrorMessage';
 import SuccessMessage from '../../ui/SuccessMessage';
 import EmailReportFormFields from '../EmailReportFormFields';
 import s from './EmailReportForm.module.css';
-import html2pdf from 'html2pdf.js';
 
 const EmailReportForm = () => {
   const { dispatch: isOpenModalDispatch } = useEmailModal();
@@ -24,9 +23,10 @@ const EmailReportForm = () => {
       <Button
         className={s.button}
         type="button"
-        onClick={(e) => {
+        onClick={async (e) => {
           e.preventDefault();
           isOpenModalDispatch({ type: 'TOGGLE_MODAL' });
+          const html2pdf = (await import('html2pdf.js')).default;
           const element = document.getElementById('__next');
           const opt = {
             filename: 'report.pdf',

@@ -33,14 +33,14 @@ const Section = ({ length, section, index }: SectionProps) => {
   console.log(
     'section index state',
     sectionIndexState.index,
-    index,
-    sectionIndexState.index === index
+    index
+    // sectionIndexState.index === index
   );
   console.log(
     'question index state',
     questionIndexState.index,
-    index,
-    questionIndexState.index === index
+    index
+    // questionIndexState.index === index
   );
   const showFullSection = sectionIndexState.index === index;
   const showSection =

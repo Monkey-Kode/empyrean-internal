@@ -22,5 +22,9 @@
   @apply uppercase text-med-gray font-montserrat font-bold;
 }
 .button {
-  @apply print:hidden;
+  @apply print:hidden mb-10;
+}
+
+.topAreaLeft {
+  @apply lg:pr-16;
 }
