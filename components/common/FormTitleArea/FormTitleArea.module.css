@@ -7,7 +7,7 @@
 }
 
 .sectionTitle {
-  @apply text-lg text-white uppercase text-right lg:max-w-[50%];
+  @apply text-base lg:text-lg text-white uppercase text-right lg:max-w-[50%];
 }
 
 .content {

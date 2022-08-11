@@ -11,5 +11,5 @@
 }
 
 .button {
-  @apply mt-5;
+  @apply mt-4 mb-14 lg:mt-5 lg:mb-0;
 }

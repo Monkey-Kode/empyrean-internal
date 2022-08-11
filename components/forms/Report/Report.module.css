@@ -21,10 +21,11 @@
 .small {
   @apply uppercase text-med-gray font-montserrat font-bold;
 }
-.button {
-  @apply print:hidden mb-10;
-}
 
 .topAreaLeft {
   @apply lg:pr-16;
+}
+
+.h2 {
+  @apply text-2xl font-bold lg:text-3xl;
 }

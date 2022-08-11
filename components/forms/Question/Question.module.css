@@ -5,10 +5,10 @@
   @apply max-w-6xl mx-auto px-4;
 }
 .question {
-  @apply text-3xl text-gray2 pt-8 leading-snug;
+  @apply text-xl lg:text-3xl text-gray2 pt-8 leading-snug;
 }
 .inputWrapper {
-  @apply bg-white pt-12 px-12 max-w-8xl mx-auto my-12;
+  @apply bg-white pt-12 px-5 lg:px-12 max-w-8xl mx-auto my-12;
 }
 /* .input {
   @apply w-full h-2 bg-mid-gray2 rounded-lg appearance-none cursor-pointer border border-gray;

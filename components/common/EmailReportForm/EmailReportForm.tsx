@@ -29,20 +29,25 @@ const EmailReportForm = () => {
             setTimeout(() => {
               isOpenModalDispatch({ type: 'TOGGLE_MODAL' });
               resolve(true);
-            }, 1000)
+            }, 0)
           );
-          const html2pdf = (await import('html2pdf.js')).default;
-          const element = document.getElementById('__next');
-          const opt = {
-            filename: 'report.pdf',
-            pagebreak: {
-              mode: ['avoid-all', 'css', 'legacy'],
-            },
-            jsPDF: {
-              orientation: 'landscape',
-            },
-          };
-          html2pdf().set(opt).from(element).save();
+          await new Promise(async (resolve) => {
+            const html2pdf = (await import('html2pdf.js')).default;
+            setTimeout(() => {
+              const element = document.getElementById('__next');
+              const opt = {
+                filename: 'report.pdf',
+                pagebreak: {
+                  mode: ['avoid-all', 'css', 'legacy'],
+                },
+                jsPDF: {
+                  orientation: 'landscape',
+                },
+              };
+              html2pdf().set(opt).from(element).save();
+              resolve(true);
+            }, 0);
+          });
         }}
       >
         Download Report

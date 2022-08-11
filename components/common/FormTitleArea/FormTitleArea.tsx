@@ -22,8 +22,9 @@ const FormTitleArea = () => {
         <h1 className={s.heading}>{pageTitle.text}</h1>
         {sectionTitle && (
           <h2 className={s.sectionTitle}>
-            {' '}
-            {sectionIndexState.index + 1}. {sectionTitle}
+            {/* {' '} */}
+            {/* {sectionIndexState.index + 1}.  */}
+            {sectionTitle}
           </h2>
         )}
       </div>

@@ -1,22 +1,18 @@
-import { useState } from 'react';
 import data from '../../../data';
 import { useFormState } from '../../../framework/context/form';
 import getFormValueFromSection from '../../../framework/state/gerFromValueFromSection';
 import getScores from '../../../framework/score/getScores';
 import getSectionState from '../../../framework/state/getSectionState';
 import getFieldLabelFromContentByName from '../../../lib/getFieldLabelFromContentByName';
-import Modal from '../../common/Modal';
 import Accordion from '../../ui/Accordion';
-import Button from '../../ui/Button';
 import Chart from '../../ui/Chart';
 import s from './Report.module.css';
 import cn from 'classnames';
-import { useEmailModal } from '../../../framework/context/emailModal/indext';
+import DownloadReportButton from '../../common/DownloadReportButton';
 interface ReportProps {
   className?: string;
 }
 const Report = ({ className }: ReportProps) => {
-  const { state: isOpenModal, dispatch: isOpenModalDispatch } = useEmailModal();
   const { state: formState } = useFormState();
   const content = data.data.pages.find(
     (page: any) => page.slug === 'report'
@@ -75,11 +71,6 @@ const Report = ({ className }: ReportProps) => {
       field: { name: industryFieldName },
     }),
   });
-
-  const downloadContent = data.data.pages.find(
-    (page: any) => page.slug === 'download-personal-report'
-  )?.content;
-
   const scores = getScores({
     formState,
   });
@@ -95,26 +86,20 @@ const Report = ({ className }: ReportProps) => {
             <li>{role}</li>
             <li>{industry}</li>
           </ul>
-          <h2>{subtitle}</h2>
+          <h2 className={s.h2}>{subtitle}</h2>
           <div dangerouslySetInnerHTML={{ __html: String(summary) }} />
         </div>
         <div className={s.download}>
-          <Button
-            data-html2canvas-ignore="true"
-            className={s.button}
-            onClick={() => {
-              isOpenModalDispatch({ type: 'TOGGLE_MODAL' });
-            }}
-          >
-            {downloadContent?.find((content: any) => content.type === 'cta')
-              ?.content || 'Download Report'}
-          </Button>
+          <DownloadReportButton />
           <Chart data={scores} />
         </div>
       </div>
       <section>
         <Accordion />
       </section>
+      <div className={s.download}>
+        <DownloadReportButton />
+      </div>
     </div>
   );
 };
