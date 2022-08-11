@@ -25,7 +25,12 @@ const EmailReportForm = () => {
         type="button"
         onClick={async (e) => {
           e.preventDefault();
-          isOpenModalDispatch({ type: 'TOGGLE_MODAL' });
+          await new Promise((resolve) =>
+            setTimeout(() => {
+              isOpenModalDispatch({ type: 'TOGGLE_MODAL' });
+              resolve(true);
+            }, 1000)
+          );
           const html2pdf = (await import('html2pdf.js')).default;
           const element = document.getElementById('__next');
           const opt = {
