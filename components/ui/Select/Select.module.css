@@ -14,3 +14,9 @@
   @apply absolute right-0 top-0 bottom-0 pointer-events-none flex items-center px-4 w-[50px] h-[50px] bg-darker text-white;
   content: '▼';
 }
+.labelWrapper {
+  @apply flex;
+}
+.required {
+  @apply text-md-gray opacity-40;
+}

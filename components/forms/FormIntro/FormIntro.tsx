@@ -43,8 +43,9 @@ const FormIntro = ({ className }: FormIntroProps) => {
           return (
             field.type === 'select' && (
               <Select
+                required={true}
                 key={field.name}
-                label={`${field.label}*`}
+                label={`${field.label}`}
                 options={field.options}
                 name={field.name}
                 value={value}

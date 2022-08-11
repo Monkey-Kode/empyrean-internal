@@ -7,6 +7,7 @@ interface SelectProps {
   value: string | number | undefined;
   name: string;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  required?: boolean;
 }
 const Select = ({
   className,
@@ -15,12 +16,16 @@ const Select = ({
   name,
   value,
   onChange,
+  required = false,
 }: SelectProps) => {
   return (
     <div className={cn(className, s.root)}>
-      <label htmlFor={name} className={s.label}>
-        {label}
-      </label>
+      <div className={s.labelWrapper}>
+        <label htmlFor={name} className={s.label}>
+          {label}
+        </label>
+        {required && <span className={s.required}>*</span>}
+      </div>
       <div className={s.selectGroup}>
         <select
           name={name}
