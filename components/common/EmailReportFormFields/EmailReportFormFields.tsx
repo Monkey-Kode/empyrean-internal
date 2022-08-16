@@ -99,9 +99,9 @@ const EmailReportFormFields = ({
         </div>
         <div>
           <Button className={s.button} type="submit" value={'Send'} />
-          <small className={s.small}>{privacy}</small>
         </div>
       </form>
+      <small className={s.small}>{privacy}</small>
     </div>
   );
 };

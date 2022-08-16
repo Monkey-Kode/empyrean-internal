@@ -30,5 +30,5 @@
   @apply text-left justify-start pt-3;
 }
 .small {
-  @apply text-sm block pt-3;
+  @apply text-sm block pt-3 text-left;
 }
