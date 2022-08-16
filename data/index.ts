@@ -403,6 +403,7 @@ const data: any = {
           {
             isOpen: true,
             title: 'Connecting benefits to company culture',
+            title2: 'Connecting benefits to company culture',
             shortTitle: 'Connected to Culture',
             description:
               'Benefits should no longer be regarded as corporate hygiene; they are a critical element in establishing and driving company culture. This section examines the extent to which your organization believes that building a more positive workplace culture is important and that benefits could make a greater contribution to employee attraction, retention, and experience.',
@@ -576,6 +577,8 @@ const data: any = {
           {
             isOpen: false,
             title: 'Getting involved in strategy development & decision-making',
+            title2:
+              'Getting involved in strategy development & decision-making',
             shortTitle: 'Strategy Development',
             description:
               'If benefits have a role to play in delivering an enhanced workplace culture, then it is important that benefits leaders are involved in the HR strategy development impacting <em>workplace</em> culture. This section examines the extent to which benefits leaders are involved in appropriate strategic initiatives and decision-making.',
@@ -779,6 +782,7 @@ const data: any = {
             isOpen: false,
             title:
               'Addressing total wellbeing at the individual level (personalization at scale)',
+            title2: 'Addressing total wellbeing at the individual level',
             shortTitle: 'Total Wellbeing',
             description:
               'It is important that your employees feel that they are treated as individuals rather than impersonally. This section examines the extent to which your benefits are personalized and measures current employee satisfaction with the benefits available.',
@@ -989,6 +993,8 @@ const data: any = {
           {
             isOpen: false,
             title:
+              'Offering a consumer-grade communications & shopping experience',
+            title2:
               'Offering a consumer-grade communications & shopping experience',
             shortTitle: 'Consumer Experience',
             description:
@@ -1237,6 +1243,8 @@ const data: any = {
           {
             isOpen: false,
             title:
+              'Use of data and analytics to drive decision-making and engagement',
+            title2:
               'Use of data and analytics to drive decision-making and engagement',
             shortTitle: 'Data & Analytics',
             description:

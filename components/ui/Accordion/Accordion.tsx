@@ -46,7 +46,7 @@ const Accordion = () => {
         return section?.questions ? (
           <AccordionItem
             key={index}
-            title={`${alphabet[index]}. ${section.title}`}
+            title={`${alphabet[index]}. ${section.title2}`}
             isOpen={true}
           >
             <h4 className={s.h4}>
