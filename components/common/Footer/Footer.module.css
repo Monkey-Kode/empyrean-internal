@@ -22,5 +22,8 @@
 }
 
 .link {
-  @apply cursor-pointer block block hover:text-blue;
+  @apply cursor-pointer block hover:text-blue;
+}
+.logo {
+  @apply w-[202px] mx-auto block max-w-full h-auto mt-7;
 }

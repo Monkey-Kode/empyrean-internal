@@ -41,13 +41,13 @@ const Question = ({
       </div>
       <div className={s.inputWrapper}>
         <div className={s.inputContent}>
-          <datalist className={s.datalist}>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="3">4</option>
-            <option value="5">5</option>
-          </datalist>
+          <ul className={s.datalist}>
+            <li value="1">1</li>
+            <li value="2">2</li>
+            <li value="3">3</li>
+            <li value="3">4</li>
+            <li value="5">5</li>
+          </ul>
           <input
             data-section={sectionIndexState.index}
             data-question={index}

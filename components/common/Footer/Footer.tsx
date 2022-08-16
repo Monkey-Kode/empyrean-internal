@@ -1,6 +1,6 @@
-import LogoIcon from '../../icons/LogoIcon';
 import s from './Footer.module.css';
 import data from '../../../data';
+import Image from 'next/image';
 const Footer = () => {
   const content = data.data.footer;
   const links = content?.content?.filter(
@@ -16,7 +16,15 @@ const Footer = () => {
   return (
     <footer className={s.root}>
       <div className={s.wrap}>
-        <LogoIcon />
+        <figure className={s.logo}>
+          <Image
+            src="/logo-footer.png"
+            alt="logo"
+            width={202}
+            height={42}
+            layout="responsive"
+          />
+        </figure>
         <div className={s.address}>
           <h2>{content.title}</h2>
           {numbers?.map((number: any) => {

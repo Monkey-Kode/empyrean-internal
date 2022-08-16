@@ -51,6 +51,9 @@
 .datalist {
   @apply px-1 flex w-full justify-between select-none mb-5;
 }
+.datalist li {
+  @apply list-none font-bold font-montserrat;
+}
 
 .labels {
   @apply lg:text-lg uppercase w-full flex justify-between font-bold tracking-tighter transform -translate-y-5;
