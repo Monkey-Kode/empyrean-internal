@@ -57,7 +57,7 @@ const Footer = () => {
             </a>
           ))}
         </nav>
-        <div>© EMPYREAN RESEARCH INSTITUTE, {new Date().getUTCFullYear()}</div>
+        <div>© {new Date().getUTCFullYear()} |  Empyrean</div>
       </div>
     </footer>
   );

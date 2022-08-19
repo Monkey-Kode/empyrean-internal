@@ -32,8 +32,8 @@ const FormIntro = ({ className }: FormIntroProps) => {
   return (
     <>
       <div className={cn(s.root, className)}>
-        <p>{content?.description}</p>
         <h2 className={s.preTitle}>{content?.title}</h2>
+        <p>{content?.description}</p>
         {errorMessage && <ErrorMessage message={errorMessage} />}
         {content?.fields?.map((field: any) => {
           const value = getFormValueFromSection({
@@ -84,12 +84,12 @@ const FormIntro = ({ className }: FormIntroProps) => {
         >
           {pageContent?.find((content: any) => content.type === 'cta')?.content}
         </Button>
-        <small className={s.small}>
+        <p className={s.small}>
           {
             pageContent?.find((content: any) => content.type === 'policy')
               ?.content
           }
-        </small>
+        </p>
       </div>
     </>
   );

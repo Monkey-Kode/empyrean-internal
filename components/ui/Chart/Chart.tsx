@@ -1,23 +1,65 @@
 import s from './Chart.module.css';
 import {
   Chart as ChartJS,
-  RadialLinearScale,
-  PointElement,
+  ArcElement,
   LineElement,
+  BarElement,
+  PointElement,
+  BarController,
+  BubbleController,
+  DoughnutController,
+  LineController,
+  PieController,
+  PolarAreaController,
+  RadarController,
+  ScatterController,
+  CategoryScale,
+  LinearScale,
+  LogarithmicScale,
+  RadialLinearScale,
+  TimeScale,
+  TimeSeriesScale,
+  Decimation,
   Filler,
-  Tooltip,
   Legend,
+  Title,
+  Tooltip,
+  SubTitle,
 } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
 import data from '../../../data';
+import {
+  isHighScore,
+  isLowScore,
+  isMediumScore,
+} from '../../../framework/score/calculateScores';
 ChartJS.register(
-  RadialLinearScale,
-  PointElement,
+  ArcElement,
   LineElement,
+  BarElement,
+  PointElement,
+  BarController,
+  BubbleController,
+  DoughnutController,
+  LineController,
+  PieController,
+  PolarAreaController,
+  RadarController,
+  ScatterController,
+  CategoryScale,
+  LinearScale,
+  LogarithmicScale,
+  RadialLinearScale,
+  TimeScale,
+  TimeSeriesScale,
+  Decimation,
   Filler,
+  Legend,
+  Title,
   Tooltip,
-  Legend
+  SubTitle
 );
+
 /** Sample Response
  * section_0:
 fields: Array(5)
@@ -73,9 +115,9 @@ export const defaultData = {
     .sections.map((section: any) => section.shortTitle),
   datasets: [
     {
-      label: 'Score Distribution',
+      label: 'Score',
       data: [18, 25, 13, 69, 39],
-      backgroundColor: 'rgba(193, 221, 230, 0.5)',
+      backgroundColor: 'rgba(221, 237, 84, 0.5)',
       borderColor: '#707070',
       borderWidth: 1,
     },
@@ -84,20 +126,88 @@ export const defaultData = {
 interface ChartProps {
   data: number[];
 }
+
 const Chart = ({ data }: ChartProps) => {
+  let simpleData = data.map((value: number, index: number) => {
+    console.log('value', value);
+    if (isLowScore({ score: value, sectionIndex: index })) {
+      return 1;
+    } else if (isMediumScore({ score: value, sectionIndex: index })) {
+      return 2;
+    } else if (isHighScore({ score: value, sectionIndex: index })) {
+      return 3;
+    }
+  });
+
+  console.log('simpleData', simpleData);
+
   const chartData = {
     ...defaultData,
     datasets: [
       {
         ...defaultData.datasets[0],
-        data,
+        data: simpleData,
       },
     ],
   };
 
   return (
     <div className={s.root}>
-      <Radar data={chartData} />
+      <Radar
+        options={{
+          responsive: true,
+          scales: {
+            title: {
+              display: false,
+            },
+            r: {
+              pointLabels: {
+                display: true,
+                // centerPointLabels: true,
+                font: {
+                  size: 14,
+                },
+              },
+              min: 0,
+              max: 4,
+              ticks: {
+                display: false,
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              titleFont: {
+                size: 12,
+              },
+              callbacks: {
+                label: function (context) {
+                  const value = context.dataset.data[context.dataIndex];
+                  const index = context.dataIndex;
+                  if (
+                    isLowScore({ score: Number(value), sectionIndex: index })
+                  ) {
+                    return 'Low';
+                  } else if (
+                    isMediumScore({ score: Number(value), sectionIndex: index })
+                  ) {
+                    return 'Medium';
+                  } else if (
+                    isHighScore({ score: Number(value), sectionIndex: index })
+                  ) {
+                    return 'High';
+                  }
+                  return '';
+                },
+              },
+            },
+          },
+        }}
+        data={chartData}
+      />
     </div>
   );
 };

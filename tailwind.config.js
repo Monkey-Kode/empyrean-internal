@@ -37,6 +37,9 @@ module.exports = {
         'fira-sans': ['fira-sans', 'sans-serif'],
         'brandon-grotesque': ['brandon-grotesque', 'sans-serif'],
       },
+      fontSize: {
+        '2.5xl': '1.688rem',
+      },
       maxWidth: {
         '8xl': '1440px',
       },

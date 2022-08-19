@@ -7,7 +7,7 @@
 }
 
 .h2 {
-  @apply font-bold text-3xl mb-5;
+  @apply font-bold text-2.5xl mb-5;
 }
 
 .button {

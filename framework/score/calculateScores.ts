@@ -36,6 +36,7 @@ const isLowScore = ({
   const lowScore = getSection({
     sectionIndex,
   })?.lowScore;
+  console.log('lowScore', lowScore);
   return score <= Number(lowScore);
 };
 
@@ -68,7 +69,7 @@ const isHighScore = ({
   const highScore = getSection({
     sectionIndex,
   })?.highScore;
-  return score > Number(mediumScore) && score <= Number(highScore);
+  return score > Number(mediumScore);
 };
 
 const calculateTotalScore = ({}) => {};

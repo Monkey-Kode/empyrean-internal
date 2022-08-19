@@ -26,7 +26,7 @@ const Form = () => {
   const totalScore = getTotalScore(scores);
   const normalizeScoresData = normalizeScores(scores);
   useEffect(() => {
-    titleDispatch({ type: 'SET_TITLE', payload: 'Participate' });
+    titleDispatch({ type: 'SET_TITLE', payload: 'BEGIN ASSESSMENT' });
   }, [titleDispatch]);
 
   console.log('normalize Scores', normalizeScoresData);

@@ -9,7 +9,8 @@ const Section: FC<{
   link: string | undefined;
   tags?: string[];
   logo: (() => JSX.Element) | undefined;
-}> = ({ className, title, content, logo, link, tags }) => (
+  __html: string | undefined;
+}> = ({ className, title, content, logo, link, tags, __html }) => (
   <section className={cn(s.section, s.root, className)}>
     <header className={s.sectionHeader}>
       <h2>{title}</h2>
@@ -19,10 +20,16 @@ const Section: FC<{
         </a>
       )}
     </header>
-    {tags && <TagList tags={tags} />}
-    <div className={s.sectionContent}>
-      <p>{content}</p>
-    </div>
+    {/* {tags && <TagList tags={tags} />} */}
+    {__html && (
+      <div
+        className={s.sectionContent}
+        dangerouslySetInnerHTML={{
+          __html,
+        }}
+      />
+    )}
+    {content}
   </section>
 );
 export default Section;

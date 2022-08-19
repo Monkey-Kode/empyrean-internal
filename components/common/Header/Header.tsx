@@ -22,7 +22,7 @@ const Header = ({ className }: { className?: string }) => {
             <Logo />
           </a>
         </Link>
-        <TopNav />
+        {/* <TopNav /> */}
       </header>
     </div>
   );

@@ -11,9 +11,8 @@ const Main: FC = () => {
     ?.content?.filter((content: any) => content.type === 'section');
   return (
     <main className={s.root}>
-      <h1 className={s.h1}>Impact</h1>
       <Hero />
-      {sections?.map(({ title, content, link, tags }: any) => {
+      {sections?.map(({ title, content, link, tags, __html }: any) => {
         let icon =
           title === 'About Nelson Hall'
             ? LogoNelsoHall
@@ -28,6 +27,7 @@ const Main: FC = () => {
             link={link}
             logo={icon}
             tags={tags}
+            __html={__html}
           />
         );
       })}

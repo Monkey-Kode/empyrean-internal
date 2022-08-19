@@ -15,7 +15,7 @@ h6 {
   @apply font-montserrat uppercase tracking-heading font-bold;
 }
 h2 {
-  @apply text-3xl mb-5;
+  @apply text-2.5xl mb-5;
 }
 main a {
   @apply text-blue hover:text-dark-blue;
