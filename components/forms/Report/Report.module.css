@@ -16,7 +16,7 @@
   @apply list-none;
 }
 .download {
-  @apply text-center py-6 border-t-2 border-blue mt-12 -mx-6;
+  @apply py-6 border-t-2 border-blue mt-12 -mx-6 flex justify-center;
 }
 .small {
   @apply uppercase text-med-gray font-montserrat font-bold;
@@ -28,4 +28,8 @@
 
 .h2 {
   @apply text-2xl font-bold lg:text-3xl;
+}
+
+.chart {
+  @apply my-4;
 }

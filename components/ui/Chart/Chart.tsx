@@ -117,7 +117,7 @@ export const defaultData = {
     {
       label: 'Score',
       data: [18, 25, 13, 69, 39],
-      backgroundColor: 'rgba(221, 237, 84, 0.5)',
+      backgroundColor: 'rgba(221, 237, 84, .75)',
       borderColor: '#707070',
       borderWidth: 1,
     },

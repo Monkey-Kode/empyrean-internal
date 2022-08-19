@@ -29,8 +29,10 @@ const DownloadReportButton = ({ className }: DownloadReportButtonProps) => {
           width={30}
           height={29}
         />
-        {downloadContent?.find((content: any) => content.type === 'cta')
-          ?.content || 'Download Report'}
+        <div>
+          {downloadContent?.find((content: any) => content.type === 'cta')
+            ?.content || 'Download Report'}
+        </div>
       </button>
     </>
   );

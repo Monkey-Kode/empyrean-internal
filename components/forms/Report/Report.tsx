@@ -89,7 +89,7 @@ const Report = ({ className }: ReportProps) => {
           <h2 className={s.h2}>{subtitle}</h2>
           <div dangerouslySetInnerHTML={{ __html: String(summary) }} />
         </div>
-        <div className={s.download}>
+        <div className={s.chart}>
           {/* <DownloadReportButton /> */}
           <Chart data={scores} />
         </div>
