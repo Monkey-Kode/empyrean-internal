@@ -5,8 +5,8 @@
   @apply bg-white rounded px-6 lg:px-16 py-9 mb-10;
 }
 .sectionContent {
-  @apply mt-5 lg:columns-2;
+  @apply mt-5;
 }
 .sectionHeader {
-  @apply lg:flex lg:justify-between;
+  @apply lg:flex lg:justify-between w-full;
 }

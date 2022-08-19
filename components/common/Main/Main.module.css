@@ -8,3 +8,6 @@
 .p {
   @apply pt-8;
 }
+.first > div {
+  @apply lg:columns-2;
+}

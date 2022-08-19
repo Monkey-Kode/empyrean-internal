@@ -1,6 +1,6 @@
 .root {
-  @apply w-full flex justify-between  mx-auto  py-8;
+  @apply w-full flex justify-between  mx-auto  py-8  max-w-8xl;
 }
 .label {
-  @apply text-darkest opacity-40 text-xl lg:text-2xl font-montserrat tracking-widest lg:tracking-heading font-bold hover:text-blue hover:opacity-100 cursor-pointer;
+  @apply text-blue hover:text-gray  text-xl lg:text-2xl font-montserrat tracking-widest lg:tracking-heading font-bold cursor-pointer;
 }

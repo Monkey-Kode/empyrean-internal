@@ -3,7 +3,7 @@
 }
 
 .heading {
-  @apply text-3xl text-white pb-8;
+  @apply text-2xl text-white pb-8;
 }
 
 .sectionTitle {

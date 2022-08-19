@@ -5,6 +5,7 @@ import LogoNelsoHall from '../../icons/LogoNelsoHall';
 import Hero from '../../ui/Hero';
 import Section from '../../ui/Section';
 import s from './Main.module.css';
+import cn from 'classnames';
 const Main: FC = () => {
   const sections = data?.data?.pages
     ?.find((page: any) => page.slug === 'home')
@@ -12,25 +13,45 @@ const Main: FC = () => {
   return (
     <main className={s.root}>
       <Hero />
-      {sections?.map(({ title, content, link, tags, __html }: any) => {
-        let icon =
-          title === 'About Nelson Hall'
-            ? LogoNelsoHall
-            : title === 'About Empyrean'
-            ? LogoIcon
-            : undefined;
-        return (
-          <Section
-            key={title}
-            title={title}
-            content={content}
-            link={link}
-            logo={icon}
-            tags={tags}
-            __html={__html}
-          />
-        );
-      })}
+      {sections?.map(
+        (
+          {
+            title,
+            content,
+            link,
+            tags,
+            __html,
+          }: {
+            title: string;
+            content: string;
+            link: string;
+            tags: string[];
+            __html: string;
+          },
+          index: any
+        ) => {
+          let icon =
+            title === 'Nelson Hall'
+              ? LogoNelsoHall
+              : title === 'Empyrean'
+              ? LogoIcon
+              : undefined;
+          return (
+            <Section
+              className={cn({
+                [s.first]: index === 0,
+              })}
+              key={title}
+              title={title}
+              content={content}
+              link={link}
+              logo={icon}
+              tags={tags}
+              __html={__html}
+            />
+          );
+        }
+      )}
     </main>
   );
 };

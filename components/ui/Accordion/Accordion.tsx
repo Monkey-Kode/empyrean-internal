@@ -44,14 +44,10 @@ const Accordion = () => {
 
         console.log('score', score);
         return section?.questions ? (
-          <AccordionItem
-            key={index}
-            title={`${alphabet[index]}. ${section.title2}`}
-            isOpen={true}
-          >
-            <h4 className={s.h4}>
+          <AccordionItem key={index} title={`${section.title2}`} isOpen={true}>
+            {/* <h4 className={s.h4}>
               Your Result: <span className={s.score}>{level}</span>
-            </h4>
+            </h4> */}
             <div
               dangerouslySetInnerHTML={{
                 __html: String(report?.content),

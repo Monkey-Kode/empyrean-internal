@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import TagList from '../TagList';
+// import TagList from '../Tag/List';
 import s from './Section.module.css';
 import cn from 'classnames';
 const Section: FC<{

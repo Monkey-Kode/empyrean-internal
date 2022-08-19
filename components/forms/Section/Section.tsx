@@ -63,7 +63,7 @@ const Section = ({ length, section, index }: SectionProps) => {
               Section {index + 1} of {length}
             </h3>
             <h2 className={s.title}>{title}</h2>
-            <div
+            <p
               className={s.p}
               dangerouslySetInnerHTML={{
                 __html: description,

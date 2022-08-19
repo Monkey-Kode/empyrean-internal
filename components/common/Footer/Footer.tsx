@@ -23,6 +23,7 @@ const Footer = () => {
             width={202}
             height={42}
             layout="responsive"
+            loading="eager"
           />
         </figure>
         <div className={s.address}>
@@ -57,7 +58,7 @@ const Footer = () => {
             </a>
           ))}
         </nav>
-        <div>© {new Date().getUTCFullYear()} |  Empyrean</div>
+        <div>© {new Date().getUTCFullYear()} | Empyrean</div>
       </div>
     </footer>
   );

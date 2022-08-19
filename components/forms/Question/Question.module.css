@@ -14,14 +14,20 @@
   @apply w-full h-2 bg-mid-gray2 rounded-lg appearance-none cursor-pointer border border-gray;
 } */
 .input {
-  @apply appearance-none w-full bg-mid-gray2 rounded-lg h-3;
+  @apply appearance-none w-full bg-mid-gray2 rounded-lg h-4 border border-gray bg-no-repeat;
   /* background-image: linear-gradient(#d46a6a, #d46a6a); */
-  background-repeat: no-repeat;
 }
 
 .input::-webkit-slider-thumb {
-  @apply appearance-none rounded-full bg-blue h-6 w-6 cursor-pointer ease-in-out  transition-all shadow-xl;
-  box-shadow: #fff 0 0 0 2px;
+  @apply appearance-none rounded-full  h-8 w-8 cursor-pointer ease-in-out  transition-all shadow-[0_9px_14px_rgba(0,0,0,0.29)];
+  background: rgb(16, 101, 222);
+  background: radial-gradient(
+    circle,
+    rgba(16, 101, 222, 1) 0%,
+    rgba(16, 101, 222, 1) 59%,
+    rgba(255, 255, 255, 1) 60%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 
 .input::-webkit-slider-runnable-track {

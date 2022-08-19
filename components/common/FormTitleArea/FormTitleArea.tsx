@@ -19,7 +19,13 @@ const FormTitleArea = () => {
   return pageTitle.text !== '' ? (
     <div className={s.root}>
       <div className={cn('wrap', s.content)}>
-        <h1 className={s.heading}>{pageTitle.text}</h1>
+        {questionIndexState.index === -1 && sectionIndexState.index === -1 ? (
+          <h1 className={s.heading}>{pageTitle.text}</h1>
+        ) : sectionIndexState.index >= 0 && questionIndexState.index !== -1 ? (
+          <h1 className={s.heading}>
+            Section {sectionIndexState.index + 1} of {sections.length}
+          </h1>
+        ) : null}
         {sectionTitle && (
           <h2 className={s.sectionTitle}>
             {/* {' '} */}

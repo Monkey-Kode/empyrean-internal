@@ -10,13 +10,13 @@
 }
 
 .list {
-  @apply ml-0 mb-10 pl-0 font-montserrat text-sm mt-1;
+  @apply ml-0 mb-10 font-montserrat text-sm mt-2 bg-mid-gray2 px-4 py-2;
 }
 .list li {
   @apply list-none;
 }
 .download {
-  @apply text-center py-6 lg:text-right;
+  @apply text-center py-6 border-t-2 border-blue mt-12 -mx-6;
 }
 .small {
   @apply uppercase text-med-gray font-montserrat font-bold;

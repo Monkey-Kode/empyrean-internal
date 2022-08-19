@@ -79,8 +79,8 @@ const Question = ({
             <span className={s.label}>{question.high}</span>
           </div>
         </div>
-        <Navigation />
       </div>
+      <Navigation />
     </div>
   );
 };

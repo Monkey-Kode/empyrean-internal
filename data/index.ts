@@ -130,12 +130,12 @@ const data: any = {
           },
           {
             type: 'section',
-            title: 'About Nelson Hall',
-            link: 'https://www.research.nelson-hall.com',
-            __html: `<p>NelsonHall is the leading global analyst firm dedicated to helping organizations understand the 'art of the possible' in IT and business services. Founded in 1998, and with analysts in the U.S., U.K., and Continental Europe, NelsonHall provides buy-side organizations with detailed, critical information on markets and vendors that helps them make fast and highly informed sourcing decisions. And for vendors, NelsonHall provides deep knowledge of market dynamics and user requirements to help them hone their go-to-market strategies.</p>
-
-            <p>NelsonHall's research is based on rigorous, all-original research, and is widely respected for the quality, depth and insight of its analysis. We work closely with our clients to create a value-based relationship founded on our unrivaled knowledge of ITS and BPS markets, acting as a trusted advisor, providing answers, and making business sense of the complexity and challenges faced by both service buyers and service providers across global services markets.</p>
-            `,
+            title: 'Empyrean',
+            link: 'https://goempyrean.com',
+            __html: `<p>
+            Since 2006, Empyrean has provided employers of varying size, industry, and benefit plan complexity with the innovative technology and best in class service necessary to accelerate their benefits strategies and bring their benefit programs to life.
+            Empyrean’s platform and services were designed to create connected employee benefit experiences that enrich lives, strengthen employer brands, and improve workplace cultures.
+        </p>`,
             content: ``,
             cta: {
               text: '',
@@ -150,12 +150,12 @@ const data: any = {
           },
           {
             type: 'section',
-            title: 'About Empyrean',
-            link: 'https://goempyrean.com',
-            __html: `<p>
-            Since 2006, Empyrean has provided employers of varying size, industry, and benefit plan complexity with the innovative technology and best in class service necessary to accelerate their benefits strategies and bring their benefit programs to life.
-            Empyrean’s platform and services were designed to create connected employee benefit experiences that enrich lives, strengthen employer brands, and improve workplace cultures.
-        </p>`,
+            title: 'Nelson Hall',
+            link: 'https://www.research.nelson-hall.com',
+            __html: `<p>NelsonHall is the leading global analyst firm dedicated to helping organizations understand the 'art of the possible' in IT and business services. Founded in 1998, and with analysts in the U.S., U.K., and Continental Europe, NelsonHall provides buy-side organizations with detailed, critical information on markets and vendors that helps them make fast and highly informed sourcing decisions. And for vendors, NelsonHall provides deep knowledge of market dynamics and user requirements to help them hone their go-to-market strategies.</p>
+
+            <p>NelsonHall's research is based on rigorous, all-original research, and is widely respected for the quality, depth and insight of its analysis. We work closely with our clients to create a value-based relationship founded on our unrivaled knowledge of ITS and BPS markets, acting as a trusted advisor, providing answers, and making business sense of the complexity and challenges faced by both service buyers and service providers across global services markets.</p>
+            `,
             content: ``,
             cta: {
               text: '',
@@ -441,13 +441,13 @@ const data: any = {
                 text: 'To what extent is building a more positive workplace culture a critical element within your HR strategy',
                 name: 'culture',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
               {
                 text: 'To what extent is building a more positive workplace culture a critical element with your benefits strategy',
                 name: 'culture-benefits',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
               {
                 text: 'How important is that your benefits and benefits operations make a greater contribution to employee attraction',
@@ -616,31 +616,31 @@ const data: any = {
                 text: 'To what extent are you as benefits leader currently involved in delivering upon strategic initiatives',
                 name: 'strategy',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
               {
                 text: 'To what extent are you as benefits leader currently involved in HR strategy development',
                 name: 'strategy-hr',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
               {
                 text: 'To what extent are you as benefits leader currently involved in talent retention strategies',
                 name: 'strategy-talent',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
               {
                 text: 'To what extent are you as the benefits leader involved in benefits evaluation and selection',
                 name: 'strategy-benefits',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
               {
                 text: 'To what extent is your benefits and HR strategy aligned with organizational goals',
                 name: 'strategy-aligned',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
             ],
             results: [
@@ -820,7 +820,7 @@ const data: any = {
                 text: 'To what extent does your current benefits technology provide personalized recommendations to employees that drive them towards the most appropriate benefits packages for their individual situation',
                 name: 'personalization',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
               {
                 text: 'How satisfied are your employees with their benefits experience for physical health support',
@@ -1033,13 +1033,13 @@ const data: any = {
                 text: 'To what extent has your benefits operations achieved high levels of automation & workflows minimizing both the user "clicks" and the number of user interfaces and ensuring effective data flows from enrollment to claims',
                 name: 'automation',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
               {
                 text: 'To what extent does your current benefits technology alert employees to potential wellness opportunities such as telehealth, disease management, and mental health support',
                 name: 'alerting',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
               {
                 text: 'How effective is your overall benefits communication',
@@ -1051,13 +1051,13 @@ const data: any = {
                 text: 'To what extent are your employees adopting the right-fit benefits plan you expected',
                 name: 'adoption',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
               {
                 text: 'How well do you believe your employees understand how to shop for and find value in your benefits offerings',
                 name: 'offerings',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
             ],
             results: [
@@ -1283,25 +1283,25 @@ const data: any = {
                 text: 'How often does your organization measure employee benefits satisfaction and engagement',
                 name: 'satisfaction',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
               {
                 text: 'To what extent are you as benefits leader involved in employee satisfaction surveys',
                 name: 'satisfaction-involved',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
               {
                 text: 'To what extent does your current benefits administration platform provide analytics to understand and optimize benefits program performance',
                 name: 'analytics',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
               {
                 text: 'To what extent does your current benefits administration platform provide analytics to assess plan providers and plan quality',
                 name: 'analytics-providers',
                 low: 'Not at all',
-                high: 'Very extensively',
+                high: 'Very extensive',
               },
             ],
             results: [
