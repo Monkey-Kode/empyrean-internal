@@ -32,20 +32,21 @@ const EmailReportForm = () => {
             }, 0)
           );
           await new Promise(async (resolve) => {
-            const html2pdf = (await import('html2pdf.js')).default;
+              // const html2pdf = (await import('html2pdf.js')).default;
             setTimeout(() => {
-              const element = document.getElementById('__next');
-              const opt = {
-                filename: 'report.pdf',
-                pagebreak: {
-                  mode: ['avoid-all', 'css', 'legacy'],
-                },
-                jsPDF: {
-                  orientation: 'landscape',
-                },
-              };
-              html2pdf().set(opt).from(element).save();
-              resolve(true);
+              // const element = document.getElementById('__next');
+              // const opt = {
+              //   filename: 'report.pdf',
+              //   pagebreak: {
+              //     mode: ['avoid-all', 'css', 'legacy'],
+              //   },
+              //   jsPDF: {
+              //     orientation: 'portrait',
+              //   },
+              // };
+              // html2pdf().set(opt).from(element).save();
+              // resolve(true);
+              window.print();
             }, 0);
           });
         }}

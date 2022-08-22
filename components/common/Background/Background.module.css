@@ -1,6 +1,6 @@
 .root {
-  @apply absolute -right-20 top-0 z-0;
+  @apply absolute right-0 top-0 lg:top-20 z-0 left-0 transform overflow-hidden w-auto flex justify-end print:hidden;
 }
 .bg {
-  @apply w-[711px] h-[711px]  bg-transparent border-black opacity-[3%] -z-20 rounded-full border-[175px];
+  @apply min-w-[711px] h-[711px] bg-transparent border-black opacity-[3%] -z-20 rounded-full border-[175px] transform translate-x-1/2 lg:translate-x-0;
 }
