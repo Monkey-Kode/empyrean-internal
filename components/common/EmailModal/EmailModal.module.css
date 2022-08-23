@@ -40,7 +40,7 @@
 }
 
 .button {
-  @apply inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2  text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2  sm:text-sm;
+  @apply inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2  text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2  sm:text-sm mb-0;
 }
 
 .enter {
@@ -81,7 +81,7 @@
   @apply block;
 }
 .buttonWrapper {
-  @apply flex justify-end;
+  @apply flex justify-end absolute right-2 top-2;
 }
 .button {
   @apply inline-block w-auto bg-gray mb-6;

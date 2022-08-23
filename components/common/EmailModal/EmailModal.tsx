@@ -5,6 +5,7 @@ import EmailReportForm from '../EmailReportForm';
 import s from './EmailModal.module.css';
 import cn from 'classnames';
 import Button from '../../ui/Button';
+import PardotForm from '../../forms/PardotForm';
 const EmailModal = () => {
   const { state, dispatch } = useEmailModal();
   console.log('state', state);
@@ -63,7 +64,8 @@ const EmailModal = () => {
                           X
                         </Button>
                       </div>
-                      <EmailReportForm />
+                      <PardotForm />
+                      {/* <EmailReportForm /> */}
                     </div>
                   </div>
                 </div>

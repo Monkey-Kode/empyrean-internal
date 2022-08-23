@@ -27,7 +27,7 @@ const Button: FC<ButtonProps> = ({
   if (type === 'link' && href) {
     return (
       <Link href={href}>
-        <a className={cn(s.button, className)} onClick={onClick} {...props}>
+        <a className={cn(className, s.button)} onClick={onClick} {...props}>
           {withIcon && (
             <span className={s.icon}>
               <Eye />

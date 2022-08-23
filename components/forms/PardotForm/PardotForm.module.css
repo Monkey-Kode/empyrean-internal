@@ -1,0 +1,6 @@
+.wrap {
+  @apply flex items-center w-full h-full;
+}
+.iframe {
+  @apply border-none h-full w-full aspect-video;
+}
