@@ -1,6 +1,9 @@
 .wrap {
-  @apply flex items-center w-full h-full;
+  @apply w-full h-full flex-col flex justify-start items-center;
 }
 .iframe {
-  @apply border-none h-full w-full aspect-video;
+  @apply border-none h-full w-full aspect-video flex-1;
+}
+.button {
+  @apply flex-1;
 }
