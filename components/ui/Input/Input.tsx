@@ -5,6 +5,7 @@ const Input = ({ label, ...props }: { label: string; [key: string]: any }) => {
     <div className={s.root}>
       <label className={s.label} htmlFor={props.id}>
         {label}
+        {props.required && '*'}
       </label>
       <input className={cn(s.input, props.className)} {...props} />
     </div>
