@@ -6,12 +6,12 @@ import ErrorMessage from '../../ui/ErrorMessage';
 import Input from '../../ui/Input';
 import SuccessMessage from '../../ui/SuccessMessage';
 import s from './PardotForm.module.css';
-interface FormFields {
+export interface FormFields {
   [key: string]: {
     value: string;
   };
 }
-interface FormValues {
+export interface FormValues {
   [key: string]: string;
 }
 const PardotForm = () => {
@@ -25,82 +25,88 @@ const PardotForm = () => {
     (content: any) => content.type === 'text'
   )?.content;
 
+  const handleReport = async () => {
+    console.log('handleReport');
+
+    await new Promise((resolve) =>
+      setTimeout(() => {
+        isOpenModalDispatch({ type: 'TOGGLE_MODAL' });
+        resolve(true);
+      }, 0)
+    );
+    await new Promise(async (resolve) => {
+      // const html2pdf = (await import('html2pdf.js')).default;
+      setTimeout(() => {
+        // const element = document.getElementById('__next');
+        // const opt = {
+        //   filename: 'report.pdf',
+        //   pagebreak: {
+        //     mode: ['avoid-all', 'css', 'legacy'],
+        //   },
+        //   jsPDF: {
+        //     orientation: 'portrait',
+        //   },
+        // };
+        // html2pdf().set(opt).from(element).save();
+        // resolve(true);
+        window.print();
+      }, 0);
+    });
+  };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement & FormFields;
-
     const formData = new FormData(form);
     const formDataJson: FormValues = {
       first_name: '',
       last_name: '',
       email: '',
       company: '',
-      maturity_assessment_score: '',
+      maturity_assessment_score: '0',
     };
     formData.forEach((value, key) => {
       if (typeof value === 'string') {
         formDataJson[key] = value;
       }
     });
-    console.log('formDataJson', formDataJson);
-    const formBody = Object.keys(formDataJson)
-      .map(
-        (key) =>
-          encodeURIComponent(key) + '=' + encodeURIComponent(formDataJson[key])
-      )
-      .join('&');
-
-    console.log('formBody', formBody);
-    console.log('form.action', form.action);
-    const response = await fetch(form.action, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-        'Access-Control-Allow-Origin': '*',
-      },
-      body: formBody,
-    });
-    const data = await response.json();
-    if (data.success) {
-      setSuccess(true);
-      await new Promise((resolve) =>
-        setTimeout(() => {
-          isOpenModalDispatch({ type: 'TOGGLE_MODAL' });
-          resolve(true);
-        }, 0)
-      );
-      await new Promise(async (resolve) => {
-        // const html2pdf = (await import('html2pdf.js')).default;
-        setTimeout(() => {
-          // const element = document.getElementById('__next');
-          // const opt = {
-          //   filename: 'report.pdf',
-          //   pagebreak: {
-          //     mode: ['avoid-all', 'css', 'legacy'],
-          //   },
-          //   jsPDF: {
-          //     orientation: 'portrait',
-          //   },
-          // };
-          // html2pdf().set(opt).from(element).save();
-          // resolve(true);
-          window.print();
-        }, 0);
+    try {
+      const response = await fetch('/api/pardot', {
+        method: 'POST',
+        body: JSON.stringify(formDataJson),
       });
-    } else {
-      setErrorMessage(data.message);
+      const data = await response.json();
+      console.log('data', data);
+
+      if (data.success) {
+        setSuccess(true);
+        await handleReport();
+      }
+    } catch (error) {
+      console.error('error', error);
     }
   };
   return success ? (
     <>
-      <SuccessMessage message="Thank you for submitting your information. Download your report by clicking on the button below." />
+      <SuccessMessage message="Thank you for submitting your information. " />
+      <Button
+        className={s.button}
+        type="submit"
+        value={'Print Report'}
+        onClick={async (e) => {
+          e.preventDefault();
+          console.log('hello');
+          await handleReport();
+        }}
+      />
     </>
   ) : (
     <div className={s.wrap}>
       <p className={s.p}>{description}</p>
       {errorMessage && <ErrorMessage message={errorMessage} />}
       <form
-        action="http://info.goempyrean.com/l/71942/2022-03-04/b54xmp"
+        acceptCharset="UTF-8"
+        action="https://info.goempyrean.com/l/71942/2022-03-04/b54xmp"
         method="post"
         id="pardot-form"
         className={s.form}

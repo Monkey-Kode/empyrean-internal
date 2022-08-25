@@ -54,7 +54,7 @@ const Button: FC<ButtonProps> = ({
         className={cn(className, s.button)}
         type="submit"
         value={value}
-        onSubmit={onClick}
+        onClick={onClick}
         {...props}
       />
     );
