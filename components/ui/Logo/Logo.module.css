@@ -2,7 +2,7 @@
   @apply py-4 pr-5 lg:px-5 flex items-center;
 }
 .circle {
-  @apply border-8  rounded-full w-[27px] h-[27px] block mr-2;
+  @apply border-8  rounded-full w-[27px] h-[27px] block mr-2 print:hidden;
 }
 .black {
   @apply border-black;

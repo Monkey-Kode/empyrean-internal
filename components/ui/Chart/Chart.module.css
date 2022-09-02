@@ -1,3 +1,6 @@
 .root {
-  /* @apply my-4; */
+  @apply h-auto;
+}
+.root canvas {
+  @apply max-w-full h-auto print:max-h-[375px];
 }

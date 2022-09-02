@@ -80,6 +80,7 @@ const Report = ({ className }: ReportProps) => {
       <div className={s.topArea}>
         <div className={s.topAreaLeft}>
           <h1 className={s.mainHeading}>{title}</h1>
+          <h1 className={s.printHeading}>Your Report</h1>
           <small className={s.small}>{subText}</small>
           <ul className={s.list}>
             <li>{companySize}</li>
@@ -90,7 +91,6 @@ const Report = ({ className }: ReportProps) => {
           <div dangerouslySetInnerHTML={{ __html: String(summary) }} />
         </div>
         <div className={s.chart}>
-          {/* <DownloadReportButton /> */}
           <Chart data={scores} />
         </div>
       </div>

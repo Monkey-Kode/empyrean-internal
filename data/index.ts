@@ -259,7 +259,7 @@ const data: any = {
           },
           {
             tyrepe: 'cta',
-            content: 'Download Report',
+            content: 'Get Report',
           },
         ],
       },

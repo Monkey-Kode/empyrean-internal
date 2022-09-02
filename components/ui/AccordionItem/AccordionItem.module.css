@@ -2,13 +2,13 @@
   @apply overflow-hidden transition-all;
 }
 .accordionItemTitle {
-  @apply font-bold font-montserrat text-dark tracking-wider text-xl lg:text-3xl cursor-pointer z-20 relative bg-lighter-gray py-6 border-t border-b border-light-gray;
+  @apply font-bold font-montserrat text-dark tracking-wider print:text-sm lg:print:text-lg text-xl lg:text-3xl cursor-pointer z-20 relative bg-lighter-gray print:py-3 py-6 border-t border-b border-light-gray;
 }
 .accordionItemContent {
   @apply pb-6 mt-6 bg-lighter-gray overflow-hidden z-10 relative;
 }
 .accordionItemContent p {
-  @apply leading-loose;
+  @apply leading-loose print:text-xs;
 }
 
 .accordionItemContent li {

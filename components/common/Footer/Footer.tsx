@@ -16,16 +16,18 @@ const Footer = () => {
   return (
     <footer className={s.root}>
       <div className={s.wrap}>
-        <figure className={s.logo}>
-          <Image
-            src="/logo-footer.png"
-            alt="logo"
-            width={202}
-            height={42}
-            layout="responsive"
-            loading="eager"
-          />
-        </figure>
+        <div className={s.logoWrap}>
+          <figure className={s.logo}>
+            <Image
+              src="/logo-footer.png"
+              alt="logo"
+              width={202}
+              height={42}
+              layout="responsive"
+              loading="eager"
+            />
+          </figure>
+        </div>
         <div className={s.address}>
           <h2>{content.title}</h2>
           {numbers?.map((number: any) => {
@@ -58,7 +60,9 @@ const Footer = () => {
             </a>
           ))}
         </nav>
-        <div>© {new Date().getUTCFullYear()} | Empyrean</div>
+        <div className={s.copyright}>
+          © {new Date().getUTCFullYear()} | Empyrean
+        </div>
       </div>
     </footer>
   );
