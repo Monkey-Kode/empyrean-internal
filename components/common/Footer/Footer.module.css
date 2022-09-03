@@ -12,7 +12,7 @@
 }
 
 .address * {
-  @apply normal-case;
+  @apply normal-case print:text-xs;
 }
 .nav {
   @apply columns-2 col-span-2 py-7 print:hidden;
@@ -31,5 +31,5 @@
   @apply w-[202px] max-w-[202px] mx-auto block h-auto mt-7 print:m-0;
 }
 .copyright {
-  @apply print:w-full print:basis-full print:flex-grow;
+  @apply print:w-full print:basis-full print:flex-grow print:text-xs;
 }

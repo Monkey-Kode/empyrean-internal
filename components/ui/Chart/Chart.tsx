@@ -25,14 +25,23 @@ import {
   Title,
   Tooltip,
   SubTitle,
+  CoreChartOptions,
+  ElementChartOptions,
+  PluginChartOptions,
+  DatasetChartOptions,
+  ScaleChartOptions,
+  LineControllerChartOptions,
+  ChartData,
 } from 'chart.js';
-import { Radar } from 'react-chartjs-2';
 import data from '../../../data';
 import {
   isHighScore,
   isLowScore,
   isMediumScore,
 } from '../../../framework/score/calculateScores';
+import ChartWrapper from '../ChartWrapper';
+import { _DeepPartialObject } from 'chart.js/types/utils';
+
 ChartJS.register(
   ArcElement,
   LineElement,
@@ -108,7 +117,14 @@ fields: Array(4)
 length: 4
 weight: 3
 */
-
+export type ChartRadarOptions = _DeepPartialObject<
+  CoreChartOptions<'radar'> &
+    ElementChartOptions<'radar'> &
+    PluginChartOptions<'radar'> &
+    DatasetChartOptions<'radar'> &
+    ScaleChartOptions<'radar'> &
+    LineControllerChartOptions
+>;
 export const defaultData = {
   labels: data.data.forms
     .find((page: any) => page.slug === 'assessment')
@@ -125,9 +141,9 @@ export const defaultData = {
 };
 interface ChartProps {
   data: number[];
+  printEnabled?: boolean;
 }
-
-const Chart = ({ data }: ChartProps) => {
+const Chart = ({ data, printEnabled = false }: ChartProps) => {
   let simpleData = data.map((value: number, index: number) => {
     console.log('value', value);
     if (isLowScore({ score: value, sectionIndex: index })) {
@@ -137,11 +153,9 @@ const Chart = ({ data }: ChartProps) => {
     } else if (isHighScore({ score: value, sectionIndex: index })) {
       return 3;
     }
+    return 0;
   });
-
-  console.log('simpleData', simpleData);
-
-  const chartData = {
+  const chartData: ChartData<'radar', (number | null)[], unknown> = {
     ...defaultData,
     datasets: [
       {
@@ -150,64 +164,89 @@ const Chart = ({ data }: ChartProps) => {
       },
     ],
   };
+  const options: ChartRadarOptions = {
+    responsive: true,
+    scales: {
+      title: {
+        display: false,
+      },
+      r: {
+        pointLabels: {
+          display: true,
+          // centerPointLabels: true,
+          font: {
+            size: 14,
+          },
+        },
+        min: 0,
+        max: 4,
+        ticks: {
+          display: false,
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        titleFont: {
+          size: 12,
+        },
+        callbacks: {
+          label: function (context) {
+            const value = context.dataset.data[context.dataIndex];
+            const index = context.dataIndex;
+            if (isLowScore({ score: Number(value), sectionIndex: index })) {
+              return 'Low';
+            } else if (
+              isMediumScore({ score: Number(value), sectionIndex: index })
+            ) {
+              return 'Medium';
+            } else if (
+              isHighScore({ score: Number(value), sectionIndex: index })
+            ) {
+              return 'High';
+            }
+            return '';
+          },
+        },
+      },
+    },
+  };
 
   return (
     <div className={s.root}>
-      <Radar
-        options={{
-          responsive: true,
-          scales: {
-            title: {
-              display: false,
-            },
-            r: {
-              pointLabels: {
-                display: true,
-                // centerPointLabels: true,
-                font: {
-                  size: 14,
-                },
-              },
-              min: 0,
-              max: 4,
-              ticks: {
-                display: false,
-              },
-            },
-          },
-          plugins: {
-            legend: {
-              display: false,
-            },
-            tooltip: {
-              titleFont: {
-                size: 12,
-              },
-              callbacks: {
-                label: function (context) {
-                  const value = context.dataset.data[context.dataIndex];
-                  const index = context.dataIndex;
-                  if (
-                    isLowScore({ score: Number(value), sectionIndex: index })
-                  ) {
-                    return 'Low';
-                  } else if (
-                    isMediumScore({ score: Number(value), sectionIndex: index })
-                  ) {
-                    return 'Medium';
-                  } else if (
-                    isHighScore({ score: Number(value), sectionIndex: index })
-                  ) {
-                    return 'High';
-                  }
-                  return '';
-                },
-              },
-            },
-          },
-        }}
-        data={chartData}
+      <ChartWrapper
+        className={s.chart}
+        options={options}
+        chartData={chartData}
       />
+      {printEnabled && (
+        <ChartWrapper
+          className={s.chartPrint}
+          options={{
+            ...options,
+            scales: {
+              ...options.scales,
+              r: {
+                ...options?.scales?.r,
+                pointLabels: {
+                  ...options?.scales?.r?.pointLabels,
+                  font: {
+                    ...options?.scales?.r?.pointLabels?.font,
+                    size: 6,
+                  },
+                },
+              },
+            },
+          }}
+          chartData={{
+            ...chartData,
+            // labels: ['', '', '', '', ''],
+          }}
+        />
+      )}
     </div>
   );
 };

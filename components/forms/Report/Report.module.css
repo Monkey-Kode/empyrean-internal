@@ -25,10 +25,13 @@
 }
 
 .topAreaLeft {
-  @apply lg:pr-16 print:pr-12 print:lg:pr-12 print:max-w-[66%];
+  @apply lg:pr-16 print:pr-12 print:lg:pr-12;
 }
 .chart {
-  @apply my-4  max-w-full print:min-w-[33%] print:mt-24;
+  @apply my-4 max-w-full  print:mt-24;
+}
+.chart canvas {
+  @apply min-w-[300px];
 }
 
 .h2 {

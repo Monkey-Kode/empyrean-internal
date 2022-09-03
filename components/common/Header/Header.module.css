@@ -9,7 +9,7 @@
   @apply hover:text-black;
 }
 .blue {
-  @apply bg-blue text-white;
+  @apply bg-blue text-white print:bg-lighter-gray;
 }
 .blue a {
   @apply text-white hover:text-black;

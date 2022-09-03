@@ -4,3 +4,9 @@
 .root canvas {
   @apply max-w-full h-auto print:max-h-[375px];
 }
+.chart {
+  @apply print:hidden;
+}
+.chartPrint {
+  @apply hidden print:block;
+}

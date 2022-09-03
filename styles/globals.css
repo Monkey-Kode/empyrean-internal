@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply font-fira-sans text-dark bg-lighter-gray select-none w-full overflow-x-hidden min-w-full min-h-full break-words print:pl-4 print:pr-4;
+  @apply font-fira-sans text-dark bg-lighter-gray select-none w-full overflow-x-hidden min-w-full min-h-full break-words;
 }
 h1,
 h2,
@@ -45,5 +45,5 @@ main {
 
 @page {
   size: auto;
-  margin: 0;
+  margin: 1em;
 }
