@@ -80,7 +80,7 @@ const PardotForm = () => {
 
       if (data.success) {
         setSuccess(true);
-        await handleReport();
+        // await handleReport();
       }
     } catch (error) {
       console.error('error', error);
