@@ -7,7 +7,6 @@ import {
 } from 'react';
 import data from '../../../data';
 import { useQuestionIndex } from '../../../framework/context/question';
-
 import { useSectionIndex } from '../../../framework/context/section';
 import gotoNextQuestion from '../../../framework/state/gotoNextQuestion';
 import gotoPrevQuestion from '../../../framework/state/gotoPrevQuestion';
@@ -84,6 +83,11 @@ const Navigation = () => {
       <button className={s.label} onClick={handlePrevClick}>
         {`<<`} PREV
       </button>
+      {questionIndexState.index !== -1 && (
+        <small className={s.pagination}>
+          SECTION {sectionIndexState.index + 1} of {sections?.length}
+        </small>
+      )}
       {sections &&
       questions &&
       sectionIndexState.index === sections?.length - 1 &&

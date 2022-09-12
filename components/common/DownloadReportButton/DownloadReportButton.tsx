@@ -31,7 +31,7 @@ const DownloadReportButton = ({ className }: DownloadReportButtonProps) => {
         />
         <div>
           {downloadContent?.find((content: any) => content.type === 'cta')
-            ?.content || 'Download Report'}
+            ?.content || 'Get Report'}
         </div>
       </button>
     </>

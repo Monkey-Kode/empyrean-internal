@@ -18,7 +18,7 @@
   @apply pb-20;
 }
 .navigationWrap {
-  @apply max-w-6xl mx-auto;
+  @apply max-w-6xl mx-auto mt-6;
 }
 .question {
   @apply hidden;

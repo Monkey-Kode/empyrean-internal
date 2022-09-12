@@ -3,13 +3,13 @@
 }
 
 .heading {
-  @apply text-2xl text-white pb-8;
+  @apply text-2xl text-white pb-0;
 }
 
 .sectionTitle {
-  @apply text-base lg:text-lg text-white uppercase text-right lg:max-w-[50%];
+  @apply text-base lg:text-lg text-white uppercase lg:text-right lg:max-w-[50%] mb-0 text-left pt-3 lg:pt-0;
 }
 
 .content {
-  @apply lg:flex lg:justify-between;
+  @apply flex flex-col lg:flex-row justify-between lg:items-end;
 }

@@ -1,5 +1,5 @@
 .root {
-  @apply relative  py-20 text-black z-30;
+  @apply relative  pt-9 pb-0 text-black z-30 max-w-7xl mx-auto;
 }
 .content {
   @apply max-w-6xl mx-auto px-4;
@@ -70,4 +70,8 @@
 /* } */
 .label:last-of-type {
   @apply text-right;
+}
+
+.h3 {
+  @apply text-2xl;
 }

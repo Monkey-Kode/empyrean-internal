@@ -36,7 +36,7 @@ const Question = ({
   return (
     <div className={s.root}>
       <div className={s.content}>
-        <h3>Question {index + 1}</h3>
+        <h3 className={s.h3}>Question {index + 1}</h3>
         <p className={s.question}>{question.text}?</p>
       </div>
       <div className={s.inputWrapper}>
