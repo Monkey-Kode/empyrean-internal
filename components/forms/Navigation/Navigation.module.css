@@ -1,5 +1,5 @@
 .root {
-  @apply w-full flex justify-between items-center  lg:items-end mx-auto  pb-8  max-w-8xl px-3 lg:px-10;
+  @apply w-full flex justify-between items-center lg:items-end mx-auto lg:pb-0 max-w-8xl px-3 lg:px-10;
 }
 .label {
   @apply text-blue hover:text-gray text-xl lg:text-2xl font-montserrat tracking-widest lg:tracking-heading font-bold cursor-pointer;

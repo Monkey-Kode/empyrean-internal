@@ -6,6 +6,7 @@ import getSectionState from '../../../framework/state/getSectionState';
 import Navigation from '../Navigation';
 import { Question } from '../Questions/Questions';
 import s from './Question.module.css';
+import cn from 'classnames';
 export interface QuestionInterface {
   text: string;
   name: string;
@@ -75,8 +76,19 @@ const Question = ({
             - from 1 to 5
           </small>
           <div className={s.labels}>
-            <span className={s.label}>{question.low}</span>
-            <span className={s.label}>{question.high}</span>
+            <span
+              className={cn(s.label, {
+                [s.labelShort]: question.low.length < 20,
+                [s.labelLong]: question.low.length >= 20,
+              })}
+            >
+              {question.low}
+              {/* {question.low.length} */}
+            </span>
+            <span className={cn(s.label, s.labelLong)}>
+              {question.high}
+              {/* {question.high.length} */}
+            </span>
           </div>
         </div>
       </div>

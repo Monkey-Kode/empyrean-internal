@@ -1,5 +1,5 @@
 .root {
-  @apply bg-blue pt-8 pb-4 lg:py-11 z-40 relative;
+  @apply bg-blue pt-8 pb-4 lg:pt-11 lg:pb-6 z-40 relative;
 }
 
 .heading {
@@ -7,7 +7,7 @@
 }
 
 .sectionTitle {
-  @apply text-base lg:text-lg text-white uppercase lg:text-right lg:max-w-[50%] mb-0 text-left pt-3 lg:pt-0;
+  @apply text-base text-white uppercase lg:max-w-[50%] mb-0 text-left pt-3 lg:pt-0 lg:pl-8;
 }
 
 .content {

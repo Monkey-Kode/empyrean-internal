@@ -26,13 +26,7 @@ const FormTitleArea = () => {
             Section {sectionIndexState.index + 1} of {sections.length}
           </h1>
         ) : null}
-        {sectionTitle && (
-          <h2 className={s.sectionTitle}>
-            {/* {' '} */}
-            {/* {sectionIndexState.index + 1}.  */}
-            {sectionTitle}
-          </h2>
-        )}
+        {sectionTitle && <h2 className={s.sectionTitle}>{sectionTitle}</h2>}
       </div>
     </div>
   ) : null;

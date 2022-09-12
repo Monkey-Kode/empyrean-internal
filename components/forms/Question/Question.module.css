@@ -8,7 +8,7 @@
   @apply text-xl lg:text-3xl text-gray2 pt-8 leading-snug;
 }
 .inputWrapper {
-  @apply bg-white pt-12 px-5 lg:px-12 max-w-8xl mx-auto my-12;
+  @apply bg-white pt-12 px-5 lg:px-12 max-w-8xl mx-auto mt-8 mb-6;
 }
 /* .input {
   @apply w-full h-2 bg-mid-gray2 rounded-lg appearance-none cursor-pointer border border-gray;
@@ -49,7 +49,7 @@
   @apply max-w-6xl mx-auto;
 }
 .small {
-  @apply text-center text-darkest opacity-40 font-bold font-montserrat w-full block my-6;
+  @apply text-center text-darkest opacity-40 font-bold font-montserrat w-full block my-6 lg:mt-12;
 }
 .smallUppercase {
   @apply uppercase;
@@ -62,12 +62,18 @@
 }
 
 .labels {
-  @apply lg:text-lg uppercase w-full flex justify-between font-bold tracking-tighter transform -translate-y-5;
+  @apply lg:text-lg uppercase w-full flex justify-between font-bold tracking-tighter transform -translate-y-5 lg:-translate-y-20;
 }
 
-/* .label:first-of-type { */
-/* @apply max-w-[100px]; */
-/* } */
+.labelShort {
+  @apply max-w-[8ch];
+}
+.labelLong {
+  @apply max-w-[14ch];
+}
+/* .label:first-of-type {
+  @apply max-w-[12ch];
+} */
 .label:last-of-type {
   @apply text-right;
 }
