@@ -8,7 +8,7 @@
   @apply w-full;
 }
 .button {
-  @apply flex-1;
+  @apply flex-1 print:hidden mb-10 border-2 px-4 py-2 border-blue rounded-xl text-blue uppercase font-montserrat font-bold flex justify-center items-center mx-auto;
 }
 .p {
   @apply leading-normal text-left pb-7;
@@ -44,4 +44,7 @@
   grid-column: 1/-1;
   grid-row: 4/5;
   @apply text-left justify-start pt-3;
+}
+.printPage {
+  @apply px-6 pt-14 pb-4;
 }

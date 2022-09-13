@@ -6,6 +6,7 @@ import ErrorMessage from '../../ui/ErrorMessage';
 import Input from '../../ui/Input';
 import SuccessMessage from '../../ui/SuccessMessage';
 import s from './PardotForm.module.css';
+import Image from 'next/image';
 export interface FormFields {
   [key: string]: {
     value: string;
@@ -87,19 +88,25 @@ const PardotForm = () => {
     }
   };
   return success ? (
-    <>
-      <SuccessMessage message="Thank you for submitting your information. " />
-      <Button
+    <div className={s.printPage}>
+      <SuccessMessage message="Thanks! Your custom Benefits Maturity Assessment is ready. Click below to print a hard copy, or choose the “Save as PDF” option in your print dialogue window to download a copy." />
+      <button
         className={s.button}
-        type="submit"
-        value={'Print Report'}
         onClick={async (e) => {
           e.preventDefault();
-          console.log('hello');
           await handleReport();
         }}
-      />
-    </>
+      >
+        <Image
+          alt="Download Personal Report"
+          src="/images/download.jpg"
+          loading="eager"
+          width={30}
+          height={29}
+        />
+        <div>GET Report</div>
+      </button>
+    </div>
   ) : (
     <div className={s.wrap}>
       <p className={s.p}>{description}</p>
