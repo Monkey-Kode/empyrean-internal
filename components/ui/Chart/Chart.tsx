@@ -141,9 +141,12 @@ export const defaultData = {
 };
 interface ChartProps {
   data: number[];
-  printEnabled?: boolean;
+  // printEnabled?: boolean;
 }
-const Chart = ({ data, printEnabled = false }: ChartProps) => {
+const Chart = ({
+  data,
+}: // printEnabled = false
+ChartProps) => {
   let simpleData = data.map((value: number, index: number) => {
     console.log('value', value);
     if (isLowScore({ score: value, sectionIndex: index })) {
@@ -222,7 +225,7 @@ const Chart = ({ data, printEnabled = false }: ChartProps) => {
         options={options}
         chartData={chartData}
       />
-      {printEnabled && (
+      {/* {printEnabled && (
         <ChartWrapper
           className={s.chartPrint}
           options={{
@@ -246,7 +249,7 @@ const Chart = ({ data, printEnabled = false }: ChartProps) => {
             // labels: ['', '', '', '', ''],
           }}
         />
-      )}
+      )} */}
     </div>
   );
 };

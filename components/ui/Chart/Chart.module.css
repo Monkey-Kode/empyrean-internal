@@ -2,11 +2,11 @@
   @apply h-auto;
 }
 .root canvas {
-  @apply max-w-full h-auto print:max-h-[375px];
+  @apply max-w-full h-auto print:max-h-[315px];
 }
 .chart {
-  @apply print:hidden;
+  @apply block;
 }
-.chartPrint {
+/* .chartPrint {
   @apply hidden print:block;
-}
+} */

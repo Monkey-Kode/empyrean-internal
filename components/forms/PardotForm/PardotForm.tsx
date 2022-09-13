@@ -1,4 +1,4 @@
-import { FormEvent, SyntheticEvent, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import data from '../../../data';
 import { useEmailModal } from '../../../framework/context/emailModal/indext';
 import Button from '../../ui/Button';
@@ -157,7 +157,7 @@ const PardotForm = () => {
         </div>
         <input type="hidden" name="maturity_assessment_score" />
         <div className={s.buttonWrap}>
-          <Button className={s.button} type="submit" value={'Submit'} />
+          <Button type="submit" value={'Submit'} />
         </div>
       </form>
     </div>

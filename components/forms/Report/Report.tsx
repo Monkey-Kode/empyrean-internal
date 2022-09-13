@@ -91,7 +91,10 @@ const Report = ({ className }: ReportProps) => {
           <div dangerouslySetInnerHTML={{ __html: String(summary) }} />
         </div>
         <div className={s.chart}>
-          <Chart data={scores} printEnabled={true} />
+          <Chart
+            data={scores}
+            //  printEnabled={false}
+          />
         </div>
       </div>
       <section>
