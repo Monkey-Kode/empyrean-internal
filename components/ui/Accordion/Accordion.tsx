@@ -16,6 +16,7 @@ const Accordion = () => {
   const content = data.data.forms.find(
     (form: any) => form.slug === 'assessment'
   )?.sections;
+  let count = 0;
   return (
     <div className={s.root}>
       {content?.map((section: any, index: number) => {
@@ -41,10 +42,15 @@ const Accordion = () => {
         const report = section.results.find(
           (result: any) => result.name === level
         );
-
-        console.log('score', score);
+        count += 1;
+        console.log(' count', count);
         return section?.questions ? (
-          <AccordionItem key={index} title={`${section.title2}`} isOpen={true}>
+          <AccordionItem
+            key={index}
+            className={s[`accordion${count}`]}
+            title={`${section.title2}`}
+            isOpen={true}
+          >
             {/* <h4 className={s.h4}>
               Your Result: <span className={s.score}>{level}</span>
             </h4> */}

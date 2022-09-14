@@ -1,18 +1,20 @@
 import { FC, ReactNode, useState } from 'react';
 import s from './AccordionItem.module.css';
-import { Transition } from '@headlessui/react';
+// import { Transition } from '@headlessui/react';
+import cn from 'classnames';
 const AccordionItem: FC<{
   title: string;
   children: ReactNode;
   isOpen?: boolean;
-}> = ({ title, isOpen: isOpenDefault, children }) => {
+  className?: string;
+}> = ({ title, isOpen: isOpenDefault, className, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
   const open = isOpenDefault ? !isOpen : isOpen;
   return (
-    <div className={s.accordionItem}>
+    <div className={cn(s.accordionItem, className)}>
       <h3 className={s.accordionItemTitle} onClick={handleClick}>
         {title}
       </h3>
