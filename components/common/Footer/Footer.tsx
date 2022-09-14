@@ -19,7 +19,7 @@ const Footer = () => {
         <div className={s.logoWrap}>
           <figure className={s.logo}>
             <Image
-              src="/logo-footer.png"
+              src="/footer-logo.png"
               alt="logo"
               width={202}
               height={42}
