@@ -1,5 +1,5 @@
 .wrap {
-  @apply lg:grid px-5 lg:grid-cols-2 mt-12 items-center mb-20;
+  @apply lg:grid px-16 lg:grid-cols-2 mt-12 items-center mb-20;
 }
 
 .content {

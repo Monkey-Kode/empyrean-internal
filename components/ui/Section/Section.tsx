@@ -10,6 +10,7 @@ const Section: FC<{
   tags?: string[];
   logo: (() => JSX.Element) | undefined;
   __html: string | undefined;
+  columns?: boolean;
 }> = ({ className, title, content, logo, link, tags, __html }) => (
   <section className={cn(s.section, s.root, className)}>
     <header className={s.sectionHeader}>

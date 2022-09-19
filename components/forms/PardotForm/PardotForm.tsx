@@ -138,7 +138,7 @@ const PardotForm = () => {
 
         <div>
           <Input
-            label="Businenss Email"
+            label="Business Email"
             type="email"
             name="email"
             required={true}

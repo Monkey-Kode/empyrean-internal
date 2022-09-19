@@ -1,5 +1,5 @@
 .root {
-  @apply z-50 relative;
+  @apply z-50 relative bg-lighter-gray;
 }
 
 .dialog {
@@ -17,7 +17,7 @@
 }
 
 .panel {
-  @apply relative bg-white p-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-sm lg:max-w-4xl sm:w-full;
+  @apply relative bg-white p-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-sm lg:max-w-4xl sm:w-full bg-lighter-gray;
 }
 
 .panelInner {

@@ -9,5 +9,5 @@
   @apply pt-8;
 }
 .first > div {
-  @apply lg:columns-2;
+  @apply lg:columns-2 gap-32;
 }

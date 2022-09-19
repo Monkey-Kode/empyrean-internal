@@ -46,6 +46,9 @@ const Footer = () => {
           {addresses?.map((address: any) => {
             return <div key={address.title}>{address.content}</div>;
           })}
+          <a target={'_blank'} rel="noreferrer" href="https://GoEmpyrean.com">
+            https://GoEmpyrean.com
+          </a>
         </div>
         <nav className={s.nav}>
           {links?.map((link: any, index: number) => (
