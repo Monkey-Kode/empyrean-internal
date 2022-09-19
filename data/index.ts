@@ -186,12 +186,12 @@ const data: any = {
             },
           },
           {
-            type: 'cta',
-            content: 'Begin Assessment',
-          },
-          {
             type: 'policy',
             content: `By proceeding, you acknowledge that your answers will be recorded and will only be used anonymously, and in aggregate with other respondents for future research.`,
+          },
+          {
+            type: 'cta',
+            content: 'NEXT',
           },
         ],
       },

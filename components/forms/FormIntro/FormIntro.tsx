@@ -65,6 +65,12 @@ const FormIntro = ({ className }: FormIntroProps) => {
             )
           );
         })}
+        <p className={s.small}>
+          {
+            pageContent?.find((content: any) => content.type === 'policy')
+              ?.content
+          }
+        </p>
         <Button
           type="button"
           className={s.button}
@@ -84,12 +90,6 @@ const FormIntro = ({ className }: FormIntroProps) => {
         >
           {pageContent?.find((content: any) => content.type === 'cta')?.content}
         </Button>
-        <p className={s.small}>
-          {
-            pageContent?.find((content: any) => content.type === 'policy')
-              ?.content
-          }
-        </p>
       </div>
     </>
   );
