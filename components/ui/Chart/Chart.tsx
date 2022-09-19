@@ -178,7 +178,7 @@ ChartProps) => {
           display: true,
           // centerPointLabels: true,
           font: {
-            size: 14,
+            size: 16,
           },
         },
         min: 0,

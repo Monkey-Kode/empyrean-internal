@@ -87,7 +87,7 @@ const Report = ({ className }: ReportProps) => {
             <li>{role}</li>
             <li>{industry}</li>
           </ul>
-          <h2 className={s.h2}>{subtitle}</h2>
+          {/* <h2 className={s.h2}>{subtitle}</h2> */}
           <div dangerouslySetInnerHTML={{ __html: String(summary) }} />
         </div>
         <div className={s.chart}>

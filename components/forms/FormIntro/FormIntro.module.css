@@ -5,8 +5,8 @@
   @apply text-med-gray text-2xl lg:text-3xl font-bold py-8;
 }
 .button {
-  @apply my-10;
+  @apply mt-6 mb-10;
 }
 .small {
-  @apply block max-w-lg;
+  @apply block max-w-lg mt-2;
 }
