@@ -1,5 +1,5 @@
 .root {
-  @apply border-t border-gray p-5 mt-4 bg-lighter-gray z-30 relative;
+  @apply border-t border-gray p-5 mt-4 bg-lighter-gray z-30 relative print:mt-32;
 }
 .wrap {
   @apply max-w-7xl mx-auto px-4 py-4 lg:grid lg:grid-cols-4 bg-lighter-gray print:flex print:flex-wrap;
