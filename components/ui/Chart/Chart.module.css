@@ -2,10 +2,10 @@
   @apply h-auto;
 }
 .root canvas {
-  @apply max-w-full h-auto print:max-h-[315px];
+  @apply max-w-full h-auto;
 }
 .chart {
-  @apply block;
+  @apply block min-h-[320px];
 }
 /* .chartPrint {
   @apply hidden print:block;

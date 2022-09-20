@@ -1,5 +1,5 @@
 .root {
-  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 pt-14;
+  @apply max-w-6xl mx-auto pl-2 pr-4 sm:pl-3 sm:pr-6 lg:pl-4 lg:pr-8 pb-12 pt-14;
 }
 .preTitle {
   @apply text-med-gray text-2xl lg:text-3xl font-bold py-8;

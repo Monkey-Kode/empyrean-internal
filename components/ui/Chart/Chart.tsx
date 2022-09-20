@@ -168,6 +168,15 @@ ChartProps) => {
     ],
   };
   const options: ChartRadarOptions = {
+    layout: {
+      padding: {
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+      },
+    },
+    maintainAspectRatio: false,
     responsive: true,
     scales: {
       title: {

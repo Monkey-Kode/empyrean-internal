@@ -98,7 +98,7 @@ const data: any = {
         content: [
           {
             type: 'hero',
-            title: 'BENEFITS MATURITY INDEX',
+            title: 'BENEFITS MATURITY ASSESSMENT',
             __html: `<p>The pandemic and its aftermath have had an unparalleled level of impact on the workforce and the importance of building a positive workplace culture and employee experience. Take this assessment to determine whether your benefits operation is sufficiently mature to positively impact your organization’s culture and business outcomes.</p>`,
             content: '',
             cta: {

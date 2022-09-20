@@ -22,7 +22,10 @@ const Hero: FC = () => {
           {content?.cta?.text}
         </Button>
       </div>
-      <Chart data={generateRandomData(5)} />
+      <div>
+        <Chart data={generateRandomData(5)} />
+        <h2 className={s.chartTitle}>Title of Chart</h2>
+      </div>
     </section>
   );
 };

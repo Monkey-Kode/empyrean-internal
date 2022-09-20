@@ -77,26 +77,32 @@ const Report = ({ className }: ReportProps) => {
 
   return (
     <div className={cn(s.root, className)}>
-      <div className={s.topArea}>
-        <div className={s.topAreaLeft}>
-          <h1 className={s.mainHeading}>{title}</h1>
-          <h1 className={s.printHeading}>Benefits Maturity Assessment</h1>
-          <small className={s.small}>{subText}</small>
-          <ul className={s.list}>
-            <li>{companySize}</li>
-            <li>{role}</li>
-            <li>{industry}</li>
-          </ul>
-          {/* <h2 className={s.h2}>{subtitle}</h2> */}
-          <div dangerouslySetInnerHTML={{ __html: String(summary) }} />
-        </div>
-        <div className={s.chart}>
-          <Chart
-            data={scores}
-            //  printEnabled={false}
+      <header>
+        <h1 className={s.mainHeading}>{title}</h1>
+        <h1 className={s.printHeading}>Benefits Maturity Assessment</h1>
+        <small className={s.small}>{subText}</small>
+
+        <ul className={s.list}>
+          <li>{companySize}</li>
+          <li>{role}</li>
+          <li>{industry}</li>
+        </ul>
+        {/* <h2 className={s.h2}>{subtitle}</h2> */}
+
+        <div className={s.topArea}>
+          <div
+            className={s.topAreaLeft}
+            dangerouslySetInnerHTML={{ __html: String(summary) }}
           />
+          <div className={s.chart}>
+            <Chart
+              data={scores}
+              //  printEnabled={false}
+            />
+            <h2 className={s.chartTitle}>Title of Chart</h2>
+          </div>
         </div>
-      </div>
+      </header>
       <section>
         <Accordion />
       </section>
