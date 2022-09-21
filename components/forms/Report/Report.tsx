@@ -99,7 +99,7 @@ const Report = ({ className }: ReportProps) => {
               data={scores}
               //  printEnabled={false}
             />
-            <h2 className={s.chartTitle}>Title of Chart</h2>
+            <h2 className={s.chartTitle}>Benefits Maturity Radar</h2>
           </div>
         </div>
       </header>

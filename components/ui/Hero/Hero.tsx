@@ -24,7 +24,7 @@ const Hero: FC = () => {
       </div>
       <div>
         <Chart data={generateRandomData(5)} />
-        <h2 className={s.chartTitle}>Title of Chart</h2>
+        <h2 className={s.chartTitle}>Benefits Maturity Radar</h2>
       </div>
     </section>
   );
