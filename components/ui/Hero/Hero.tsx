@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import data from '../../../data';
 import generateRandomData from '../../../data/generateRandomData';
+import ChartLottie from '../../common/ChartLottie';
 import Button from '../Button';
 import Chart from '../Chart';
 import s from './Hero.module.css';
@@ -23,7 +24,8 @@ const Hero: FC = () => {
         </Button>
       </div>
       <div>
-        <Chart data={generateRandomData(5)} />
+        <ChartLottie />
+        {/* <Chart data={generateRandomData(5)} /> */}
         <h2 className={s.chartTitle}>Benefits Maturity Radar</h2>
       </div>
     </section>

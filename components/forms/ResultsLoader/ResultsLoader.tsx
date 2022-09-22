@@ -8,6 +8,7 @@ import Chart from '../../ui/Chart';
 import ProgressBar from '../../ui/ProgressBar';
 import s from './ResultsLoader.module.css';
 import cn from 'classnames';
+import ChartLottie from '../../common/ChartLottie';
 interface Props {
   className?: string;
 }
@@ -29,7 +30,8 @@ const ResultsLoader = ({ className }: Props) => {
   return (
     <div className={cn(s.root, className)}>
       <div className={s.chart}>
-        <Chart data={generateRandomData(5)} />
+        <ChartLottie />
+        {/* <Chart data={generateRandomData(5)} /> */}
       </div>
       <ProgressBar width={100} percent={Math.round(100)} />
       <p>{content?.content}</p>

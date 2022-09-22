@@ -1,5 +1,5 @@
 .wrap {
-  @apply lg:grid px-16 lg:grid-cols-2 mt-12 items-center mb-20 py-16;
+  @apply lg:grid px-6 lg:px-16 lg:grid-cols-2 lg:mt-12 items-center mb-20 lg:py-16;
 }
 
 .content {
@@ -14,5 +14,5 @@
   @apply mt-4 mb-14 lg:mt-5 lg:mb-0;
 }
 .chartTitle {
-  @apply text-xl font-normal print:text-sm text-center tracking-normal italic;
+  @apply text-xl font-normal print:text-sm text-center tracking-normal italic lg:-mt-16;
 }
