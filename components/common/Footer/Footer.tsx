@@ -47,7 +47,7 @@ const Footer = () => {
             return <div key={address.title}>{address.content}</div>;
           })}
           <a target={'_blank'} rel="noreferrer" href="https://GoEmpyrean.com">
-            https://GoEmpyrean.com
+            GoEmpyrean.com
           </a>
         </div>
         <nav className={s.nav}>
