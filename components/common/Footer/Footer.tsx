@@ -46,20 +46,25 @@ const Footer = () => {
           {addresses?.map((address: any) => {
             return <div key={address.title}>{address.content}</div>;
           })}
-          <a target={'_blank'} rel="noreferrer" href="https://GoEmpyrean.com">
+          <a
+            className={s.link}
+            target={'_blank'}
+            rel="noreferrer"
+            href="https://GoEmpyrean.com"
+          >
             GoEmpyrean.com
           </a>
         </div>
         <nav className={s.nav}>
-          {links?.map((link: any, index: number) => (
+          {links?.map((link: any) => (
             <a
               className={s.link}
               key={link.title}
               target="_blank"
               rel="noreferrer"
-              href={link.link}
+              href={link.cta.link}
             >
-              {link.title}
+              {link.cta.text}
             </a>
           ))}
         </nav>
