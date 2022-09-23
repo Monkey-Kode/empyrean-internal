@@ -3,7 +3,7 @@ import s from './TopNav.module.css';
 const TopNav = () => {
   return (
     <nav className={s.nav}>
-      <Link href="/participate">Participate</Link>
+      <Link href="/BenefitMaturityReport">Participate</Link>
     </nav>
   );
 };

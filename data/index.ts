@@ -103,7 +103,7 @@ const data: any = {
             content: '',
             cta: {
               text: 'Begin Assessment',
-              link: '/participate',
+              link: '/BenefitMaturityReport',
             },
             tags: [],
           },
