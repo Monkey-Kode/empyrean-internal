@@ -133,7 +133,7 @@ export const defaultData = {
     {
       label: 'Score',
       data: [18, 25, 13, 69, 39],
-      backgroundColor: 'rgba(221, 237, 84, .75)',
+      backgroundColor: 'rgba(221, 237, 84, .6)',
       borderColor: '#707070',
       borderWidth: 1,
     },
@@ -191,7 +191,7 @@ ChartProps) => {
           },
         },
         min: 0,
-        max: 4,
+        max: 3,
         ticks: {
           display: false,
         },
