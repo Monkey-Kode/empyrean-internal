@@ -5,6 +5,7 @@ import cn from 'classnames';
 import s from './Layout.module.css';
 import { ThemeProvider } from '../../../framework/context/theme';
 import Background from '../Background';
+import Alert from '../Alert/Alert';
 
 const Layout: FC<{
   children: ReactNode;
@@ -12,6 +13,7 @@ const Layout: FC<{
   return (
     <ThemeProvider>
       <div className={cn(s.root)}>
+        <Alert message="INTERNAL EXPERIENCE ONLY" />
         <Background />
         <Header />
         {children}
