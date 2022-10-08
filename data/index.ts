@@ -450,19 +450,19 @@ const data: any = {
                 high: 'Very extensive',
               },
               {
-                text: 'How important is that your benefits and benefits operations make a greater contribution to employee attraction',
+                text: 'How important is it that your benefits and benefits operations make a greater contribution to employee attraction',
                 name: 'attraction',
                 low: 'Not at all important',
                 high: 'Very important',
               },
               {
-                text: 'How important is that your benefits and benefits operations make a greater contribution to employee retention',
+                text: 'How important is it that your benefits and benefits operations make a greater contribution to employee retention',
                 name: 'retention',
                 low: 'Not at all important',
                 high: 'Very important',
               },
               {
-                text: 'How important is that your benefits and benefits operations make a greater contribution to employee experience',
+                text: 'How important is it that your benefits and benefits operations make a greater contribution to employee experience',
                 name: 'experience',
                 low: 'Not at all important',
                 high: 'Very important',
