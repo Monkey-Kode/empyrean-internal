@@ -36,5 +36,8 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
+  },
+  "volta": {
+    "node": "16.18.1"
   }
 }

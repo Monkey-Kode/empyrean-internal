@@ -104,6 +104,7 @@ const data: any = {
             cta: {
               text: 'Begin Assessment',
               link: '/BenefitMaturityReport',
+              small: 'Takes less than 10 minutes to complete',
             },
             tags: [],
           },

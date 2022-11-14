@@ -1,9 +1,7 @@
 import { FC } from 'react';
 import data from '../../../data';
-import generateRandomData from '../../../data/generateRandomData';
 import ChartLottie from '../../common/ChartLottie';
 import Button from '../Button';
-import Chart from '../Chart';
 import s from './Hero.module.css';
 
 const Hero: FC = () => {
@@ -22,6 +20,7 @@ const Hero: FC = () => {
         >
           {content?.cta?.text}
         </Button>
+        <small className={s.ctaSmall}>{content?.cta?.small}</small>
       </div>
       <div>
         <ChartLottie />
